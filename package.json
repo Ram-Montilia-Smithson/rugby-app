@@ -1,0 +1,20 @@
+{
+  "name": "rugby-app",
+  "version": "1.0.0",
+  "description": "building a rugby website to practice and improve my skills as a web developer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ram-Montilia-Smithson/rugby-app.git"
+  },
+  "keywords": [],
+  "author": "Ram Montilia Smithson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ram-Montilia-Smithson/rugby-app/issues"
+  },
+  "homepage": "https://github.com/Ram-Montilia-Smithson/rugby-app#readme"
+}
