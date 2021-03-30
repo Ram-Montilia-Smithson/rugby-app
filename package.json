@@ -1,5 +1,6 @@
 {
   "name": "rugby-app",
+  "description": "",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,6 +18,13 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ram-Montilia-Smithson/rugby-app.git"
+  },
+  "keywords": [],
+  "author": "Ram Montilia Smithson",
+  "license": "MIT",
   "eslintConfig": {
     "extends": [
       "react-app",
