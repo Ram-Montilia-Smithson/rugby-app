@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Ram-Montilia-Smithson/rugby-app/issues"
   },
-  "homepage": "https://github.com/Ram-Montilia-Smithson/rugby-app#readme"
+  "homepage": "https://github.com/Ram-Montilia-Smithson/rugby-app#readme",
+  "dependencies": {
+    "create-react-app": "^4.0.3"
+  }
 }
