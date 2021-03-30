@@ -1,0 +1,108 @@
+@import "./variables";
+@import "./_mixin";
+
+body{
+    font-family: $font-family;
+    margin: 0px;
+    background-color: rgb(150, 150, 150);
+}
+
+.parent{
+    @include parent()
+}
+
+.child{
+    height: 100px;
+}
+
+.header{
+    @include element(space-between);
+    background-image: url("../images/lines.png");
+}
+
+.header-left{
+    height: 120px;
+    width: 120px;
+    margin-left: 50px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.header-options{
+    margin-top: 10px;
+    margin-right: 50px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+a {
+    color: black;
+    margin: 0 20px;
+    text-decoration: none;
+}
+
+a:visited{
+    margin: 0 20px;
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    margin: 0 20px;
+    text-decoration: none;
+    color: #004aad;
+}
+
+.head-line{
+    @include element(center);
+}
+
+.head-line-child{
+    margin: -5px;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.line{
+    @include element(center);
+    display: flex;
+    flex-direction: column;
+}
+
+.line-child{
+    font-size: 25px;
+    padding-bottom: 20px;
+}
+
+.button{
+    @include element(center);
+    padding-top: 50px;
+}
+
+.button-child{
+    @include button(white, rgb(0, 18, 119));
+    transition: box-shadow 0.25s;
+    cursor: pointer;
+}
+
+.button-child:hover {
+    @include button(rgb(0, 18, 119), white);
+    box-shadow: 0px 0px 20px 0px #FFFFFF;
+}
+
+.footer{
+    @include element(center);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    // max-height: 100px;
+}
+
+.premiership,
+.rwc,
+.SupeRugby,
+.SIX_NATIONS,
+.pro14,
+.Top14 {
+    height: $height;
+}

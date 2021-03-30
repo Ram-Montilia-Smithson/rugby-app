@@ -1,0 +1,23 @@
+@mixin parent() {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+@mixin element($space) {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: $space
+}
+
+@mixin button($color1, $color2) {
+    background: $color1;
+    color: $color2;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+    padding: 18px 42px;
+    margin-top: -30px;
+}
+
+

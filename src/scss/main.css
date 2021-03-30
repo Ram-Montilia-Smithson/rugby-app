@@ -1,0 +1,176 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0px;
+  background-color: #969696;
+}
+
+.parent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
+
+.child {
+  height: 100px;
+}
+
+.header {
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-image: url("../images/lines.png");
+}
+
+.header-left {
+  height: 120px;
+  width: 120px;
+  margin-left: 50px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.header-options {
+  margin-top: 10px;
+  margin-right: 50px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+a {
+  color: black;
+  margin: 0 20px;
+  text-decoration: none;
+}
+
+a:visited {
+  margin: 0 20px;
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  margin: 0 20px;
+  text-decoration: none;
+  color: #004aad;
+}
+
+.head-line {
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.head-line-child {
+  margin: -5px;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.line {
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.line-child {
+  font-size: 25px;
+  padding-bottom: 20px;
+}
+
+.button {
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 50px;
+}
+
+.button-child {
+  background: white;
+  color: #001277;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+  padding: 18px 42px;
+  margin-top: -30px;
+  -webkit-transition: -webkit-box-shadow 0.25s;
+  transition: -webkit-box-shadow 0.25s;
+  transition: box-shadow 0.25s;
+  transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
+  cursor: pointer;
+}
+
+.button-child:hover {
+  background: #001277;
+  color: white;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+  padding: 18px 42px;
+  margin-top: -30px;
+  -webkit-box-shadow: 0px 0px 20px 0px #FFFFFF;
+          box-shadow: 0px 0px 20px 0px #FFFFFF;
+}
+
+.footer {
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.premiership,
+.rwc,
+.SupeRugby,
+.SIX_NATIONS,
+.pro14,
+.Top14 {
+  height: 100px;
+}
+/*# sourceMappingURL=main.css.map */
