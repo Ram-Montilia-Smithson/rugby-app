@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 150vh;
+    height: fit-content;
 }
 @mixin element($space) {
     height: 100px;

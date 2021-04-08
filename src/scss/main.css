@@ -1,9 +1,7 @@
-/* remember to use scss in an efficient way, learn something */
-
 body {
   font-family: "Open Sans", sans-serif;
   margin: 0px;
-  background-color: #969696;
+  background-color: #004aad;
 }
 
 .parent {
@@ -15,7 +13,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 150vh;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .child {
@@ -152,7 +152,42 @@ a:hover {
           box-shadow: 0px 0px 20px 0px #FFFFFF;
 }
 
-#footer {
+.competitions {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  color: #FFFFFF;
+}
+
+.competitions-container {
+  margin: 20px 20px;
+  padding: 30px 30px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto auto auto;
+      grid-template-columns: auto auto auto auto auto;
+  -ms-grid-rows: auto auto auto auto auto;
+      grid-template-rows: auto auto auto auto auto;
+  grid-gap: 20px;
+}
+
+.competitions-link {
+  height: 200px;
+  width: 200px;
+}
+
+.competitions-image {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+
+td {
+  background-color: #FFFFFF;
+  text-align: center;
+}
+
+#footer-container {
   height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -160,20 +195,25 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: auto;
+  padding: 20px 20px;
+  background-color: #1b1b1b;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  grid-gap: 20px;
 }
 
-.premiership,
-.rwc,
-.SupeRugby,
-.SIX_NATIONS,
-.pro14,
-.Top14 {
-  height: 100px;
+.footer-element {
+  background-color: #555555;
 }
 /*# sourceMappingURL=main.css.map */
