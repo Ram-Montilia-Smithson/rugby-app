@@ -1,7 +1,8 @@
 @mixin parent() {
+    position: relative;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 150vh;
 }
 @mixin element($space) {
     height: 100px;

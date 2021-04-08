@@ -16,7 +16,7 @@ export default function Home() {
                 <div className="line-child">STATS FROM AROUND THE WORLD</div>
             </div>
             <div className="button">
-                <div className="button-child">Book a Demo</div>
+                <div className="button-child">Button</div>
             </div>
         </div>
     )

@@ -49,7 +49,10 @@ export default function Competitions() {
         //         setItems(data.results)
         //     })
         //     .catch(err => console.error(err));
-        setItems([{ id:1, season: 2022, name: "Gallagher Premiership" }, {id: 2, season: 2022, name: "Gallagher Premiership"}])
+        setItems([
+            { id: 1, season: 2022, name: "Gallagher Premiership" },
+            { id: 2, season: 2022, name: "Gallagher Premiership" }
+        ])
         return () => {
             
         }

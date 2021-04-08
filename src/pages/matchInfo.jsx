@@ -21,7 +21,7 @@ import React from 'react'
 export default function MatchInfo() {
     return (
         <div>
-            <h1>math info</h1>
+            <h1>match info</h1>
         </div>
     )
 }
