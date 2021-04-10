@@ -2,6 +2,7 @@ body {
   font-family: "Open Sans", sans-serif;
   margin: 0px;
   background-color: #004aad;
+  scroll-behavior: smooth;
 }
 
 .parent {
@@ -16,6 +17,7 @@ body {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  scroll-behavior: smooth;
 }
 
 .child {
@@ -174,6 +176,16 @@ a:hover {
 .competitions-link {
   height: 200px;
   width: 200px;
+  -webkit-transition: -webkit-box-shadow 0.25s;
+  transition: -webkit-box-shadow 0.25s;
+  transition: box-shadow 0.25s;
+  transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
+}
+
+.competitions-link:hover {
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 20px 10px #00ff00;
+          box-shadow: 0px 0px 20px 10px #00ff00;
 }
 
 .competitions-image {
@@ -182,12 +194,54 @@ a:hover {
   border-radius: 5px;
 }
 
+.competition {
+  text-align: center;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'header header' 'table fixtures' 'table fixtures';
+  grid-gap: 20px;
+}
+
+.tables {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: table;
+}
+
+.table {
+  margin: 20px 0px 20px 20px;
+  background-color: #004aad;
+  border-radius: 5px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
+tbody {
+  margin: 10px;
+}
+
+tr {
+  margin: 50px;
+}
+
+th {
+  background-color: #272727;
+  color: #ffffff;
+  margin: 10px;
+}
+
 td {
-  background-color: #FFFFFF;
+  background-color: #555555;
+  color: #000000;
   text-align: center;
 }
 
-#footer-container {
+.fixtures {
+  background-color: blueviolet;
+}
+
+#footer {
   height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -202,7 +256,7 @@ td {
   height: -moz-fit-content;
   height: fit-content;
   width: auto;
-  padding: 20px 20px;
+  padding: 20px;
   background-color: #1b1b1b;
   display: -ms-grid;
   display: grid;

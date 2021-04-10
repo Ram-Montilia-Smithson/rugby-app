@@ -13,9 +13,13 @@ import "../scss/main.css"
 // .then(response => response.json())
 // .then(data => {
 // console.log(data)
+// if (data.results.standings.length > 1) {
+// setMoreTeams(data.results.standings[1].teams)
+// setTableName(data.results.standings[0].table_name)
+// setTable2Name(data.results.standings[1].table_name)
+// }
 // setName(data.results.comp_name)
 // setTeams(data.results.standings[0].teams)
-// })
 // .catch(err => {
 // 	console.error(err);
 // });
@@ -54,11 +58,34 @@ import "../scss/main.css"
 export default function Competition({ id }) {
     
     const [name, setName] = useState("")
+    const [tableName, setTableName] = ("")
+    const [table2Name, setTable2Name] = ("")
     const [teams, setTeams] = useState([])
+    const [moreTeams, setMoreTeams] = useState([])
+    const [fixtures, setFixtures] = useState([])
 
     useEffect(() => {
         console.log(id)
-        setName(id)
+        setName(`competition ${id}`)
+        setFixtures([
+            {"away":"Glasgow Warriors",
+            // right side
+            "away_score":14,
+            // "next to name
+            "date":"2019-09-27T17:05:00+00:00",
+            // show in line above,
+            "game_week":1,
+            // arange fixtures based on that and "date",
+            "id":3780106,
+            //  to use when fixture is pressed - send info to match.jsx component that would open as a drop down from the fixture downwards,
+            "home":"Cheetahs",
+            //  left side,
+            "home_score":48,
+            // next to name
+            "venue":"Toyota Stadium",
+            // show in line above
+            }
+        ])
         setTeams(
             [{
                 "position": 1,
@@ -173,7 +200,9 @@ export default function Competition({ id }) {
                 "losing_bonus": 2,
                 "bye_bonus": 0,
                 "points": 40
-            },
+            }
+        ])
+        setMoreTeams([
             {
                 "position": 7,
                 "id": 3767,
@@ -288,57 +317,149 @@ export default function Competition({ id }) {
                 "bye_bonus": 0,
                 "points": 18
             }
-        ]
-        )
+        ])
     }, [id])
 
     return (
-        <div className="table-container">
-            <h1>{name}</h1>
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th>position</th>
-                        <th>name</th>
-                        <th>played</th>
-                        <th>won</th>
-                        <th>drawn</th>
-                        <th>lost</th>
-                        <th>tries for</th>
-                        <th>tries against</th>
-                        <th>tries difference</th>
-                        <th>points for</th>
-                        <th>points against</th>
-                        <th>points difference</th>
-                        <th>try bonus</th>
-                        <th>loosing bonus</th>
-                        <th>points</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {teams.map(team => {
-                        return(
-                            <tr>
-                                <td>{team.position}</td>
-                                <td>{team.name}</td>
-                                <td>{team.played}</td>
-                                <td>{team.won}</td>
-                                <td>{team.drawn}</td>
-                                <td>{team.lost}</td>
-                                <td>{team.tries_for}</td>
-                                <td>{team.tries_against}</td>
-                                <td>{team.tries_diff}</td>
-                                <td>{team.points_for}</td>
-                                <td>{team.points_against}</td>
-                                <td>{team.points_diff}</td>
-                                <td>{team.try_bonus}</td>
-                                <td>{team.losing_bonus}</td>
-                                <td>{team.points}</td>
-                            </tr>
-                        )
-                    })}
-                </tbody>
-            </table>
+        <div className="competition">
+            {name}
+            <div className="tables">
+                {teams.length &&
+                    <div className="table-container">
+                    <table className="table">
+                        {tableName && <h1>{tableName}</h1>}
+                            <thead>
+                                <tr>
+                                    <th>POS</th>
+                                    <th>NAME</th>
+                                    <th>P</th>
+                                    <th>W</th>
+                                    <th>D</th>
+                                    <th>L</th>
+                                    <th>T F</th>
+                                    <th>T A</th>
+                                    <th>T DIFF</th>
+                                    <th>P FOR</th>
+                                    <th>P A</th>
+                                    <th>P DIFF</th>
+                                    <th>T BONUS</th>
+                                    <th>L BONUS</th>
+                                    <th>POINTS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {teams.map(team => {
+                                    console.log(fixtures)
+                                    return(
+                                        <tr>
+                                            <td>{team.position}</td>
+                                            <td>{team.name}</td>
+                                            <td>{team.played}</td>
+                                            <td>{team.won}</td>
+                                            <td>{team.drawn}</td>
+                                            <td>{team.lost}</td>
+                                            <td>{team.tries_for}</td>
+                                            <td>{team.tries_against}</td>
+                                            <td>{team.tries_diff}</td>
+                                            <td>{team.points_for}</td>
+                                            <td>{team.points_against}</td>
+                                            <td>{team.points_diff}</td>
+                                            <td>{team.try_bonus}</td>
+                                            <td>{team.losing_bonus}</td>
+                                            <td>{team.points}</td>
+                                        </tr>
+                                    )
+                                })}
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                {moreTeams.length && 
+                    <div className="table-container">
+                    <table className="table">
+                        {table2Name && <h1>{table2Name}</h1>}
+                            <thead>
+                                <tr>
+                                    <th>POS</th>
+                                    <th>NAME</th>
+                                    <th>P</th>
+                                    <th>W</th>
+                                    <th>D</th>
+                                    <th>L</th>
+                                    <th>T F</th>
+                                    <th>T A</th>
+                                    <th>T DIFF</th>
+                                    <th>P FOR</th>
+                                    <th>P A</th>
+                                    <th>P DIFF</th>
+                                    <th>T BONUS</th>
+                                    <th>L BONUS</th>
+                                    <th>POINTS</th>
+                                </tr>
+                            </thead>
+                            {/* <tbody>
+                                {table2Name.map(team => {
+                                    return(
+                                        <tr>
+                                            
+                                        </tr>
+                                    )
+                                })}
+                            </tbody> */}
+                        </table>
+                    </div>
+                }
+                {/* {teams.length === 0 && 
+                    <h1>error</h1>
+                } */}
+            </div>
+            <div className="fixtures">fixtures
+                <table>
+                    <thead>
+                        <tr>
+
+                            {/* "away":"Glasgow Warriors",
+                            // right side
+                            "away_score":14,
+                            // "next to name
+                            "date":"2019-09-27T17:05:00+00:00",
+                            // show in line above,
+                            "game_week":1,
+                            // arange fixtures based on that and "date",
+                            "id":3780106,
+                            //  to use when fixture is pressed - send info to match.jsx component that would open as a drop down from the fixture downwards,
+                            "home":"Cheetahs",
+                            //  left side,
+                            "home_score":48,
+                            // next to name
+                            "venue":"Toyota Stadium",
+                            // show in line above */}
+                            {/* <th>away</th>
+                            <th>away_score</th>
+                            <th>date</th>
+                            <th>game_week</th>
+                            <th>id</th>
+                            <th>home</th>
+                            <th>home_score</th>
+                            <th>venue</th> */}
+                        </tr>
+                    </thead>
+                    {/* <tbody>
+                        {fixtures && fixtures[0].map(fixture => {
+                            return(
+                                <tr>{fixture.away}</tr>
+                                <tr>{fixture.away_score}</tr>
+                                <tr>{fixture.date}</tr>
+                                <tr>{fixture.game_week}</tr>
+                                <tr>{fixture.id}</tr>
+                                <tr>{fixture.home}</tr>
+                                <tr>{fixture.home_score}</tr>
+                                <tr>{fixture.venue}</tr>
+                            )
+                        })}
+                    </tbody> */}
+                </table>
+            </div>
         </div>
     )
 }

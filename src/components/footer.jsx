@@ -8,7 +8,7 @@ import "../scss/main.css"
 
 export default function Footer() {
     return (
-        <div id="footer-container">
+        <div id="footer">
             <div className="footer-element">
                 <h1>contact</h1>
                 <ul>

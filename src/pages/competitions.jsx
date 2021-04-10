@@ -218,8 +218,7 @@ export default function Competitions({ competitionChoice}) {
                             <img className="competitions-image" src={rugbyEurope} alt={item.name} />
                         </a>
                     )
-                    if (item.season >= 2021) return (<div key={item.id}>{JSON.stringify(item.name)}</div>)
-                    return <div>for now, until the mapping of competitions will be completed</div>
+                    else return <div>for now, until the mapping of competitions will be completed</div>
                 })}
             </div>
         </div>
