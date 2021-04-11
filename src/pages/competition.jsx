@@ -84,6 +84,126 @@ export default function Competition({ id }) {
             // next to name
             "venue":"Toyota Stadium",
             // show in line above
+            },
+            {"away":"Glasgow Warriors",
+            // right side
+            "away_score":14,
+            // "next to name
+            "date":"2019-09-27T17:05:00+00:00",
+            // show in line above,
+            "game_week":1,
+            // arange fixtures based on that and "date",
+            "id":3780106,
+            //  to use when fixture is pressed - send info to match.jsx component that would open as a drop down from the fixture downwards,
+            "home":"Cheetahs",
+            //  left side,
+            "home_score":48,
+            // next to name
+            "venue":"Toyota Stadium",
+            // show in line above
+            },
+            {"away":"Glasgow Warriors",
+            // right side
+            "away_score":14,
+            // "next to name
+            "date":"2019-09-27T17:05:00+00:00",
+            // show in line above,
+            "game_week":1,
+            // arange fixtures based on that and "date",
+            "id":3780106,
+            //  to use when fixture is pressed - send info to match.jsx component that would open as a drop down from the fixture downwards,
+            "home":"Cheetahs",
+            //  left side,
+            "home_score":48,
+            // next to name
+            "venue":"Toyota Stadium",
+            // show in line above
+            },
+            {"away":"Glasgow Warriors",
+            // right side
+            "away_score":14,
+            // "next to name
+            "date":"2019-09-27T17:05:00+00:00",
+            // show in line above,
+            "game_week":1,
+            // arange fixtures based on that and "date",
+            "id":3780106,
+            //  to use when fixture is pressed - send info to match.jsx component that would open as a drop down from the fixture downwards,
+            "home":"Cheetahs",
+            //  left side,
+            "home_score":48,
+            // next to name
+            "venue":"Toyota Stadium",
+            // show in line above
+            },
+            
+            {"away":"Glasgow Warriors",
+            // right side
+            "away_score":14,
+            // "next to name
+            "date":"2019-09-27T17:05:00+00:00",
+            // show in line above,
+            "game_week":1,
+            // arange fixtures based on that and "date",
+            "id":3780106,
+            //  to use when fixture is pressed - send info to match.jsx component that would open as a drop down from the fixture downwards,
+            "home":"Cheetahs",
+            //  left side,
+            "home_score":48,
+            // next to name
+            "venue":"Toyota Stadium",
+            // show in line above
+            },
+            {"away":"Glasgow Warriors",
+            // right side
+            "away_score":14,
+            // "next to name
+            "date":"2019-09-27T17:05:00+00:00",
+            // show in line above,
+            "game_week":1,
+            // arange fixtures based on that and "date",
+            "id":3780106,
+            //  to use when fixture is pressed - send info to match.jsx component that would open as a drop down from the fixture downwards,
+            "home":"Cheetahs",
+            //  left side,
+            "home_score":48,
+            // next to name
+            "venue":"Toyota Stadium",
+            // show in line above
+            },
+            {"away":"Glasgow Warriors",
+            // right side
+            "away_score":14,
+            // "next to name
+            "date":"2019-09-27T17:05:00+00:00",
+            // show in line above,
+            "game_week":1,
+            // arange fixtures based on that and "date",
+            "id":3780106,
+            //  to use when fixture is pressed - send info to match.jsx component that would open as a drop down from the fixture downwards,
+            "home":"Cheetahs",
+            //  left side,
+            "home_score":48,
+            // next to name
+            "venue":"Toyota Stadium",
+            // show in line above
+            },
+            {"away":"Glasgow Warriors",
+            // right side
+            "away_score":14,
+            // "next to name
+            "date":"2019-09-27T17:05:00+00:00",
+            // show in line above,
+            "game_week":1,
+            // arange fixtures based on that and "date",
+            "id":3780106,
+            //  to use when fixture is pressed - send info to match.jsx component that would open as a drop down from the fixture downwards,
+            "home":"Cheetahs",
+            //  left side,
+            "home_score":48,
+            // next to name
+            "venue":"Toyota Stadium",
+            // show in line above
             }
         ])
         setTeams(
@@ -203,120 +323,120 @@ export default function Competition({ id }) {
             }
         ])
         setMoreTeams([
-            // {
-            //     "position": 7,
-            //     "id": 3767,
-            //     "name": "Leicester",
-            //     "played": 15,
-            //     "won": 8,
-            //     "drawn": 0,
-            //     "lost": 7,
-            //     "tries_for": 34,
-            //     "tries_against": 39,
-            //     "tries_diff": -5,
-            //     "points_for": 316,
-            //     "points_against": 319,
-            //     "points_diff": -3,
-            //     "try_bonus": 3,
-            //     "losing_bonus": 0,
-            //     "bye_bonus": 0,
-            //     "points": 37
-            // },
-            // {
-            //     "position": 8,
-            //     "id": 3017,
-            //     "name": "Bath",
-            //     "played": 15,
-            //     "won": 7,
-            //     "drawn": 0,
-            //     "lost": 8,
-            //     "tries_for": 40,
-            //     "tries_against": 56,
-            //     "tries_diff": -16,
-            //     "points_for": 341,
-            //     "points_against": 413,
-            //     "points_diff": -72,
-            //     "try_bonus": 5,
-            //     "losing_bonus": 3,
-            //     "bye_bonus": 0,
-            //     "points": 36
-            // },
-            // {
-            //     "position": 9,
-            //     "id": 4667,
-            //     "name": "Wasps",
-            //     "played": 15,
-            //     "won": 6,
-            //     "drawn": 0,
-            //     "lost": 9,
-            //     "tries_for": 39,
-            //     "tries_against": 41,
-            //     "tries_diff": -2,
-            //     "points_for": 323,
-            //     "points_against": 381,
-            //     "points_diff": -58,
-            //     "try_bonus": 3,
-            //     "losing_bonus": 4,
-            //     "bye_bonus": 0,
-            //     "points": 31
-            // },
-            // {
-            //     "position": 10,
-            //     "id": 4067,
-            //     "name": "Newcastle Falcons",
-            //     "played": 15,
-            //     "won": 6,
-            //     "drawn": 0,
-            //     "lost": 9,
-            //     "tries_for": 28,
-            //     "tries_against": 33,
-            //     "tries_diff": -5,
-            //     "points_for": 221,
-            //     "points_against": 264,
-            //     "points_diff": -43,
-            //     "try_bonus": 0,
-            //     "losing_bonus": 2,
-            //     "bye_bonus": 0,
-            //     "points": 30
-            // },
-            // {
-            //     "position": 11,
-            //     "id": 3317,
-            //     "name": "Gloucester",
-            //     "played": 15,
-            //     "won": 4,
-            //     "drawn": 0,
-            //     "lost": 11,
-            //     "tries_for": 39,
-            //     "tries_against": 51,
-            //     "tries_diff": -12,
-            //     "points_for": 325,
-            //     "points_against": 395,
-            //     "points_diff": -70,
-            //     "try_bonus": 3,
-            //     "losing_bonus": 6,
-            //     "bye_bonus": 0,
-            //     "points": 25
-            // },
-            // {
-            //     "position": 12,
-            //     "id": 9917,
-            //     "name": "Worcester",
-            //     "played": 15,
-            //     "won": 3,
-            //     "drawn": 0,
-            //     "lost": 12,
-            //     "tries_for": 25,
-            //     "tries_against": 51,
-            //     "tries_diff": -26,
-            //     "points_for": 208,
-            //     "points_against": 376,
-            //     "points_diff": -168,
-            //     "try_bonus": 1,
-            //     "losing_bonus": 5,
-            //     "bye_bonus": 0,
-            //     "points": 18
-            // }
+            {
+                "position": 7,
+                "id": 3767,
+                "name": "Leicester",
+                "played": 15,
+                "won": 8,
+                "drawn": 0,
+                "lost": 7,
+                "tries_for": 34,
+                "tries_against": 39,
+                "tries_diff": -5,
+                "points_for": 316,
+                "points_against": 319,
+                "points_diff": -3,
+                "try_bonus": 3,
+                "losing_bonus": 0,
+                "bye_bonus": 0,
+                "points": 37
+            },
+            {
+                "position": 8,
+                "id": 3017,
+                "name": "Bath",
+                "played": 15,
+                "won": 7,
+                "drawn": 0,
+                "lost": 8,
+                "tries_for": 40,
+                "tries_against": 56,
+                "tries_diff": -16,
+                "points_for": 341,
+                "points_against": 413,
+                "points_diff": -72,
+                "try_bonus": 5,
+                "losing_bonus": 3,
+                "bye_bonus": 0,
+                "points": 36
+            },
+            {
+                "position": 9,
+                "id": 4667,
+                "name": "Wasps",
+                "played": 15,
+                "won": 6,
+                "drawn": 0,
+                "lost": 9,
+                "tries_for": 39,
+                "tries_against": 41,
+                "tries_diff": -2,
+                "points_for": 323,
+                "points_against": 381,
+                "points_diff": -58,
+                "try_bonus": 3,
+                "losing_bonus": 4,
+                "bye_bonus": 0,
+                "points": 31
+            },
+            {
+                "position": 10,
+                "id": 4067,
+                "name": "Newcastle Falcons",
+                "played": 15,
+                "won": 6,
+                "drawn": 0,
+                "lost": 9,
+                "tries_for": 28,
+                "tries_against": 33,
+                "tries_diff": -5,
+                "points_for": 221,
+                "points_against": 264,
+                "points_diff": -43,
+                "try_bonus": 0,
+                "losing_bonus": 2,
+                "bye_bonus": 0,
+                "points": 30
+            },
+            {
+                "position": 11,
+                "id": 3317,
+                "name": "Gloucester",
+                "played": 15,
+                "won": 4,
+                "drawn": 0,
+                "lost": 11,
+                "tries_for": 39,
+                "tries_against": 51,
+                "tries_diff": -12,
+                "points_for": 325,
+                "points_against": 395,
+                "points_diff": -70,
+                "try_bonus": 3,
+                "losing_bonus": 6,
+                "bye_bonus": 0,
+                "points": 25
+            },
+            {
+                "position": 12,
+                "id": 9917,
+                "name": "Worcester",
+                "played": 15,
+                "won": 3,
+                "drawn": 0,
+                "lost": 12,
+                "tries_for": 25,
+                "tries_against": 51,
+                "tries_diff": -26,
+                "points_for": 208,
+                "points_against": 376,
+                "points_diff": -168,
+                "try_bonus": 1,
+                "losing_bonus": 5,
+                "bye_bonus": 0,
+                "points": 18
+            }
         ])
     }, [id])
 
@@ -351,7 +471,7 @@ export default function Competition({ id }) {
                                 {teams.map(team => {
                                         console.log(fixtures)
                                         return(
-                                            <tr>
+                                            <tr key={team.id}>
                                                 <td key="table-td-position">{team.position}</td>
                                                 <td key="table-td-name">{team.name}</td>
                                                 <td key="table-td-played">{team.played}</td>
@@ -402,22 +522,22 @@ export default function Competition({ id }) {
                             <tbody>
                                 {moreTeams.map(team => {
                                     return (
-                                        <tr>
-                                            <td>{team.position}</td>
-                                            <td>{team.name}</td>
-                                            <td>{team.played}</td>
-                                            <td>{team.won}</td>
-                                            <td>{team.drawn}</td>
-                                            <td>{team.lost}</td>
-                                            <td>{team.tries_for}</td>
-                                            <td>{team.tries_against}</td>
-                                            <td>{team.tries_diff}</td>
-                                            <td>{team.points_for}</td>
-                                            <td>{team.points_against}</td>
-                                            <td>{team.points_diff}</td>
-                                            <td>{team.try_bonus}</td>
-                                            <td>{team.losing_bonus}</td>
-                                            <td>{team.points}</td>
+                                        <tr key={team.id}>
+                                            <td key="table2-td-position">{team.position}</td>
+                                            <td key="table2-td-name">{team.name}</td>
+                                            <td key="table2-td-played">{team.played}</td>
+                                            <td key="table2-td-won">{team.won}</td>
+                                            <td key="table2-td-drawn">{team.drawn}</td>
+                                            <td key="table2-td-lost">{team.lost}</td>
+                                            <td key="table2-td-tries_for">{team.tries_for}</td>
+                                            <td key="table2-td-tries_against">{team.tries_against}</td>
+                                            <td key="table2-td-tries_diff">{team.tries_diff}</td>
+                                            <td key="table2-td-points_for">{team.points_for}</td>
+                                            <td key="table2-td-points_against">{team.points_against}</td>
+                                            <td key="table2-td-points_diff">{team.points_diff}</td>
+                                            <td key="table2-td-try_bonus">{team.try_bonus}</td>
+                                            <td key="table2-td-losing_bonus">{team.losing_bonus}</td>
+                                            <td key="table2-td-points">{team.points}</td>
                                         </tr>
                                     )
                                 })}
@@ -431,39 +551,28 @@ export default function Competition({ id }) {
             <div className="fixtures">
                 {fixtures ?
                     <div className="fixture-container">
-                    <table className="fixture">
-                        {/* {tableName && <h1>{tableName}</h1>} */}
-                            {/* <thead>
-                                <tr>
-                                    <th>away</th>
-                                    <th>away_score</th>
-                                    <th>date</th>
-                                    <th>game_week</th>
-                                    <th>id</th>
-                                    <th>home</th>
-                                    <th>home_score</th>
-                                    <th>venue</th>
-                                </tr>
-                            </thead> */}
-                            <tbody>
                             {fixtures.map(fixture => {
                                     console.log(fixture)
                                     return(
-                                        <tr>
-                                            <th>{fixture.date}</th>
-                                            <td>{fixture.away}</td>
-                                            <td>{fixture.away_score}</td>
-                                            <td>{fixture.date}</td>
-                                            <td>{fixture.game_week}</td>
-                                            <td>{fixture.id}</td>
-                                            <td>{fixture.home}</td>
-                                            <td>{fixture.home_score}</td>
-                                            <td>{fixture.venue}</td>
-                                        </tr>
+                                        <div className="fixture-container">
+                                            <div className="fixture-head">
+                                                <span className="fixture-game_week">game week No.{fixture.game_week}</span>
+                                                <span className="fixture_date">{fixture.date}</span>
+                                                <span className="fixture-venue">{fixture.venue}</span>
+                                            </div>
+                                            <div className="fixture">
+                                                {/* <span className="fixture_date">{fixture.date}</span> */}
+                                                <span className="fixture_away">{fixture.home}</span>
+                                                <span className="fixture-score">{fixture.home_score} - {fixture.away_score}</span>
+                                                {/* <span className="fixture-game_week">{fixture.game_week}</span> */}
+                                                {/* <span className="fixture-id">{fixture.id}</span> */}
+                                                {/* <span className="fixture-score">{fixture.home_score}</span> */}
+                                                <span className="fixture-home">{fixture.away}</span>
+                                                {/* <span className="fixture-venue">{fixture.venue}</span> */}
+                                            </div>
+                                        </div>
                                     )
                             })}
-                            </tbody>
-                        </table>
                     </div>
                 : 
                     <h1>error - no fixtures</h1>

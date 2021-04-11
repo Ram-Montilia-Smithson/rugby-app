@@ -195,18 +195,19 @@ a:hover {
 }
 
 .competition {
+  display: grid;
+  width: 100%;
+  grid-template-areas: "head head"
+                       "table  fixtures";
+  grid-template-rows: 100px 1fr;
+  grid-template-columns: 1fr 1fr;
   text-align: center;
   display: -ms-grid;
-  display: grid;
-  grid-template-areas: 'header header'
-                       'table fixtures';
-  grid-areas-columns: 1fr 1fr;
-  grid-areas-rows: 50px 1fr;
   grid-gap: 20px;
 }
 
 .competition-header{
-  grid-area: 'header';
+  grid-area: head;
 }
 
 .tables {
@@ -219,7 +220,7 @@ a:hover {
 .table {
   margin: 20px 0px 20px 20px;
   background-color: #004aad;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
 }
@@ -230,7 +231,6 @@ tbody {
 
 tr {
   margin: 50px;
-  /* width: 200px; */
 }
 
 th {
@@ -244,14 +244,40 @@ td {
   background-color: #555555;
   color: #000000;
   text-align: center;
-  /* display: table-cell;
-  vertical-align: inherit! important; */
   width: 100px;
-  /* width: fit-content; */
 }
 
 .fixtures {
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
+  grid-area: fixtures;
+}
+
+.fixture-container{
+  margin: 10px 20px;
+}
+
+.fixture-head{
+  /* margin: 100px 20px; */
+  background-color: green;
+  /* border-radius: 5px; */
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fixture{
+  /* margin: 100px 20px; */
+  background-color: green;
+  /* border-radius: 5px; */
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-around;
+}
+
+.fixture-score{
+  background-color:red;
 }
 
 #footer {

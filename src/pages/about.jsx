@@ -1,4 +1,5 @@
 import React from 'react'
+import "../scss/main.css"
 
 // explain about yourself and your project
 
