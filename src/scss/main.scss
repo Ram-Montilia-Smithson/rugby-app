@@ -137,6 +137,10 @@ a:hover{
     grid-gap: 20px;
 }
 
+.competition-header{
+    grid-area: header;
+}
+
 .tables{
     grid-area: table;
 }

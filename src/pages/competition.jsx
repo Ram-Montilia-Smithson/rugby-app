@@ -203,176 +203,204 @@ export default function Competition({ id }) {
             }
         ])
         setMoreTeams([
-            {
-                "position": 7,
-                "id": 3767,
-                "name": "Leicester",
-                "played": 15,
-                "won": 8,
-                "drawn": 0,
-                "lost": 7,
-                "tries_for": 34,
-                "tries_against": 39,
-                "tries_diff": -5,
-                "points_for": 316,
-                "points_against": 319,
-                "points_diff": -3,
-                "try_bonus": 3,
-                "losing_bonus": 0,
-                "bye_bonus": 0,
-                "points": 37
-            },
-            {
-                "position": 8,
-                "id": 3017,
-                "name": "Bath",
-                "played": 15,
-                "won": 7,
-                "drawn": 0,
-                "lost": 8,
-                "tries_for": 40,
-                "tries_against": 56,
-                "tries_diff": -16,
-                "points_for": 341,
-                "points_against": 413,
-                "points_diff": -72,
-                "try_bonus": 5,
-                "losing_bonus": 3,
-                "bye_bonus": 0,
-                "points": 36
-            },
-            {
-                "position": 9,
-                "id": 4667,
-                "name": "Wasps",
-                "played": 15,
-                "won": 6,
-                "drawn": 0,
-                "lost": 9,
-                "tries_for": 39,
-                "tries_against": 41,
-                "tries_diff": -2,
-                "points_for": 323,
-                "points_against": 381,
-                "points_diff": -58,
-                "try_bonus": 3,
-                "losing_bonus": 4,
-                "bye_bonus": 0,
-                "points": 31
-            },
-            {
-                "position": 10,
-                "id": 4067,
-                "name": "Newcastle Falcons",
-                "played": 15,
-                "won": 6,
-                "drawn": 0,
-                "lost": 9,
-                "tries_for": 28,
-                "tries_against": 33,
-                "tries_diff": -5,
-                "points_for": 221,
-                "points_against": 264,
-                "points_diff": -43,
-                "try_bonus": 0,
-                "losing_bonus": 2,
-                "bye_bonus": 0,
-                "points": 30
-            },
-            {
-                "position": 11,
-                "id": 3317,
-                "name": "Gloucester",
-                "played": 15,
-                "won": 4,
-                "drawn": 0,
-                "lost": 11,
-                "tries_for": 39,
-                "tries_against": 51,
-                "tries_diff": -12,
-                "points_for": 325,
-                "points_against": 395,
-                "points_diff": -70,
-                "try_bonus": 3,
-                "losing_bonus": 6,
-                "bye_bonus": 0,
-                "points": 25
-            },
-            {
-                "position": 12,
-                "id": 9917,
-                "name": "Worcester",
-                "played": 15,
-                "won": 3,
-                "drawn": 0,
-                "lost": 12,
-                "tries_for": 25,
-                "tries_against": 51,
-                "tries_diff": -26,
-                "points_for": 208,
-                "points_against": 376,
-                "points_diff": -168,
-                "try_bonus": 1,
-                "losing_bonus": 5,
-                "bye_bonus": 0,
-                "points": 18
-            }
+            // {
+            //     "position": 7,
+            //     "id": 3767,
+            //     "name": "Leicester",
+            //     "played": 15,
+            //     "won": 8,
+            //     "drawn": 0,
+            //     "lost": 7,
+            //     "tries_for": 34,
+            //     "tries_against": 39,
+            //     "tries_diff": -5,
+            //     "points_for": 316,
+            //     "points_against": 319,
+            //     "points_diff": -3,
+            //     "try_bonus": 3,
+            //     "losing_bonus": 0,
+            //     "bye_bonus": 0,
+            //     "points": 37
+            // },
+            // {
+            //     "position": 8,
+            //     "id": 3017,
+            //     "name": "Bath",
+            //     "played": 15,
+            //     "won": 7,
+            //     "drawn": 0,
+            //     "lost": 8,
+            //     "tries_for": 40,
+            //     "tries_against": 56,
+            //     "tries_diff": -16,
+            //     "points_for": 341,
+            //     "points_against": 413,
+            //     "points_diff": -72,
+            //     "try_bonus": 5,
+            //     "losing_bonus": 3,
+            //     "bye_bonus": 0,
+            //     "points": 36
+            // },
+            // {
+            //     "position": 9,
+            //     "id": 4667,
+            //     "name": "Wasps",
+            //     "played": 15,
+            //     "won": 6,
+            //     "drawn": 0,
+            //     "lost": 9,
+            //     "tries_for": 39,
+            //     "tries_against": 41,
+            //     "tries_diff": -2,
+            //     "points_for": 323,
+            //     "points_against": 381,
+            //     "points_diff": -58,
+            //     "try_bonus": 3,
+            //     "losing_bonus": 4,
+            //     "bye_bonus": 0,
+            //     "points": 31
+            // },
+            // {
+            //     "position": 10,
+            //     "id": 4067,
+            //     "name": "Newcastle Falcons",
+            //     "played": 15,
+            //     "won": 6,
+            //     "drawn": 0,
+            //     "lost": 9,
+            //     "tries_for": 28,
+            //     "tries_against": 33,
+            //     "tries_diff": -5,
+            //     "points_for": 221,
+            //     "points_against": 264,
+            //     "points_diff": -43,
+            //     "try_bonus": 0,
+            //     "losing_bonus": 2,
+            //     "bye_bonus": 0,
+            //     "points": 30
+            // },
+            // {
+            //     "position": 11,
+            //     "id": 3317,
+            //     "name": "Gloucester",
+            //     "played": 15,
+            //     "won": 4,
+            //     "drawn": 0,
+            //     "lost": 11,
+            //     "tries_for": 39,
+            //     "tries_against": 51,
+            //     "tries_diff": -12,
+            //     "points_for": 325,
+            //     "points_against": 395,
+            //     "points_diff": -70,
+            //     "try_bonus": 3,
+            //     "losing_bonus": 6,
+            //     "bye_bonus": 0,
+            //     "points": 25
+            // },
+            // {
+            //     "position": 12,
+            //     "id": 9917,
+            //     "name": "Worcester",
+            //     "played": 15,
+            //     "won": 3,
+            //     "drawn": 0,
+            //     "lost": 12,
+            //     "tries_for": 25,
+            //     "tries_against": 51,
+            //     "tries_diff": -26,
+            //     "points_for": 208,
+            //     "points_against": 376,
+            //     "points_diff": -168,
+            //     "try_bonus": 1,
+            //     "losing_bonus": 5,
+            //     "bye_bonus": 0,
+            //     "points": 18
+            // }
         ])
     }, [id])
 
     return (
         <div className="competition">
-            <h1>{name}</h1>
+            <h1 className="competition-header">{name}</h1>
             <div className="tables">
                 {teams.length ?
                     <div className="table-container">
-                    <table className="table">
-                        <h1>{tableName}</h1>
+                        {moreTeams.length ? <h2>comp 1 {tableName}</h2> : <></>}
+                        <table className="table">
                             <thead>
                                 <tr>
-                                    <th>POS</th>
-                                    <th>NAME</th>
-                                    <th>P</th>
-                                    <th>W</th>
-                                    <th>D</th>
-                                    <th>L</th>
-                                    <th>T F</th>
-                                    <th>T A</th>
-                                    <th>T DIFF</th>
-                                    <th>P FOR</th>
-                                    <th>P A</th>
-                                    <th>P DIFF</th>
-                                    <th>T BONUS</th>
-                                    <th>L BONUS</th>
-                                    <th>POINTS</th>
+                                    <th key="table-th-pos">POS</th>
+                                    <th key="table-th-name">NAME</th>
+                                    <th key="table-th-played">P</th>
+                                    <th key="table-th-won">W</th>
+                                    <th key="table-th-drawn">D</th>
+                                    <th key="table-th-lost">L</th>
+                                    <th key="table-th-tries_for">T.F</th>
+                                    <th key="table-th-tries_against">T.A</th>
+                                    <th key="table-th-tries_diff">T.DIFF</th>
+                                    <th key="table-th-points_for">P.FOR</th>
+                                    <th key="table-th-points_against">P.A</th>
+                                    <th key="table-th-points_diff">P.DIFF</th>
+                                    <th key="table-th-try_bonus">T-BONUS</th>
+                                    <th key="table-th-losing_bonus">L-BONUS</th>
+                                    <th key="table-th_points">POINTS</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {moreTeams.length ? <span>comp 1</span> : <></>}
                                 {teams.map(team => {
                                         console.log(fixtures)
                                         return(
                                             <tr>
-                                                <td>{team.position}</td>
-                                                <td>{team.name}</td>
-                                                <td>{team.played}</td>
-                                                <td>{team.won}</td>
-                                                <td>{team.drawn}</td>
-                                                <td>{team.lost}</td>
-                                                <td>{team.tries_for}</td>
-                                                <td>{team.tries_against}</td>
-                                                <td>{team.tries_diff}</td>
-                                                <td>{team.points_for}</td>
-                                                <td>{team.points_against}</td>
-                                                <td>{team.points_diff}</td>
-                                                <td>{team.try_bonus}</td>
-                                                <td>{team.losing_bonus}</td>
-                                                <td>{team.points}</td>
+                                                <td key="table-td-position">{team.position}</td>
+                                                <td key="table-td-name">{team.name}</td>
+                                                <td key="table-td-played">{team.played}</td>
+                                                <td key="table-td-won">{team.won}</td>
+                                                <td key="table-td-drawn">{team.drawn}</td>
+                                                <td key="table-td-lost">{team.lost}</td>
+                                                <td key="table-td-tries_for">{team.tries_for}</td>
+                                                <td key="table-td-tries_against">{team.tries_against}</td>
+                                                <td key="table-td-tries_diff">{team.tries_diff}</td>
+                                                <td key="table-td-points_for">{team.points_for}</td>
+                                                <td key="table-td-points_against">{team.points_against}</td>
+                                                <td key="table-td-points_diff">{team.points_diff}</td>
+                                                <td key="table-td-try_bonus">{team.try_bonus}</td>
+                                                <td key="table-td-losing_bonus">{team.losing_bonus}</td>
+                                                <td key="table-td-points">{team.points}</td>
                                             </tr>
                                         )
                                 })}
-                                {moreTeams.length ? <span>comp 2</span> : <></>}
-                                {moreTeams.length && moreTeams.map(team => {
+                            </tbody>
+                        </table>
+                    </div>
+                : 
+                    <h1>error</h1>
+                }
+                {moreTeams.length ? 
+                    <div className="table-container">
+                        <h2>comp 2 {table2Name}</h2>
+                        <table className="table">
+                            <thead>
+                                <tr>
+                                    <th key="table-th-pos">POS</th>
+                                    <th key="table-th-name">NAME</th>
+                                    <th key="table-th-played">P</th>
+                                    <th key="table-th-won">W</th>
+                                    <th key="table-th-drawn">D</th>
+                                    <th key="table-th-lost">L</th>
+                                    <th key="table-th-tries_for">T.F</th>
+                                    <th key="table-th-tries_against">T.A</th>
+                                    <th key="table-th-tries_diff">T.DIFF</th>
+                                    <th key="table-th-points_for">P.FOR</th>
+                                    <th key="table-th-points_against">P.A</th>
+                                    <th key="table-th-points_diff">P.DIFF</th>
+                                    <th key="table-th-try_bonus">T-BONUS</th>
+                                    <th key="table-th-losing_bonus">L-BONUS</th>
+                                    <th key="table-th_points">POINTS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {moreTeams.map(team => {
                                     return (
                                         <tr>
                                             <td>{team.position}</td>
@@ -396,16 +424,16 @@ export default function Competition({ id }) {
                             </tbody>
                         </table>
                     </div>
-                : 
-                    <h1>error</h1>
+                :
+                    <></>
                 }
             </div>
             <div className="fixtures">
-                {fixtures &&
+                {fixtures ?
                     <div className="fixture-container">
                     <table className="fixture">
                         {/* {tableName && <h1>{tableName}</h1>} */}
-                            <thead>
+                            {/* <thead>
                                 <tr>
                                     <th>away</th>
                                     <th>away_score</th>
@@ -416,83 +444,30 @@ export default function Competition({ id }) {
                                     <th>home_score</th>
                                     <th>venue</th>
                                 </tr>
-                            </thead>
+                            </thead> */}
                             <tbody>
-                            {teams.map(team => {
-                                    console.log(fixtures)
+                            {fixtures.map(fixture => {
+                                    console.log(fixture)
                                     return(
                                         <tr>
-                                            <td>{team.position}</td>
-                                            <td>{team.name}</td>
-                                            <td>{team.played}</td>
-                                            <td>{team.won}</td>
-                                            <td>{team.drawn}</td>
-                                            <td>{team.lost}</td>
-                                            <td>{team.tries_for}</td>
-                                            <td>{team.tries_against}</td>
-                                            <td>{team.tries_diff}</td>
-                                            <td>{team.points_for}</td>
-                                            <td>{team.points_against}</td>
-                                            <td>{team.points_diff}</td>
-                                            <td>{team.try_bonus}</td>
-                                            <td>{team.losing_bonus}</td>
-                                            <td>{team.points}</td>
+                                            <th>{fixture.date}</th>
+                                            <td>{fixture.away}</td>
+                                            <td>{fixture.away_score}</td>
+                                            <td>{fixture.date}</td>
+                                            <td>{fixture.game_week}</td>
+                                            <td>{fixture.id}</td>
+                                            <td>{fixture.home}</td>
+                                            <td>{fixture.home_score}</td>
+                                            <td>{fixture.venue}</td>
                                         </tr>
                                     )
                             })}
                             </tbody>
                         </table>
                     </div>
-                // : 
-                //     <h1>error</h1>
+                : 
+                    <h1>error - no fixtures</h1>
                 }
-            </div>
-            <div className="fixtures">fixtures
-                <table>
-                    <thead>
-                        <tr>
-
-                            {/* "away":"Glasgow Warriors",
-                            // right side
-                            "away_score":14,
-                            // "next to name
-                            "date":"2019-09-27T17:05:00+00:00",
-                            // show in line above,
-                            "game_week":1,
-                            // arange fixtures based on that and "date",
-                            "id":3780106,
-                            //  to use when fixture is pressed - send info to match.jsx component that would open as a drop down from the fixture downwards,
-                            "home":"Cheetahs",
-                            //  left side,
-                            "home_score":48,
-                            // next to name
-                            "venue":"Toyota Stadium",
-                            // show in line above */}
-                            {/* <th>away</th>
-                            <th>away_score</th>
-                            <th>date</th>
-                            <th>game_week</th>
-                            <th>id</th>
-                            <th>home</th>
-                            <th>home_score</th>
-                            <th>venue</th> */}
-                        </tr>
-                    </thead>
-                    {/* <tbody>
-                        {fixtures && fixtures[0].map(fixture => {
-                            return(
-                                <tr>{fixture.away}</tr>
-                                <tr>{fixture.away_score}</tr>
-                                <tr>{fixture.date}</tr>
-                                <tr>{fixture.game_week}</tr>
-                                <tr>{fixture.id}</tr>
-                                <tr>{fixture.home}</tr>
-                                <tr>{fixture.home_score}</tr>
-                                <tr>{fixture.venue}</tr>
-                            )
-                        })}
-                    </tbody> */}
-                </table>
             </div>
         </div>
     )

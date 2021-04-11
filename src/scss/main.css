@@ -198,8 +198,15 @@ a:hover {
   text-align: center;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'header header' 'table fixtures' 'table fixtures';
+  grid-template-areas: 'header header'
+                       'table fixtures';
+  grid-areas-columns: 1fr 1fr;
+  grid-areas-rows: 50px 1fr;
   grid-gap: 20px;
+}
+
+.competition-header{
+  grid-area: 'header';
 }
 
 .tables {
@@ -223,18 +230,24 @@ tbody {
 
 tr {
   margin: 50px;
+  /* width: 200px; */
 }
 
 th {
   background-color: #272727;
   color: #ffffff;
   margin: 10px;
+  width: 100px;
 }
 
 td {
   background-color: #555555;
   color: #000000;
   text-align: center;
+  /* display: table-cell;
+  vertical-align: inherit! important; */
+  width: 100px;
+  /* width: fit-content; */
 }
 
 .fixtures {
