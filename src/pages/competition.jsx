@@ -322,12 +322,12 @@ export default function Competition({ id }) {
 
     return (
         <div className="competition">
-            {name}
+            <h1>{name}</h1>
             <div className="tables">
-                {teams.length &&
+                {teams.length ?
                     <div className="table-container">
                     <table className="table">
-                        {tableName && <h1>{tableName}</h1>}
+                        <h1>{tableName}</h1>
                             <thead>
                                 <tr>
                                     <th>POS</th>
@@ -345,6 +345,76 @@ export default function Competition({ id }) {
                                     <th>T BONUS</th>
                                     <th>L BONUS</th>
                                     <th>POINTS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {moreTeams.length ? <span>comp 1</span> : <></>}
+                                {teams.map(team => {
+                                        console.log(fixtures)
+                                        return(
+                                            <tr>
+                                                <td>{team.position}</td>
+                                                <td>{team.name}</td>
+                                                <td>{team.played}</td>
+                                                <td>{team.won}</td>
+                                                <td>{team.drawn}</td>
+                                                <td>{team.lost}</td>
+                                                <td>{team.tries_for}</td>
+                                                <td>{team.tries_against}</td>
+                                                <td>{team.tries_diff}</td>
+                                                <td>{team.points_for}</td>
+                                                <td>{team.points_against}</td>
+                                                <td>{team.points_diff}</td>
+                                                <td>{team.try_bonus}</td>
+                                                <td>{team.losing_bonus}</td>
+                                                <td>{team.points}</td>
+                                            </tr>
+                                        )
+                                })}
+                                {moreTeams.length ? <span>comp 2</span> : <></>}
+                                {moreTeams.length && moreTeams.map(team => {
+                                    return (
+                                        <tr>
+                                            <td>{team.position}</td>
+                                            <td>{team.name}</td>
+                                            <td>{team.played}</td>
+                                            <td>{team.won}</td>
+                                            <td>{team.drawn}</td>
+                                            <td>{team.lost}</td>
+                                            <td>{team.tries_for}</td>
+                                            <td>{team.tries_against}</td>
+                                            <td>{team.tries_diff}</td>
+                                            <td>{team.points_for}</td>
+                                            <td>{team.points_against}</td>
+                                            <td>{team.points_diff}</td>
+                                            <td>{team.try_bonus}</td>
+                                            <td>{team.losing_bonus}</td>
+                                            <td>{team.points}</td>
+                                        </tr>
+                                    )
+                                })}
+                            </tbody>
+                        </table>
+                    </div>
+                : 
+                    <h1>error</h1>
+                }
+            </div>
+            <div className="fixtures">
+                {fixtures &&
+                    <div className="fixture-container">
+                    <table className="fixture">
+                        {/* {tableName && <h1>{tableName}</h1>} */}
+                            <thead>
+                                <tr>
+                                    <th>away</th>
+                                    <th>away_score</th>
+                                    <th>date</th>
+                                    <th>game_week</th>
+                                    <th>id</th>
+                                    <th>home</th>
+                                    <th>home_score</th>
+                                    <th>venue</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -369,49 +439,13 @@ export default function Competition({ id }) {
                                             <td>{team.points}</td>
                                         </tr>
                                     )
-                                })}
+                            })}
                             </tbody>
                         </table>
                     </div>
+                // : 
+                //     <h1>error</h1>
                 }
-                {moreTeams.length && 
-                    <div className="table-container">
-                    <table className="table">
-                        {table2Name && <h1>{table2Name}</h1>}
-                            <thead>
-                                <tr>
-                                    <th>POS</th>
-                                    <th>NAME</th>
-                                    <th>P</th>
-                                    <th>W</th>
-                                    <th>D</th>
-                                    <th>L</th>
-                                    <th>T F</th>
-                                    <th>T A</th>
-                                    <th>T DIFF</th>
-                                    <th>P FOR</th>
-                                    <th>P A</th>
-                                    <th>P DIFF</th>
-                                    <th>T BONUS</th>
-                                    <th>L BONUS</th>
-                                    <th>POINTS</th>
-                                </tr>
-                            </thead>
-                            {/* <tbody>
-                                {table2Name.map(team => {
-                                    return(
-                                        <tr>
-                                            
-                                        </tr>
-                                    )
-                                })}
-                            </tbody> */}
-                        </table>
-                    </div>
-                }
-                {/* {teams.length === 0 && 
-                    <h1>error</h1>
-                } */}
             </div>
             <div className="fixtures">fixtures
                 <table>
