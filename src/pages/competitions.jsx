@@ -103,7 +103,7 @@ export default function Competitions({ competitionChoice}) {
                             className="competitions-link"
                             key={item.id}
                             onClick={() => handleClick(item.id)}
-                            to="/competition"
+                            to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={premiership} alt={item.name} />
                         </Link>

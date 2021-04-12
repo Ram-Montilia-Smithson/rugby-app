@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+
 
 // here, after reciving the match's id from match.jsx
 // call fetch("https://rugby-live-data.p.rapidapi.com/match/3195835", {
@@ -18,7 +19,12 @@ import React from 'react'
 // and show all relevant info about the match, there is so much of it
 // be creative as you go over the info and think how should you show it.
 
-export default function MatchInfo() {
+export default function MatchInfo({match}) {
+
+    useEffect(() => {
+        console.log(match);
+    }, [match])
+
     return (
         <div>
             <h1>match info</h1>

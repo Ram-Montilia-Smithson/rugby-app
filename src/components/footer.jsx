@@ -41,6 +41,7 @@ export default function Footer() {
                     <li>whoever you stole all these pictures from</li>
                     <li>canva?</li>
                     <li>ITC?</li>
+                    <li>google fonts</li>
                 </ul>
             </div>
             <div className="footer-element">

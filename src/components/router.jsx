@@ -12,10 +12,15 @@ import logo from "../images/rugby world logo.png"
 
 export default function Router() {
 
-    const [id, setId] = useState(0)
+    const [comp, setComp] = useState(0)
+    const [match, setMatch] = useState(0)
 
     const competitionChoice = (id) => {
-        setId(id)
+        setComp(id)
+    }
+
+    const matchChoise = (id) => {
+        setMatch(id)
     }
 
     return (
@@ -32,9 +37,9 @@ export default function Router() {
                 </div>
                 <Switch>
                     <Route path="/about"><About /></Route>
-                    <Route path="/competition"><Competition id={id} /></Route>
+                    <Route path="/competition"><Competition id={comp} matchChoise={matchChoise} /></Route>
                     <Route path="/competitions"><Competitions competitionChoice={competitionChoice} /></Route>
-                    <Route path="/matchInfo"><MatchInfo /></Route>
+                    <Route path="/matchInfo"><MatchInfo match={match}/></Route>
                     {/* <Route path="fixtures" component={ }/> */}
                     <Route exact path="/"><Home /></Route>
                 </Switch>
