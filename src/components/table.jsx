@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
+import "../scss/main.css"
+import {Link} from "react-router-dom"
 
-// add team's page link on every team in a table
-// make team page
 // copy from ultimate rugby, they use the exact same info
 // responsiveness
 // screen sizes
@@ -10,7 +10,7 @@ import React, {useState, useEffect} from 'react'
 
 
 
-export default function Table({standings}) {
+export default function Table({standings, teamChoise}) {
 
     const [tableName, setTableName] = useState("")
     const [table2Name, setTable2Name] = useState("")
@@ -57,7 +57,14 @@ export default function Table({standings}) {
                                         return(
                                             <tr key={team.id}>
                                                 <td>{team.position}</td>
-                                                <td>{team.name}</td>
+                                                <td>
+                                                    <Link
+                                                        to={`/team?${team.name}`}
+                                                        onClick={() => teamChoise(team.id)}
+                                                    >
+                                                        {team.name}
+                                                    </Link>
+                                                </td>
                                                 <td>{team.played}</td>
                                                 <td>{team.won}</td>
                                                 <td>{team.drawn}</td>
@@ -101,7 +108,14 @@ export default function Table({standings}) {
                                     return (
                                         <tr key={team.id}>
                                             <td>{team.position}</td>
-                                            <td>{team.name}</td>
+                                            <td>
+                                                <Link
+                                                    o={`/team?${team.name}`}
+                                                    onClick={() => teamChoise(team.id)}
+                                                >
+                                                    {team.name}
+                                                </Link>
+                                            </td>
                                             <td>{team.played}</td>
                                             <td>{team.won}</td>
                                             <td>{team.drawn}</td>

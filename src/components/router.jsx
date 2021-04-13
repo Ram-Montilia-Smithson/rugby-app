@@ -15,13 +15,18 @@ export default function Router() {
 
     const [comp, setComp] = useState(0)
     const [match, setMatch] = useState(0)
+    const [team, setTeam] = useState(0)
 
-    const competitionChoice = (id) => {
+    const compChoice = (id) => {
         setComp(id)
     }
 
     const matchChoise = (id) => {
         setMatch(id)
+    }
+
+    const teamChoise = (id) => {
+        setTeam(id)
     }
 
     return (
@@ -38,8 +43,8 @@ export default function Router() {
                 </div>
                 <Switch>
                     <Route path="/about"><About /></Route>
-                    <Route path="/competition"><Competition id={comp} matchChoise={matchChoise} /></Route>
-                    <Route path="/competitions"><Competitions competitionChoice={competitionChoice} /></Route>
+                    <Route path="/competition"><Competition id={comp} matchChoise={matchChoise} teamChoise={teamChoise} /></Route>
+                    <Route path="/competitions"><Competitions compChoice={compChoice} /></Route>
                     <Route path="/matchInfo"><MatchInfoPage match={match}/></Route>
                     <Route path="/team"><Team/></Route>
                     <Route exact path="/"><Home /></Route>

@@ -5,8 +5,7 @@ import Fixtures from "../components/fixtures";
 import premiership from "../images/premiership.png";
 
 
-
-// copy from ultimate rugby, they use the exact same info
+// consider making competitionHeader.jsx to show logo with comp_name in a nice way
 // responsiveness
 // screen sizes
 // intuitive
@@ -15,7 +14,7 @@ import premiership from "../images/premiership.png";
 //  after reciving the competition's id that was sent from competitions.jsx
 // call
 
-// fetch("https://rugby-live-data.p.rapidapi.com/standings/{id}/2021", {
+// fetch(`https://rugby-live-data.p.rapidapi.com/standings/${id}/2021`, {
 // 	"method": "GET",
 // 	"headers": {
 // 		"x-rapidapi-key": "ef122e1472msh9e1a6187db0abafp1ca12ejsnab19288e6f05",
@@ -27,10 +26,10 @@ import premiership from "../images/premiership.png";
 // console.log(data)
 // setStandings(data.results)
 const DATA = {
-    "comp_name": "prepiership",
+    "comp_name": "premiership",
     "standings": [
         {
-            "tableName": "comp1",
+            "tableName": "table1",
             "teams": 
                 [
                     {   
@@ -52,7 +51,7 @@ const DATA = {
                 ]
         },
         {
-            "tableName": "comp2",
+            "tableName": "table2",
             "teams": 
                 [
                     {   
@@ -83,7 +82,7 @@ const DATA = {
 
 
 
-// also call fetch("https://rugby-live-data.p.rapidapi.com/fixtures/{id}/2021", {
+// also call fetch(`https://rugby-live-data.p.rapidapi.com/fixtures/${id}/2021`, {
 // "method": "GET",
 // "headers": {
 // "x-rapidapi-key": "ef122e1472msh9e1a6187db0abafp1ca12ejsnab19288e6f05",
@@ -94,20 +93,20 @@ const DATA = {
 // .then(data => {
 // console.log(data)
 const RESULTS = [
-            {"away":"Glasgow Warr","away_score":14,"date":"2019-09-27T17:05:00+00:00","game_week":1,
-            "id":3780201,"home":"Cheetahs","home_score":48,"venue":"Toyota Stadium",
+            {"away":"Glasgow Warr","away_score":22,"date":"2019-09-27T17:05:00+00:00","game_week":1,
+            "id":3780201,"home":"Cheetahs","home_score":22,"venue":"Toyota Stadium",
             },
             {"away":"Glasgow Warr","away_score":14,"date":"2019-09-27T17:05:00+00:00","game_week":1,
-            "id":3780101,"home":"Cheetahs","home_score":48,"venue":"Toyota Stadium",
+            "id":3780001,"home":"Cheetahs","home_score":48,"venue":"Toyota Stadium",
             },
-            {"away":"Glasgow Warr","away_score":14,"date":"2019-09-27T17:05:00+00:00","game_week":1,
-            "id":3780101,"home":"Cheetahs","home_score":48,"venue":"Toyota Stadium",
+            {"away":"Glasgow Warr","away_score":8,"date":"2019-09-27T17:05:00+00:00","game_week":1,
+            "id":3780101,"home":"Cheetahs","home_score":10,"venue":"Toyota Stadium",
             },
-            {"away":"Glasgow Warr","away_score":14,"date":"2019-09-27T17:05:00+00:00","game_week":1,
-            "id":3780301,"home":"Cheetahs","home_score":48,"venue":"Toyota Stadium",
+            {"away":"Glasgow Warr","away_score":34,"date":"2019-09-27T17:05:00+00:00","game_week":1,
+            "id":3780301,"home":"Cheetahs","home_score":25,"venue":"Toyota Stadium",
             },
-            {"away":"Glasgow Warr","away_score":14,"date":"2019-09-27T17:05:00+00:00","game_week":1,
-            "id":3780401,"home":"Cheetahs","home_score":48,"venue":"Toyota Stadium",
+            {"away":"Glasgow Warr","away_score":12,"date":"2019-09-27T17:05:00+00:00","game_week":1,
+            "id":3780401,"home":"Cheetahs","home_score":15,"venue":"Toyota Stadium",
             },
         ]
 // setFixtureList(data.results)
@@ -118,7 +117,7 @@ const RESULTS = [
 
 
 
-export default function Competition({ id, matchChoise }) {
+export default function Competition({ id, matchChoise, teamChoise }) {
 
     const [name, setName] = useState(DATA.comp_name)
     const [logo, setLogo] = useState(premiership)
@@ -135,10 +134,10 @@ export default function Competition({ id, matchChoise }) {
     return (
         <div className="competition">
             <div className="competition-header">
-                <img src={logo} alt={name}/>
-                <h1>{name}</h1>
+                {/* <img src={logo} alt={name}/> */}
+                <div>{name}</div>
             </div>
-            <Table standings={standings}/>
+            <Table standings={standings} teamChoise={teamChoise}/>
             <Fixtures fixtureList={fixtureList} matchChoise={matchChoise}/>
         </div>
     )

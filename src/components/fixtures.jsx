@@ -56,21 +56,40 @@ export default function Fixtures({ fixtureList, matchChoise }) {
                                     <span className="fixture-game_week">ROUND {fixture.game_week}</span>
                                     <span className="fixture_date">{fixture.date}</span>
                                     <span className="fixture-venue">{fixture.venue}</span>
-                                    <div className="dropdown">
+                                    <div>
                                         <button 
-                                            className="dropbtn" 
+                                            className="dropdown-button" 
                                             onClick={() => moreInfo(fixture.id)}
                                         >
                                             {showMoreButton.current}
-                                            {/* MORE INFO */}
                                         </button>
                                     </div>
                                 </div>
                                 <div className="fixture">
                                     {/* {fixture.home_score > fixture.away_score ? : } */}
-                                    <span className="fixture_away">{fixture.home}</span>
-                                    <span className="fixture-score">{fixture.home_score} - {fixture.away_score}</span>
-                                    <span className="fixture-home">{fixture.away}</span>
+                                    <span className="fixture_home">{fixture.home}</span>
+                                    {fixture.home_score > fixture.away_score &&
+                                        <span>
+                                        <span className="fixture-score-home" style={{ backgroundColor: "#414141", color: "#ffffff" }}>{fixture.home_score}</span>
+                                            -
+                                        <span className="fixture-score-away" style={{ backgroundColor: "#c2c2c2"}}>{fixture.away_score}</span>
+                                        </span>  
+                                    }
+                                    {fixture.home_score < fixture.away_score &&
+                                        <span>
+                                        <span className="fixture-score-home" style={{ backgroundColor: "#c2c2c2" }}>{fixture.home_score}</span>
+                                            -
+                                        <span className="fixture-score-away" style={{ backgroundColor: "#414141", color: "#ffffff" }}>{fixture.away_score}</span>
+                                        </span>
+                                    }
+                                    {fixture.home_score === fixture.away_score &&
+                                        <span>
+                                            <span className="fixture-score-home" style={{ backgroundColor: "#c2c2c2" }}>{fixture.home_score}</span>
+                                            -
+                                        <span className="fixture-score-away" style={{ backgroundColor: "#c2c2c2"}}>{fixture.away_score}</span>
+                                        </span>
+                                    }
+                                    <span className="fixture-away">{fixture.away}</span>
                                 </div>
                                 <MatchInfoComponent
                                     id={fixture.id} 
