@@ -19,7 +19,7 @@ import React, {useEffect, useState} from 'react'
 // and show all relevant info about the match, there is so much of it
 // be creative as you go over the info and think how should you show it.
 
-export default function MatchInfo({match}) {
+export default function MatchInfoPage({match}) {
 
     useEffect(() => {
         console.log(match);

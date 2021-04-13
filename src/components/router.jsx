@@ -6,7 +6,8 @@ import About from '../pages/about';
 import Competition from '../pages/competition';
 import Competitions from '../pages/competitions';
 import Home from '../pages/home';
-import MatchInfo from '../pages/matchInfo';
+import MatchInfoPage from '../pages/matchInfoPage';
+import Team from "../pages/team"
 import logo from "../images/rugby world logo.png"
 // correct logo design and align it correctly
 
@@ -39,8 +40,8 @@ export default function Router() {
                     <Route path="/about"><About /></Route>
                     <Route path="/competition"><Competition id={comp} matchChoise={matchChoise} /></Route>
                     <Route path="/competitions"><Competitions competitionChoice={competitionChoice} /></Route>
-                    <Route path="/matchInfo"><MatchInfo match={match}/></Route>
-                    {/* <Route path="fixtures" component={ }/> */}
+                    <Route path="/matchInfo"><MatchInfoPage match={match}/></Route>
+                    <Route path="/team"><Team/></Route>
                     <Route exact path="/"><Home /></Route>
                 </Switch>
             </BrowserRouter>
