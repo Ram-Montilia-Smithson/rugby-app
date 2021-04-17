@@ -1,6 +1,6 @@
 import React from 'react'
 import '../scss/main.css';
-
+import {Link} from "react-router-dom";
 
 // here you add welcome to the website and some basic explanations
 
@@ -14,9 +14,10 @@ export default function Home() {
             <div className="line">
                 <div className="line-child">HERE YOU CAN FIND ALL THE RUGBY</div>
                 <div className="line-child">STATS FROM AROUND THE WORLD</div>
+                <div className="line-child">go to Competition link in the nav bar on top or start just press down</div>
             </div>
             <div className="button">
-                <div className="button-child">Button</div>
+                <Link to="/competitions" className="button-child">here</Link>
             </div>
         </div>
     )

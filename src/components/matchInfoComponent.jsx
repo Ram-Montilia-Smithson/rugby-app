@@ -31,7 +31,7 @@ const data = {
             team_stats: {
                 possesion: [
                     {
-                        value: 70
+                        value: 65
                     }
                 ]
             }
@@ -40,7 +40,7 @@ const data = {
             team_stats: {
                 possesion: [
                     {
-                        value: 30
+                        value: 35
                     }
                 ]
             }

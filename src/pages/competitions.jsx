@@ -1,28 +1,27 @@
 import React, {useEffect, useState} from 'react'
 import '../scss/main.css';
-import premiership from "../images/premiership.png";
-import pro14 from "../images/pro14.png"
-import top14 from "../images/top14.png"
-import RWC from "../images/RWC.png"
-import sixNations from "../images/six nations.png"
-import superugbyAO from "../images/super rugby AO.png"
-import superugbyAU from "../images/super rugby AU.png"
-import superugbyUL from "../images/super rugby UL.png"
-import TRC from "../images/TRC.png"
-import champions from "../images/champions.png"
-import challenge from "../images/challenge.png"
-import worldRugby from "../images/world rugby.png"
-import topLeague from "../images/TopLeaguelogo.png"
-import MLR from "../images/MLR.png"
-import worldRugbyWomen from "../images/world rugby women.png"
-import currie from "../images/currie.png"
-import NPC from "../images/NPC.png"
-import lions from "../images/lions.png"
-import womenSixNations from "../images/women six nations.png"
-import WRWC from "../images/WRWC.png"
-import rugbyEurope from "../images/rugby europe.png"
-import superugbyTT from "../images/super rugby TT.png"
-import autumn from "../images/autumn.png"
+import premiership from "../utils/images/comps/premiership.png";
+import pro14 from "../utils/images/comps/pro14.png"
+import top14 from "../utils/images/comps/top14.png"
+import RWC from "../utils/images/comps/RWC.png"
+import sixNations from "../utils/images/comps/six nations.png"
+import superugbyAO from "../utils/images/comps/super rugby AO.png"
+import superugbyAU from "../utils/images/comps/super rugby AU.png"
+import superugbyUL from "../utils/images/comps/super rugby UL.png"
+import TRC from "../utils/images/comps/TRC.png"
+import champions from "../utils/images/comps/champions.png"
+import challenge from "../utils/images/comps/challenge.png"
+import worldRugby from "../utils/images/comps/world rugby.png"
+import topLeague from "../utils/images/comps/TopLeaguelogo.png"
+import MLR from "../utils/images/comps/MLR.png"
+import worldRugbyWomen from "../utils/images/comps/world rugby women.png"
+import currie from "../utils/images/comps/currie.png"
+import NPC from "../utils/images/comps/NPC.png"
+import lions from "../utils/images/comps/lions.png"
+import womenSixNations from "../utils/images/comps/women six nations.png"
+import WRWC from "../utils/images/comps/WRWC.png"
+import rugbyEurope from "../utils/images/comps/rugby europe.png"
+import superugbyTT from "../utils/images/comps/super rugby TT.png"
 import { Link } from 'react-router-dom';
 
 // once you use the actual API, adjust the names and Links so you
@@ -72,7 +71,7 @@ export default function Competitions({ compChoice}) {
             { id: 19, season: 2022, name: "lions" },
             { id: 20, season: 2022, name: "rugby-europe" },
             { id: 21, season: 2022, name: "superugbyTT" },
-            { id: 22, season: 2022, name: "autumn" },
+            // { id: 22, season: 2022, name: "autumn" },
             { id: 23, season: 2022, name: "women-six-nations"}
         ])
         return () => {
@@ -80,8 +79,8 @@ export default function Competitions({ compChoice}) {
         }
     }, [])
 
-    const handleClick = (id) => {
-        compChoice(id)
+    const handleClick = (id, logo) => {
+        compChoice(id, logo)
     }
 
     return (
@@ -94,7 +93,7 @@ export default function Competitions({ compChoice}) {
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id)}
+                            onClick={() => handleClick(item.id, premiership)}
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={premiership} alt={item.name} />
@@ -104,7 +103,7 @@ export default function Competitions({ compChoice}) {
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id)}
+                            onClick={() => handleClick(item.id, top14)}
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={top14} alt={item.name} />
@@ -114,7 +113,7 @@ export default function Competitions({ compChoice}) {
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id)}
+                            onClick={() => handleClick(item.id, pro14)}
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={pro14} alt={item.name} />
@@ -124,7 +123,7 @@ export default function Competitions({ compChoice}) {
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id)}
+                            onClick={() => handleClick(item.id, RWC)}
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={RWC} alt={item.name} />
@@ -134,7 +133,7 @@ export default function Competitions({ compChoice}) {
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id)}
+                            onClick={() => handleClick(item.id, WRWC)}
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={WRWC} alt={item.name} />
@@ -144,7 +143,7 @@ export default function Competitions({ compChoice}) {
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id)}
+                            onClick={() => handleClick(item.id, MLR)}
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={MLR} alt={item.name} />
@@ -154,7 +153,7 @@ export default function Competitions({ compChoice}) {
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id)}
+                            onClick={() => handleClick(item.id, topLeague)}
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={topLeague} alt={item.name} />
@@ -164,7 +163,7 @@ export default function Competitions({ compChoice}) {
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id)}
+                            onClick={() => handleClick(item.id, sixNations)}
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={sixNations} alt={item.name} />
@@ -174,7 +173,7 @@ export default function Competitions({ compChoice}) {
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id)}
+                            onClick={() => handleClick(item.id, womenSixNations)}
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={womenSixNations} alt={item.name} />
@@ -184,7 +183,7 @@ export default function Competitions({ compChoice}) {
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id)}
+                            onClick={() => handleClick(item.id, superugbyAO)}
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={superugbyAO} alt={item.name} />
@@ -194,7 +193,7 @@ export default function Competitions({ compChoice}) {
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id)}
+                            onClick={() => handleClick(item.id, superugbyAU)}
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={superugbyAU} alt={item.name} />
@@ -204,7 +203,7 @@ export default function Competitions({ compChoice}) {
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id)}
+                            onClick={() => handleClick(item.id, superugbyUL)}
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={superugbyUL} alt={item.name} />
@@ -214,7 +213,7 @@ export default function Competitions({ compChoice}) {
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id)}
+                            onClick={() => handleClick(item.id, superugbyTT)}
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={superugbyTT} alt={item.name} />
@@ -224,27 +223,17 @@ export default function Competitions({ compChoice}) {
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id)}
+                            onClick={() => handleClick(item.id, worldRugby)}
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={worldRugby} alt={item.name} />
-                        </Link>
-                    )
-                    if (item.name === "autumn") return (
-                        <Link
-                            className="competitions-link"
-                            key={item.id}
-                            onClick={() => handleClick(item.id)}
-                            to={`/competition?${item.name}`}
-                        >
-                            <img className="competitions-image" src={autumn} alt={item.name} />
                         </Link>
                     )
                     if (item.name === "currie") return (
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id)}
+                            onClick={() => handleClick(item.id, currie)}
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={currie} alt={item.name} />
@@ -254,7 +243,7 @@ export default function Competitions({ compChoice}) {
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id)}
+                            onClick={() => handleClick(item.id, challenge)}
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={challenge} alt={item.name} />
@@ -264,7 +253,7 @@ export default function Competitions({ compChoice}) {
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id)}
+                            onClick={() => handleClick(item.id, champions)}
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={champions} alt={item.name} />
@@ -274,7 +263,7 @@ export default function Competitions({ compChoice}) {
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id)}
+                            onClick={() => handleClick(item.id, NPC)}
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={NPC} alt={item.name} />
@@ -284,7 +273,7 @@ export default function Competitions({ compChoice}) {
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id)}
+                            onClick={() => handleClick(item.id, TRC)}
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={TRC} alt={item.name} />
@@ -294,7 +283,7 @@ export default function Competitions({ compChoice}) {
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id)}
+                            onClick={() => handleClick(item.id, worldRugbyWomen)}
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={worldRugbyWomen} alt={item.name} />
@@ -304,7 +293,7 @@ export default function Competitions({ compChoice}) {
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id)}
+                            onClick={() => handleClick(item.id, lions)}
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={lions} alt={item.name} />
@@ -314,7 +303,7 @@ export default function Competitions({ compChoice}) {
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id)}
+                            onClick={() => handleClick(item.id, rugbyEurope)}
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={rugbyEurope} alt={item.name} />

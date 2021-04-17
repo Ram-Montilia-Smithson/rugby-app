@@ -36,7 +36,8 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-image: url("../images/lines.png");
+  background-image: url("../utils/images/lines.png");
+  margin-bottom: 20px;
 }
 
 .header-left {
@@ -179,8 +180,8 @@ a:hover {
 
 .competitions-link:hover {
   border-radius: 10px;
-  -webkit-box-shadow: 0px 0px 20px 10px #00ff00;
-          box-shadow: 0px 0px 20px 10px #00ff00;
+  -webkit-box-shadow: 0px 0px 20px 10px #F4D35E;
+          box-shadow: 0px 0px 20px 10px #F4D35E;
 }
 
 .competitions-image {
@@ -194,8 +195,8 @@ a:hover {
   display: grid;
   width: 100%;
       grid-template-areas: "header header" "table  fixtures";
-  -ms-grid-rows: 30px 1fr;
-      grid-template-rows: 30px 1fr;
+  -ms-grid-rows: 140px 1fr;
+      grid-template-rows: 140px 1fr;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   text-align: center;
@@ -292,14 +293,20 @@ td {
 .fixture-link,
 .fixture-link:visited,
 .fixture-link:hover {
-  background-color: #ffffff;
+  background-color: #F4D35E;
   border-radius: 2px;
+  border: #000000 solid 1px;
   padding: 0px 50px;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .fixture-link:hover {
-  background-color: #9DB4C0;
+  background-color: #E0FBFC;
   color: #000000;
+  border: none;
+  text-decoration: none;
+  font-weight: 400;
 }
 
 .dropdown-button,
@@ -318,7 +325,7 @@ td {
 }
 
 .fixture-moreInfo {
-  background-color: #9DB4C0;
+  background-color: #E0FBFC;
 }
 
 .fixture-moreInfo div {

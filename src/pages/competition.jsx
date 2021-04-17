@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "../scss/main.css"
 import Table from "../components/table";
 import Fixtures from "../components/fixtures";
-import premiership from "../images/premiership.png";
+// import premiership from "../images/premiership.png";
 
 
 // consider making competitionHeader.jsx to show logo with comp_name in a nice way
@@ -117,10 +117,10 @@ const RESULTS = [
 
 
 
-export default function Competition({ id, matchChoise, teamChoise }) {
+export default function Competition({ id, logo, matchChoise, teamChoise }) {
 
     const [name, setName] = useState(DATA.comp_name)
-    const [logo, setLogo] = useState(premiership)
+    // const [logo, setLogo] = useState(premiership)
 
     const [standings, setStandings] = useState(DATA.standings)
     const [fixtureList, setFixtureList] = useState(RESULTS)
@@ -132,13 +132,15 @@ export default function Competition({ id, matchChoise, teamChoise }) {
     }, [id])
 
     return (
-        <div className="competition">
-            <div className="competition-header">
-                {/* <img src={logo} alt={name}/> */}
-                <div>{name}</div>
+        // <div style={{ backgroundImage: `url(${logo})`, backgroundRepeat: 'no-repeat', backgroundSize:"cover" }}>
+            <div className="competition" >
+                <div className="competition-header">
+                    <img src={logo} alt={name}/>
+                    {/* <div>{name}</div> */}
+                </div>
+                <Table standings={standings} teamChoise={teamChoise}/>
+                <Fixtures fixtureList={fixtureList} matchChoise={matchChoise}/>
             </div>
-            <Table standings={standings} teamChoise={teamChoise}/>
-            <Fixtures fixtureList={fixtureList} matchChoise={matchChoise}/>
-        </div>
+        // </div>
     )
 }

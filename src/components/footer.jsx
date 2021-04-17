@@ -27,9 +27,10 @@ export default function Footer() {
                             {/* <img/> */}
                         </a>
                     </li>
-                    <li>other options
-                        <a href="other options">
-                            {/* <img/> */}
+                    <li>Email
+                        <a href="gmail">
+                        {/* look for how to make a link to send an email */}
+                            {/* <img/> of Gmail or just an Email */}
                         </a>
                     </li>
                 </ul>

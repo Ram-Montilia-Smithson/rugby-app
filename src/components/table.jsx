@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import "../scss/main.css"
 import {Link} from "react-router-dom"
 
+
 // copy from ultimate rugby, they use the exact same info
 // responsiveness
 // screen sizes
@@ -91,6 +92,7 @@ export default function Table({standings, teamChoise}) {
                                 <tr>
                                     <th>POS</th>
                                     <th>NAME</th>
+                                    {/* <th>symbol</th> */}
                                     <th>P</th>
                                     <th>W</th>
                                     <th>D</th>

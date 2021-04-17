@@ -8,17 +8,17 @@ import Competitions from '../pages/competitions';
 import Home from '../pages/home';
 import MatchInfoPage from '../pages/matchInfoPage';
 import Team from "../pages/team"
-import logo from "../images/rugby world logo.png"
+import logo from "../utils/images/rugby world logo.png"
 // correct logo design and align it correctly
 
 export default function Router() {
 
-    const [comp, setComp] = useState(0)
+    const [comp, setComp] = useState({})
     const [match, setMatch] = useState(0)
     const [team, setTeam] = useState(0)
 
-    const compChoice = (id) => {
-        setComp(id)
+    const compChoice = (id, logo) => {
+        setComp({id, logo})
     }
 
     const matchChoise = (id) => {
@@ -43,7 +43,7 @@ export default function Router() {
                 </div>
                 <Switch>
                     <Route path="/about"><About /></Route>
-                    <Route path="/competition"><Competition id={comp} matchChoise={matchChoise} teamChoise={teamChoise} /></Route>
+                    <Route path="/competition"><Competition id={comp.id} logo={comp.logo} matchChoise={matchChoise} teamChoise={teamChoise} /></Route>
                     <Route path="/competitions"><Competitions compChoice={compChoice} /></Route>
                     <Route path="/matchInfo"><MatchInfoPage match={match}/></Route>
                     <Route path="/team"><Team/></Route>
