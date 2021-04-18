@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import "../scss/main.css"
 import {Link} from "react-router-dom"
-
+import bristol from "../utils/images/teams/england/6.png";
 
 // copy from ultimate rugby, they use the exact same info
 // responsiveness
@@ -13,7 +13,7 @@ import {Link} from "react-router-dom"
 
 export default function Table({standings, teamChoise}) {
 
-    const [tableName, setTableName] = useState("")
+    const tableName = useRef("")
     const [table2Name, setTable2Name] = useState("")
     const [teams, setTeams] = useState([])
     const [moreTeams, setMoreTeams] = useState([])
@@ -26,21 +26,23 @@ export default function Table({standings, teamChoise}) {
         else {
             setTeams(standings[0].teams)
             setMoreTeams(standings[1].teams)
-            setTableName(standings[0].table_name)
-            setTable2Name(standings[1].table_name)
+            tableName.current = standings[0].tableName
+            setTable2Name(standings[1].tableName)
+            console.log(tableName.current, standings[0].tableName)
         }
-    }, [standings])
+    }, [])
 
     return (
         <div className="tables">
                 {teams.length &&
                     <div className="table-container">
-                        {moreTeams.length ? <h2>comp 1 {tableName}</h2> : <></>}
+                        {moreTeams.length ? <h2>{tableName.current}</h2> : <></>}
                         <table className="table">
                             <thead>
                                 <tr>
                                     <th>POS</th>
                                     <th>NAME</th>
+                                    <th>LOGO</th>
                                     <th>P</th>
                                     <th>W</th>
                                     <th>D</th>
@@ -58,10 +60,8 @@ export default function Table({standings, teamChoise}) {
                                         return(
                                             <tr key={team.id}>
                                                 <td>{team.position}</td>
-                                                <td>                                                    
-                                                    {team.name}
-                                                    {/* and symbol */}
-                                                </td>
+                                                <td>{team.name}</td>
+                                                <td><img src={bristol} alt={team.name}/></td>
                                                 <td>{team.played}</td>
                                                 <td>{team.won}</td>
                                                 <td>{team.drawn}</td>
@@ -82,7 +82,7 @@ export default function Table({standings, teamChoise}) {
 
                 {moreTeams.length &&
                     <div className="table-container">
-                        <h2>comp 2 {table2Name}</h2>
+                        <h2>{table2Name}</h2>
                         <table className="table">
                             <thead>
                                 <tr>
