@@ -1,10 +1,11 @@
 import React from 'react'
 import "../scss/main.css"
 
-// footer should include the contact info and the credits
-// the footer should be linked to the right buttons in the navbar that should send the page down to see the footer
 // look for nice design to show the contact info
 // contact the "live-rugby-data" API provider about use of the API legally and the credits that should be given
+// set the scroll to the footer
+// fix the sizes of the footer boxes
+// responsiveness and sizes diffrences
 
 export default function Footer() {
     return (
@@ -27,11 +28,11 @@ export default function Footer() {
                             {/* <img/> */}
                         </a>
                     </li>
-                    <li>Email
-                        <a href="gmail">
-                        {/* look for how to make a link to send an email */}
-                            {/* <img/> of Gmail or just an Email */}
+                    <li>
+                        <a href = "mailto:ramsmithson2@gmail.com?subject=Rugby-App-Feedback&body=Message">
+                            Ramsmithson1@gmail.com
                         </a>
+                        {/* <img/> of Gmail or just an Email */}
                     </li>
                 </ul>
             </div>

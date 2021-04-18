@@ -5,10 +5,14 @@ import Fixtures from "../components/fixtures";
 // import premiership from "../images/premiership.png";
 
 
-// consider making competitionHeader.jsx to show logo with comp_name in a nice way
+// consider making competitionHeader.jsx to show logo with comp_name in a nice way and
+// show all logos of teams in a horizontal line, fetched by  "https://rugby-live-data.p.rapidapi.com/teams/ID/2021"
+// these logos will connect you to team's page
 // responsiveness
 // screen sizes
 // intuitive
+// consider cases of no data
+// transfer all fetches to utils api
 
 
 //  after reciving the competition's id that was sent from competitions.jsx

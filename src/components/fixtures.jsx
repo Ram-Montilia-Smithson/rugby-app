@@ -5,8 +5,9 @@ import MatchInfoComponent from "./matchInfoComponent"
 // responsiveness
 // screen sizes
 // intuitive
-// arange the time date value in the fixtures
-// change color of score depends on other score
+// arrange the time date value in the fixtures
+// fix the show more/show less with []
+// scores colors
 
 
 
@@ -84,9 +85,9 @@ export default function Fixtures({ fixtureList, matchChoise }) {
                                     }
                                     {fixture.home_score === fixture.away_score &&
                                         <span>
-                                            <span className="fixture-score-home" style={{ backgroundColor: "#c2c2c2" }}>{fixture.home_score}</span>
+                                        <span className="fixture-score-home" style={{ backgroundColor: "#3d3d3d", color: "#a3a3a3" }}>{fixture.home_score}</span>
                                             -
-                                        <span className="fixture-score-away" style={{ backgroundColor: "#c2c2c2"}}>{fixture.away_score}</span>
+                                        <span className="fixture-score-away" style={{ backgroundColor: "#3d3d3d"}}>{fixture.away_score}</span>
                                         </span>
                                     }
                                     <span className="fixture-away">{fixture.away}</span>

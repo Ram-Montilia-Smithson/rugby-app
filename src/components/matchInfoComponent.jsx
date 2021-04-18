@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import "../scss/main.css"
 import { Link } from 'react-router-dom';
 
-
+// transfer all fetches to utils api
 // fetch(`https://rugby-live-data.p.rapidapi.com/match/${id}`, {
 // "method": "GET",
 // "headers": {

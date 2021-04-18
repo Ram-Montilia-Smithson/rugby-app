@@ -2,6 +2,9 @@ import React from 'react'
 import "../scss/main.css"
 
 // explain about yourself and your project
+// mention the web dev sspects
+// charts.js, front end project, create react hooks, changing theme based on team/comp, small CV, links to other projects 
+// you have coppied examples of about pages in prtSc
 
 export default function About() {
     return (

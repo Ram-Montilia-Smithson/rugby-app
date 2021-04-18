@@ -60,11 +60,12 @@ export default function Table({standings, teamChoise}) {
                                                 <td>{team.position}</td>
                                                 <td>
                                                     <Link
-                                                        to={`/team?${team.name}`}
+                                                        o={`/team?${team.name}`}
                                                         onClick={() => teamChoise(team.id)}
                                                     >
                                                         {team.name}
                                                     </Link>
+                                                {/* and symbol */}
                                                 </td>
                                                 <td>{team.played}</td>
                                                 <td>{team.won}</td>
@@ -92,7 +93,6 @@ export default function Table({standings, teamChoise}) {
                                 <tr>
                                     <th>POS</th>
                                     <th>NAME</th>
-                                    {/* <th>symbol</th> */}
                                     <th>P</th>
                                     <th>W</th>
                                     <th>D</th>
@@ -117,6 +117,7 @@ export default function Table({standings, teamChoise}) {
                                                 >
                                                     {team.name}
                                                 </Link>
+                                                {/* and symbol */}
                                             </td>
                                             <td>{team.played}</td>
                                             <td>{team.won}</td>

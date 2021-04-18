@@ -24,8 +24,7 @@ import rugbyEurope from "../utils/images/comps/rugby europe.png"
 import superugbyTT from "../utils/images/comps/super rugby TT.png"
 import { Link } from 'react-router-dom';
 
-// once you use the actual API, adjust the names and Links so you
-// would be able to send the logo to competition.jsx and show it there as well
+// transfer all fetches to utils api
 
 export default function Competitions({ compChoice}) {
 

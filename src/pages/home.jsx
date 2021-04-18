@@ -3,6 +3,8 @@ import '../scss/main.css';
 import {Link} from "react-router-dom";
 
 // here you add welcome to the website and some basic explanations
+// copy from ultimate rugby
+// 
 
 export default function Home() {
     return (
