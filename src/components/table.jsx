@@ -58,14 +58,9 @@ export default function Table({standings, teamChoise}) {
                                         return(
                                             <tr key={team.id}>
                                                 <td>{team.position}</td>
-                                                <td>
-                                                    <Link
-                                                        o={`/team?${team.name}`}
-                                                        onClick={() => teamChoise(team.id)}
-                                                    >
-                                                        {team.name}
-                                                    </Link>
-                                                {/* and symbol */}
+                                                <td>                                                    
+                                                    {team.name}
+                                                    {/* and symbol */}
                                                 </td>
                                                 <td>{team.played}</td>
                                                 <td>{team.won}</td>
@@ -110,14 +105,9 @@ export default function Table({standings, teamChoise}) {
                                     return (
                                         <tr key={team.id}>
                                             <td>{team.position}</td>
-                                            <td>
-                                                <Link
-                                                    o={`/team?${team.name}`}
-                                                    onClick={() => teamChoise(team.id)}
-                                                >
+                                            <td>                                                    
                                                     {team.name}
-                                                </Link>
-                                                {/* and symbol */}
+                                                    {/* and symbol */}
                                             </td>
                                             <td>{team.played}</td>
                                             <td>{team.won}</td>

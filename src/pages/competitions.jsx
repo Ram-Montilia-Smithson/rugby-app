@@ -49,7 +49,7 @@ export default function Competitions({ compChoice}) {
         //     .catch(err => console.error(err));
         // })
         setItems([
-            { id: 1, season: 2022, name: "Gallagher-Premiership" },
+            { id: 2142, season: 2022, name: "Gallagher-Premiership" },
             { id: 2, season: 2022, name: "top14" },
             { id: 3, season: 2022, name: "pro14" },
             { id: 4, season: 2022, name: "RWC" },

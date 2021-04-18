@@ -6,13 +6,15 @@ import Fixtures from "../components/fixtures";
 
 
 // consider making competitionHeader.jsx to show logo with comp_name in a nice way and
-// show all logos of teams in a horizontal line, fetched by  "https://rugby-live-data.p.rapidapi.com/teams/ID/2021"
+// show all logos of teams in a horizontal line, fetched by  `https://rugby-live-data.p.rapidapi.com/teams/${id}/2021`
 // these logos will connect you to team's page
 // responsiveness
 // screen sizes
 // intuitive
 // consider cases of no data
 // transfer all fetches to utils api
+
+// add `https://rugby-live-data.p.rapidapi.com/fixtures-by-team/${id}` for future matches
 
 
 //  after reciving the competition's id that was sent from competitions.jsx
@@ -37,7 +39,7 @@ const DATA = {
             "teams": 
                 [
                     {   
-                        "position": 1,"id": 7167,"name": "Bristol","played": 15,"won": 12,"drawn": 1,"lost": 2,
+                        "position": 1,"id": 302,"name": "Bristol","played": 15,"won": 12,"drawn": 1,"lost": 2,
                         "tries_for": 51,"tries_against": 28,"tries_diff": 23,"points_for": 398,"points_against": 270,
                         "points_diff": 128,"try_bonus": 9,"losing_bonus": 2,"bye_bonus": 0,"points": 61
                     },
@@ -121,7 +123,7 @@ const RESULTS = [
 
 
 
-export default function Competition({ id, logo, matchChoise, teamChoise }) {
+export default function Competition({ id, logo, matchChoise }) {
 
     const [name, setName] = useState(DATA.comp_name)
     // const [logo, setLogo] = useState(premiership)
@@ -142,7 +144,7 @@ export default function Competition({ id, logo, matchChoise, teamChoise }) {
                     <img src={logo} alt={name}/>
                     {/* <div>{name}</div> */}
                 </div>
-                <Table standings={standings} teamChoise={teamChoise}/>
+                <Table standings={standings}/>
                 <Fixtures fixtureList={fixtureList} matchChoise={matchChoise}/>
             </div>
         // </div>
