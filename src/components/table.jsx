@@ -3,32 +3,32 @@ import "../scss/main.css"
 import {Link} from "react-router-dom"
 import bristol from "../utils/images/teams/england/6.png";
 
-export default function Table({standings, teamChoise, futureFixtures}) {
+export default function Table({standings, teamChoice, futureFixtures}) {
 
-    const tableName = useRef("")
+    const [tableName, setTableName] = useState("")
     const [table2Name, setTable2Name] = useState("")
     const [teams, setTeams] = useState([])
     const [moreTeams, setMoreTeams] = useState([])
 
     useEffect(() => {
         console.log(standings)
-        if (standings.length === 1) {
+        if (standings.length > 2) {
             setTeams(standings[0].teams)
         }
         else {
+            console.log("standings")
             setTeams(standings[0].teams)
             setMoreTeams(standings[1].teams)
-            tableName.current = standings[0].tableName
-            setTable2Name(standings[1].tableName)
-            console.log(tableName.current, standings[0].tableName)
+            setTableName(standings[0].table_name)
+            setTable2Name(standings[1].table_name)
         }
-    }, [])
+    }, [standings])
 
     return (
         <div className="tables">
                 {teams.length &&
                     <div className="table-container">
-                        {moreTeams.length ? <h2>{tableName.current}</h2> : <></>}
+                        {moreTeams.length && <h2>{tableName}</h2>}
                         <table className="table">
                             <thead>
                                 <tr>
@@ -55,7 +55,7 @@ export default function Table({standings, teamChoise, futureFixtures}) {
                                                 <td>
                                                     <Link
                                                         to={`/team?${team.name}`}
-                                                        onClick={() => teamChoise(team.id, futureFixtures)}
+                                                        onClick={() => teamChoice(team.id, futureFixtures)}
                                                     >
                                                         {team.name}
                                                     </Link>
@@ -66,7 +66,7 @@ export default function Table({standings, teamChoise, futureFixtures}) {
                                                 <td>{team.drawn}</td>
                                                 <td>{team.lost}</td>
                                                 <td>{team.points_for}/{team.points_against}</td>
-                                                <td>{team.points_diff}</td>
+                                                <td>{team.points_for - team.points_against}</td>
                                                 <td>{team.tries_for}/{team.tries_against}</td>
                                                 <td>{team.try_bonus}</td>
                                                 <td>{team.losing_bonus}</td>
@@ -107,7 +107,7 @@ export default function Table({standings, teamChoise, futureFixtures}) {
                                             <td>                                                    
                                                 <Link
                                                         to={`/team?${team.name}`}
-                                                        onClick={() => teamChoise(team.id, futureFixtures)}
+                                                        onClick={() => teamChoice(team.id, futureFixtures)}
                                                     >
                                                         {team.name}
                                                         <img src={bristol} alt={team.name}/>
@@ -118,7 +118,7 @@ export default function Table({standings, teamChoise, futureFixtures}) {
                                             <td>{team.drawn}</td>
                                             <td>{team.lost}</td>
                                             <td>{team.points_for}/{team.points_against}</td>
-                                            <td>{team.points_diff}</td>
+                                            <td>{team.points_for - team.points_against}</td>
                                             <td>{team.tries_for}/{team.tries_against}</td>
                                             <td>{team.try_bonus}</td>
                                             <td>{team.losing_bonus}</td>

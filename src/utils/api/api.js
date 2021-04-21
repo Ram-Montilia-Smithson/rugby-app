@@ -4,7 +4,7 @@
 const address = "https://rugby-live-data.p.rapidapi.com/"
 
 const headers = {
-    "x-rapidapi-key": "ef122e1472msh9e1a6187db0abafp1ca12ejsnab19288e6f05",
+    "x-rapidapi-key": "036004ea61mshcdbc588413d13d6p139954jsnb5af2304f0a1",
     "x-rapidapi-host": "rugby-live-data.p.rapidapi.com"
 }
 
@@ -64,14 +64,15 @@ export const TeamsByCompetitionSeason = (comp_id) => {
     });
 }
 
-export const Competitions = () => {
+export const competitions = () => {
     fetch(`${address}competitions`, {
         "method": "GET",
         "headers": headers
     })
     .then(response => response.json())
-        .then(data => {
-            return (data)
+    .then(data => {
+        const results = data.results.filter(result => {result.season >= 2021})
+        return (results)
     })
     .catch(err => {
         console.error(err);

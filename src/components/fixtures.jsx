@@ -1,15 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react'
 import MatchInfoComponent from "./matchInfoComponent"
 
-// copy from ultimate rugby, they use the exact same info
-// responsiveness
-// screen sizes
-// intuitive
 // arrange the time date value in the fixtures
 // fix the show more/show less with []
 // scores colors
-
-
 
 export default function Fixtures({ fixtureList, matchChoise }) {
     
@@ -17,8 +11,8 @@ export default function Fixtures({ fixtureList, matchChoise }) {
         console.log(fixtureList)
     }, [fixtureList])
 
-    const LIMIT = 2;    
-    const [fixtures, setFixtures] = useState(fixtureList.slice(0, LIMIT))
+    const LIMIT = 5;    
+    const [fixtures, setFixtures] = useState(fixtureList.slice(0, 5))
     const [showMoreFixtures,setShowMoreFixtures] = useState(true);
     const [fixtureIndex,setFixtureIndex] = useState(LIMIT);
     const [showMoreInfo, setShowMoreInfo] = useState(0)

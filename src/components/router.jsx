@@ -21,11 +21,11 @@ export default function Router() {
         setComp({id, logo})
     }
 
-    const matchChoise = (id) => {
+    const matchChoice = (id) => {
         setMatch(id)
     }
 
-    const teamChoise = (id, futureFixtures) => {
+    const teamChoice = (id, futureFixtures) => {
         setTeam({id, futureFixtures})
     }
 
@@ -43,10 +43,10 @@ export default function Router() {
                 </div>
                 <Switch>
                     <Route path="/about"><About /></Route>
-                    <Route path="/competition"><Competition id={comp.id} logo={comp.logo} matchChoise={matchChoise} teamChoise={teamChoise}/></Route>
+                    <Route path="/competition"><Competition id={comp.id} logo={comp.logo} matchChoice={matchChoice} teamChoice={teamChoice}/></Route>
                     <Route path="/competitions"><Competitions compChoice={compChoice} /></Route>
                     <Route path="/matchInfo"><MatchInfoPage match={match}/></Route>
-                    <Route path="/team"><Team team={team} comp_id={comp} matchChoise={matchChoise}/></Route>
+                    <Route path="/team"><Team team={team} comp_id={comp} matchChoice={matchChoice}/></Route>
                     <Route exact path="/"><Home /></Route>
                 </Switch>
             </BrowserRouter>
