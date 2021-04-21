@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
-
+import {} from 'react-chartjs-2';
+ 
 // transfer all fetches to utils api
 // here, after reciving the match's id from match.jsx
 // call fetch("https://rugby-live-data.p.rapidapi.com/match/3195835", {
@@ -30,6 +31,8 @@ export default function MatchInfoPage({match}) {
     return (
         <div>
             <h1>match info</h1>
+            <Bar/>
+
         </div>
     )
 }

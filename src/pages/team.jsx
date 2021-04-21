@@ -1,23 +1,86 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react';
+import Player from "../components/player";
+import Fixtures from "../components/fixtures";
 
-// future fixtures using fixtures.jsx
-// all past results of fixtures using fixtures.jsx
-// link to actuall team's website
-// use "https://rugby-live-data.p.rapidapi.com/fixtures-by-team/TEAM'S-ID"
-// in the results array, use the id's of ten fixtures to fetch ten times the 
+// in the results array of fixtures, use the id's of ten fixtures to fetch ten times the 
 // "https://rugby-live-data.p.rapidapi.com/match/FIXTURE-ID"
 // in results.match.home_team / results.match.away_team you will find your team's name (can be done with ids as well)
 // then in results.home.teamsheet /results.away.teamsheet, you will find an array of the team's players
 // collect all players from the last ten matches and show each player as a card in a grid
+
 // about 5-7 cards per row
-// the player card should contain name, position/s, place for picture
+
+
+// await fetch(`https://rugby-live-data.p.rapidapi.com/fixtures/${comp_id}/2021`, {
+        //     "method": "GET",
+        //     "headers": {
+        //         "x-rapidapi-key": "d572e6ed0fmsh868629b7063cd7bp1c431cjsnd4f196e6cfe5",
+        //         "x-rapidapi-host": "rugby-live-data.p.rapidapi.com"
+        //     }
+        // })
+        // .then(response => response.json())
+        // .then(data => {
+        //     console.log("data",data);
+        //     while (pastFixturesList.length < 20) {
+        //       data.results.forEach(result => {
+        //         if(result.away_id === team.id || result.home_id === team.id) {
+        //           setpastFixturesList((pastFixturesList) => { return [...pastFixturesList, result]}) 
+        //         } 
+        //       }
+        //     }
+        //     if (pastFixturesList[0].away_id === team.id) {homeOrAway = "away"}
+        //     if (pastFixturesList[0].home_id === team.id) {homeOrAway = "home"}
+        // })
+        // .catch(err => {
+        //     console.error(err);
+        // });
+
+        // console.log(pastFixturesList);
+        
+        // get the players
+        //     fetch(`https://rugby-live-data.p.rapidapi.com/match/${pastFixturesList[0]}`, {
+        //         "method": "GET",
+        //         "headers": {
+        //             "x-rapidapi-key": "d572e6ed0fmsh868629b7063cd7bp1c431cjsnd4f196e6cfe5",
+        //             "x-rapidapi-host": "rugby-live-data.p.rapidapi.com"
+        //         }
+        //     })
+        //     .then(response => response.json())
+        //     .then(data => {
+    //             console.log("data",data);
+    //             console.log("homeOrAway",homeOrAway);
+    //             data.results[`${homeOrAway}`].teamsheet.forEach(player => {
+    //               setPlayers([...players, player])
+    //             });
+    //         })
+    //         .catch(err => {
+    //             console.error(err);
+    //         });
+
+const RESULTS = [
+            {"away":"Glasgow Warr","away_score":22,"date":"2019-09-27T17:05:00+00:00","game_week":1,
+            "id":3780201,"home":"Cheetahs","home_score":22,"venue":"Toyota Stadium",
+            },
+            {"away":"Glasgow Warr","away_score":14,"date":"2019-09-27T17:05:00+00:00","game_week":1,
+            "id":3780001,"home":"Cheetahs","home_score":48,"venue":"Toyota Stadium",
+            },
+            {"away":"Glasgow Warr","away_score":8,"date":"2019-09-27T17:05:00+00:00","game_week":1,
+            "id":3780101,"home":"Cheetahs","home_score":10,"venue":"Toyota Stadium",
+            },
+            {"away":"Glasgow Warr","away_score":34,"date":"2019-09-27T17:05:00+00:00","game_week":1,
+            "id":3780301,"home":"Cheetahs","home_score":25,"venue":"Toyota Stadium",
+            },
+            {"away":"Glasgow Warr","away_score":12,"date":"2019-09-27T17:05:00+00:00","game_week":1,
+            "id":3780401,"home":"Cheetahs","home_score":15,"venue":"Toyota Stadium",
+            },
+        ]
 
 const data = { 
             "results": {
                 "match": {
-                    "away_id":302
+                    "home_id":302
                 },
-                "away": {
+                "home": {
                     "teamsheet": [
                         {
                             "name":"Mitch Hunt",
@@ -146,12 +209,6 @@ const data = {
                             "substitute":true
                         },
                         {
-                            "name":"Folau Fakatava",
-                            "player_id":188592,
-                            "position":21,
-                            "substitute":true
-                        },
-                        {
                             "name":"Ngatungane Punivai",
                             "player_id":185064,
                             "position":22,
@@ -168,86 +225,49 @@ const data = {
             }  
         }
 
-export default function Team({team}) {
+export default function Team({team, comp_id, matchChoise}) {
 
+    const [pastFixturesList, setpastFixturesList] = useState(RESULTS)
     const [players, setPlayers] = useState([])
-    const fixturesList = [3780106, 3780205, 3780331, 3780403, 3780466]
+    let homeOrAway = "home"
 
-    // useEffect(() => {
-        // console.log(team);
-    // }, [team])
-    const getPlayers = async () => {
-
-        // await fetch(`https://rugby-live-data.p.rapidapi.com/fixtures/${team.compId}/2021`, {
-        //     "method": "GET",
-        //     "headers": {
-        //         "x-rapidapi-key": "d572e6ed0fmsh868629b7063cd7bp1c431cjsnd4f196e6cfe5",
-        //         "x-rapidapi-host": "rugby-live-data.p.rapidapi.com"
-        //     }
-        // })
-        // .then(response => response.json())
-        // .then(data => {
-        //     // console.log("data",data);
-        //     while (fixturesList.length <= 10) {
-        //         data.results.forEach(result => {
-        //             if (result.away_id === team.teamId || result.home_id === team.teamId) {
-        //                 fixturesList.push(result.id)
-        //             }
-        //         })
-        //     }
-        // })
-        // .catch(err => {
-        //     console.error(err);
-        // });
-
-        // console.log(fixturesList);
-
-        // fixturesList.forEach(fixture => {
-        //     fetch(`https://rugby-live-data.p.rapidapi.com/match/${fixture}`, {
-        //         "method": "GET",
-        //         "headers": {
-        //             "x-rapidapi-key": "d572e6ed0fmsh868629b7063cd7bp1c431cjsnd4f196e6cfe5",
-        //             "x-rapidapi-host": "rugby-live-data.p.rapidapi.com"
-        //         }
-        //     })
-        //     .then(response => response.json())
-        //     .then(data => {
-        
-                console.log("data",data);
-                let homeOrAway = "home"
-                if (data.results.match.home_id === team.teamId) {
-                    homeOrAway = "home"
-                }
-                if (data.results.match.away_id === team.teamId) {
-                    homeOrAway = "away"
-                }
-                console.log("homeOrAway",homeOrAway);
-                console.log(data.results[`${homeOrAway}`].teamsheet);
-                for (let i = 0; i < data.results[`${homeOrAway}`].teamsheet.length; i++) {
-                    for (let j = 0; j < players.length; j++) {
-                        if (data.results[`${homeOrAway}`].teamsheet[i].player_id === players[j].player_id) {
-                            return
-                        }
-                        else if (data.results[`${homeOrAway}`].teamsheet[i].player_id !== players[j].player_id) {
-                            setPlayers([...players, data.results[`${homeOrAway}`].teamsheet[i]])
-                        }
-                    }
-
-                }
-    //         })
-    //         .catch(err => {
-    //             console.error(err);
-    //         });
-    //     })
+    const getPlayers = () => {
+        data.results[`${homeOrAway}`].teamsheet.forEach(player => {
+            if (players.includes(player)) {
+                return
+            }
+            console.log(player)
+            setPlayers((players) => { return[...players, player]})
+        })
     }
 
-    getPlayers()
+    useEffect(() => {
+        console.log(team)
+        // console.log()
+        getPlayers()
+    }, [team])
 
     return (
         <div>
-            {players.length && console.log(players)}
-            {/* {players && getPlayers()} */}
-            <h1>teams page</h1>
+            <div className="team">
+                <h1>teams page</h1>
+                {players.length && 
+                    players.map(player => {
+                        return (
+                            <Player className="team-players" name={player.name} number={player.position}/>
+                        )
+                    })
+                }
+                <Player className="team-coach" name={""} number={0}/>
+            </div>
+            <div className="team-past-fixtures">
+                <h1>Last Results</h1>
+                <Fixtures fixtureList={pastFixturesList} matchChoise={matchChoise}/>
+            </div>
+            <div className="team-future-fixtures">
+                <h1>Upcomming fixtures</h1>
+                <Fixtures fixtureList={team.futureFixtures} matchChoise={matchChoise}/>
+            </div>
         </div>
     )
 }

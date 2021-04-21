@@ -15,6 +15,7 @@ export default function Router() {
 
     const [comp, setComp] = useState({})
     const [match, setMatch] = useState(0)
+    const [team, setTeam] = useState({})
 
     const compChoice = (id, logo) => {
         setComp({id, logo})
@@ -22,6 +23,10 @@ export default function Router() {
 
     const matchChoise = (id) => {
         setMatch(id)
+    }
+
+    const teamChoise = (id, futureFixtures) => {
+        setTeam({id, futureFixtures})
     }
 
     return (
@@ -38,10 +43,10 @@ export default function Router() {
                 </div>
                 <Switch>
                     <Route path="/about"><About /></Route>
-                    <Route path="/competition"><Competition id={comp.id} logo={comp.logo} matchChoise={matchChoise} /></Route>
+                    <Route path="/competition"><Competition id={comp.id} logo={comp.logo} matchChoise={matchChoise} teamChoise={teamChoise}/></Route>
                     <Route path="/competitions"><Competitions compChoice={compChoice} /></Route>
                     <Route path="/matchInfo"><MatchInfoPage match={match}/></Route>
-                    {/* <Route path="/team"><Team /></Route> */}
+                    <Route path="/team"><Team team={team} comp_id={comp} matchChoise={matchChoise}/></Route>
                     <Route exact path="/"><Home /></Route>
                 </Switch>
             </BrowserRouter>

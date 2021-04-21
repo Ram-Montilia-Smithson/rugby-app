@@ -88,7 +88,7 @@ const DATA = {
 
 
 
-// also call fetch(`https://rugby-live-data.p.rapidapi.com/fixtures/${id}/2021`, {
+// also call fetch(`https://rugby-live-data.p.rapidapi.com/fixtures-by-team/${id}/2021`, {
 // "method": "GET",
 // "headers": {
 // "x-rapidapi-key": "ef122e1472msh9e1a6187db0abafp1ca12ejsnab19288e6f05",
@@ -123,7 +123,7 @@ const RESULTS = [
 
 
 
-export default function Competition({ id, logo, matchChoise }) {
+export default function Competition({ id, logo, matchChoise, teamChoise }) {
 
     const [name, setName] = useState(DATA.comp_name)
     // const [logo, setLogo] = useState(premiership)
@@ -138,15 +138,16 @@ export default function Competition({ id, logo, matchChoise }) {
     }, [id])
 
     return (
-        // <div style={{ backgroundImage: `url(${logo})`, backgroundRepeat: 'no-repeat', backgroundSize:"cover" }}>
-            <div className="competition" >
-                <div className="competition-header">
-                    <img src={logo} alt={name}/>
-                    {/* <div>{name}</div> */}
-                </div>
-                <Table standings={standings}/>
+        <div className="competition" >
+            <div className="competition-header">
+                <img src={logo} alt={name}/>
+                {/* <div>{name}</div> */}
+            </div>
+            <Table standings={standings} teamChoise={teamChoise} futureFixtures={fixtureList}/>
+            <div>
+                <h2>Last Results</h2>
                 <Fixtures fixtureList={fixtureList} matchChoise={matchChoise}/>
             </div>
-        // </div>
+        </div>
     )
 }

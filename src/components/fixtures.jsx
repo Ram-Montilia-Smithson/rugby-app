@@ -48,7 +48,6 @@ export default function Fixtures({ fixtureList, matchChoise }) {
         <div className="fixtures">
             {fixtures &&
                 <div>
-                    <h2>FIXTURES</h2>
                     {fixtures.map(fixture => {
                         console.log(fixture)
                         return(

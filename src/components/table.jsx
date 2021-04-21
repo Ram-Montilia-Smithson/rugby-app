@@ -3,15 +3,7 @@ import "../scss/main.css"
 import {Link} from "react-router-dom"
 import bristol from "../utils/images/teams/england/6.png";
 
-// copy from ultimate rugby, they use the exact same info
-// responsiveness
-// screen sizes
-// intuitive
-// download all teams's logos and show acordingly in table and fixtures
-
-
-
-export default function Table({standings, teamChoise}) {
+export default function Table({standings, teamChoise, futureFixtures}) {
 
     const tableName = useRef("")
     const [table2Name, setTable2Name] = useState("")
@@ -60,7 +52,14 @@ export default function Table({standings, teamChoise}) {
                                         return(
                                             <tr key={team.id}>
                                                 <td>{team.position}</td>
-                                                <td>{team.name}</td>
+                                                <td>
+                                                    <Link
+                                                        to={`/team?${team.name}`}
+                                                        onClick={() => teamChoise(team.id, futureFixtures)}
+                                                    >
+                                                        {team.name}
+                                                    </Link>
+                                                </td>
                                                 <td><img src={bristol} alt={team.name}/></td>
                                                 <td>{team.played}</td>
                                                 <td>{team.won}</td>
@@ -106,8 +105,13 @@ export default function Table({standings, teamChoise}) {
                                         <tr key={team.id}>
                                             <td>{team.position}</td>
                                             <td>                                                    
-                                                    {team.name}
-                                                    {/* and symbol */}
+                                                <Link
+                                                        to={`/team?${team.name}`}
+                                                        onClick={() => teamChoise(team.id, futureFixtures)}
+                                                    >
+                                                        {team.name}
+                                                        <img src={bristol} alt={team.name}/>
+                                                    </Link>
                                             </td>
                                             <td>{team.played}</td>
                                             <td>{team.won}</td>
