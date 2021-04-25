@@ -34,7 +34,7 @@ export default function Competition({ id, logo, matchChoice, teamChoice }) {
                 {/* <div>{name}</div> */}
             </div>
             {table.length && 
-                <Table standings={table} teamChoice={teamChoice} futureFixtures={fixtureList}/>
+                <Table standings={table} teamChoice={teamChoice} futureFixtures={fixtureList} comp={name}/>
             }
             <div>
                 <h2>Last Results</h2>

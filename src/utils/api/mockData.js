@@ -151,7 +151,7 @@ export const match = (matchID) => {
                     "possession": [
                         {
                             "stat": "possession",
-                            "value": "0.50"
+                            "value": "0.60"
                         },
                         {
                             "stat": "pc_possession_first",
@@ -793,7 +793,7 @@ export const match = (matchID) => {
                     "possession": [
                         {
                             "stat": "possession",
-                            "value": "0.50"
+                            "value": "0.40"
                         },
                         {
                             "stat": "pc_possession_first",
@@ -1017,7 +1017,7 @@ export const match = (matchID) => {
 }
 
 export const standings = (comp_id) => {
-    console.log(comp_id)
+    console.log("comp_id",comp_id)
     return ({
         "results": {
             "comp_id": "1236",

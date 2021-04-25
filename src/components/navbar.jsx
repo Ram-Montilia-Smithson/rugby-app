@@ -11,7 +11,7 @@ import Team from "../pages/team"
 import logo from "../utils/images/rugby world logo.png"
 // correct logo design and align it correctly
 
-export default function Router() {
+export default function Navbar() {
 
     const [comp, setComp] = useState({})
     const [match, setMatch] = useState(0)

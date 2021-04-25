@@ -1,3 +1,3 @@
-import { Doughnut } from 'react-chartjs-2';
+// import { Doughnut } from 'react-chartjs-2';
  
-<Doughnut data={...} />
+// <Doughnut data={...} />

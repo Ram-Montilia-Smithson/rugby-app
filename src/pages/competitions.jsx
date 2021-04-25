@@ -5,7 +5,6 @@ import RWC from "../utils/images/comps/RWC.png"
 import sixNations from "../utils/images/comps/six nations.png"
 import superugbyAO from "../utils/images/comps/super rugby AO.png"
 import superugbyAU from "../utils/images/comps/super rugby AU.png"
-import superugbyUL from "../utils/images/comps/super rugby UL.png"
 import TRC from "../utils/images/comps/TRC.png"
 import champions from "../utils/images/comps/champions.png"
 import challenge from "../utils/images/comps/challenge.png"
@@ -27,6 +26,7 @@ import { competitions } from "../utils/api/mockData"
 import { Link } from 'react-router-dom';
 
 // world rugby women, champions cup and TT needs fixing
+// delete SR UL
 
 export default function Competitions({ compChoice}) {
 
@@ -154,16 +154,6 @@ export default function Competitions({ compChoice}) {
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={superugbyAU} alt={item.name} />
-                        </Link>
-                    )
-                    if (item.name === "Super Rugby Unlocked") return (
-                        <Link
-                            className="competitions-link"
-                            key={item.id}
-                            onClick={() => handleClick(item.id, superugbyUL)}
-                            to={`/competition?${item.name}`}
-                        >
-                            <img className="competitions-image" src={superugbyUL} alt={item.name} />
                         </Link>
                     )
                     if (item.name === "Super Rugby Trans-Tasman") return (

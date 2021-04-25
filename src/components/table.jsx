@@ -1,9 +1,12 @@
 import React, {useState, useEffect, useRef} from 'react'
 import "../scss/main.css"
 import {Link} from "react-router-dom"
-import bristol from "../utils/images/teams/england/6.png";
+import bristol from "../utils/images/teams/Gallagher Premiership/Bristol Bears.png";
+import Photo from "../utils/api/images"
 
-export default function Table({standings, teamChoice, futureFixtures}) {
+// learn how to import images from public
+
+export default function Table({standings, teamChoice, futureFixtures, comp}) {
 
     const [tableName, setTableName] = useState("")
     const [table2Name, setTable2Name] = useState("")
@@ -11,7 +14,7 @@ export default function Table({standings, teamChoice, futureFixtures}) {
     const [moreTeams, setMoreTeams] = useState([])
 
     useEffect(() => {
-        console.log(standings)
+        console.log()
         if (standings.length > 2) {
             setTeams(standings[0].teams)
         }
@@ -34,12 +37,11 @@ export default function Table({standings, teamChoice, futureFixtures}) {
                                 <tr>
                                     <th>POS</th>
                                     <th>NAME</th>
-                                    <th>LOGO</th>
+                                    {/* <th>LOGO</th> */}
                                     <th>P</th>
                                     <th>W</th>
                                     <th>D</th>
                                     <th>L</th>
-                                    <th>POINTS +/-</th>
                                     <th>POINTS DIFF</th>
                                     <th>TRIES +/-</th>
                                     <th>TRY BONUS</th>
@@ -60,12 +62,11 @@ export default function Table({standings, teamChoice, futureFixtures}) {
                                                         {team.name}
                                                     </Link>
                                                 </td>
-                                                <td><img src={bristol} alt={team.name}/></td>
+                                                {/* <td><img src={require('../utils/images/teams/Guinness PRO14/Glasgow Warriors.png')} alt={team}/></td> */}
                                                 <td>{team.played}</td>
                                                 <td>{team.won}</td>
                                                 <td>{team.drawn}</td>
                                                 <td>{team.lost}</td>
-                                                <td>{team.points_for}/{team.points_against}</td>
                                                 <td>{team.points_for - team.points_against}</td>
                                                 <td>{team.tries_for}/{team.tries_against}</td>
                                                 <td>{team.try_bonus}</td>
@@ -87,11 +88,11 @@ export default function Table({standings, teamChoice, futureFixtures}) {
                                 <tr>
                                     <th>POS</th>
                                     <th>NAME</th>
+                                    <th>LOGO</th>
                                     <th>P</th>
                                     <th>W</th>
                                     <th>D</th>
                                     <th>L</th>
-                                    <th>POINTS +/-</th>
                                     <th>POINTS DIFF</th>
                                     <th>TRIES +/-</th>
                                     <th>TRY BONUS</th>
@@ -104,20 +105,19 @@ export default function Table({standings, teamChoice, futureFixtures}) {
                                     return (
                                         <tr key={team.id}>
                                             <td>{team.position}</td>
-                                            <td>                                                    
+                                            <td>
                                                 <Link
-                                                        to={`/team?${team.name}`}
-                                                        onClick={() => teamChoice(team.id, futureFixtures)}
-                                                    >
-                                                        {team.name}
-                                                        <img src={bristol} alt={team.name}/>
-                                                    </Link>
+                                                    to={`/team?${team.name}`}
+                                                    onClick={() => teamChoice(team.id, futureFixtures)}
+                                                >
+                                                    {team.name}
+                                                </Link>
                                             </td>
+                                            <td><img src={bristol} alt={team.name} /></td>
                                             <td>{team.played}</td>
                                             <td>{team.won}</td>
                                             <td>{team.drawn}</td>
                                             <td>{team.lost}</td>
-                                            <td>{team.points_for}/{team.points_against}</td>
                                             <td>{team.points_for - team.points_against}</td>
                                             <td>{team.tries_for}/{team.tries_against}</td>
                                             <td>{team.try_bonus}</td>
