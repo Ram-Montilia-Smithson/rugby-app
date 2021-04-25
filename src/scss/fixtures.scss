@@ -1,0 +1,109 @@
+@import "./variables";
+@import "./_mixin";
+
+.fixtures {
+    // background-color: blueviolet;
+    grid-area: fixtures;
+}
+
+.fixture-container {
+    margin: 10px 20px;
+    padding: 1.5px;
+    background-color: #000000;
+}
+
+.fixture-head {
+    margin-bottom: 1.5px;
+    background-color: #004AAD;
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr;
+}
+
+.fixture_date {
+    width: 200px;
+}
+
+.dropdown-button {
+    width: 100px;
+    height: 100%;
+    padding: 5px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    border: none;
+}
+
+.dropdown-button:hover {
+    background-color: #004aad;
+    color: #FFFFFF;
+}
+
+.fixture-bottom {
+    background-color: #F4D35E;
+    color: #000000;
+    display: grid;
+    grid-template-columns: 1fr 100px 1fr;
+}
+
+.fixture-scores {
+    width: 70px;
+    display: grid;
+    grid-template-columns: 1fr 10px 1fr;
+    font-weight: 700;
+}
+
+.fixture-link,
+.fixture-link:visited,
+.fixture-link:hover {
+    background-color: #F4D35E;
+    border-radius: 2px;
+    border: #000000 solid 1px;
+    padding: 0px 50px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.fixture-link:hover {
+    background-color: #E0FBFC;
+    color: #000000;
+    border: none;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.fixture-moreInfo {
+    background-color: #E0FBFC;
+}
+
+.fixture-moreInfo div {
+    border-bottom: #000000 solid 1px;
+}
+
+.progress-bar {
+    background-color: #E0FBFC;
+    color: #000000;
+    border-top: #000000 solid 1px;
+}
+
+.progress-home {
+    background-color: #004aad;
+    color: #ffffff;
+    display: inline-block;
+    border-top: #000000 solid 1px;
+}
+
+.progress-away {
+    background-color: #F4D35E;
+    color: #000000;
+    display: inline-block;
+    border-top: #000000 solid 1px;
+}
+
+.fixture-stats {
+    @include element(space-around);
+    height: fit-content;
+}
+
+.fixture-label {
+    width: 100px;
+}
