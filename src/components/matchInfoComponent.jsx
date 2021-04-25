@@ -54,6 +54,8 @@ const data = {
 
 export default function MatchInfoComponent({id, matchChoise, showMoreInfo}) {
 
+    const [isShowMore, setIsShowMore] = useState(false)
+
     const [homeTries, setHomeTries] = useState(0)
     const awayTries = useRef(0)
     const [homeConversions, setHomeConversions] = useState(0)
@@ -67,6 +69,12 @@ export default function MatchInfoComponent({id, matchChoise, showMoreInfo}) {
 
     useEffect(() => {
         console.log(id, showMoreInfo, data.results.match.away)
+        if (showMoreInfo.includes(id)) {
+            setIsShowMore(true)
+        }
+        if (!showMoreInfo.includes(id)) {
+            setIsShowMore(false)
+        }
         // insert fetch here
         setHomeTries(data.results.match.home_tries)
         awayTries.current = data.results.match.away_tries
@@ -82,7 +90,7 @@ export default function MatchInfoComponent({id, matchChoise, showMoreInfo}) {
 
     return (
         <>
-            {id === showMoreInfo ?
+            {isShowMore &&
                 <div className="fixture-moreInfo">
                     <div className="progress-bar">
                         <div>POSSESION</div>
@@ -118,8 +126,6 @@ export default function MatchInfoComponent({id, matchChoise, showMoreInfo}) {
                         COMPLETE MATCH INFO
                     </Link>    
                 </div>
-            :
-                <></>
             }
         </>
     )

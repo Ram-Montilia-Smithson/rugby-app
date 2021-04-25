@@ -8,15 +8,17 @@ import MatchInfoComponent from "./matchInfoComponent"
 export default function Fixtures({ fixtureList, matchChoise }) {
     
     useEffect(() => {
-        console.log(fixtureList)
+        // console.log(fixtureList)
+        setFixtures(fixtureList.slice(0, LIMIT))
     }, [fixtureList])
 
     const LIMIT = 5;    
-    const [fixtures, setFixtures] = useState(fixtureList.slice(0, 5))
-    const [showMoreFixtures,setShowMoreFixtures] = useState(true);
+    const [fixtures, setFixtures] = useState([])
+    const [isShowMoreFixtures,setIsShowMoreFixtures] = useState(true);
     const [fixtureIndex,setFixtureIndex] = useState(LIMIT);
-    const [showMoreInfo, setShowMoreInfo] = useState(0)
-    const showMoreButton = useRef("MORE INFO")
+
+    const [showMoreInfo, setShowMoreInfo] = useState([]);
+    // const showMoreButton = useRef("MORE INFO")
 
     const loadFixtures = () =>{
         const newIndex = fixtureIndex + LIMIT;
@@ -24,18 +26,27 @@ export default function Fixtures({ fixtureList, matchChoise }) {
         const newList = fixtures.concat(fixtureList.slice(fixtureIndex, newIndex));
         setFixtureIndex(newIndex);
         setFixtures(newList);
-        setShowMoreFixtures(newShowMore);
+        setIsShowMoreFixtures(newShowMore);
     }
 
     const moreInfo = (id) => {
-        if (showMoreButton.current === "MORE INFO") {
-            setShowMoreInfo(id)
-            showMoreButton.current = "LESS INFO"
+        console.log(showMoreInfo)
+        if (!showMoreInfo.includes(id)) {
+            setShowMoreInfo([...showMoreInfo,id])
         }
-        else{
-            showMoreButton.current = "MORE INFO"
-            setShowMoreInfo(0)
+        if (showMoreInfo.includes(id)) {
+            setShowMoreInfo(showMoreInfo.filter(ids => ids !== id))
         }
+        console.log(showMoreInfo)
+        // splice(showMoreInfo.indexOf(id),1)
+        // if (showMoreButton.current === "MORE INFO") {
+        //     setShowMoreInfo(id)
+        //     showMoreButton.current = "LESS INFO"
+        // }
+        // else{
+        //     showMoreButton.current = "MORE INFO"
+        //     setShowMoreInfo(0)
+        // }
     }
 
     return (
@@ -43,7 +54,7 @@ export default function Fixtures({ fixtureList, matchChoise }) {
             {fixtures &&
                 <div>
                     {fixtures.map(fixture => {
-                        console.log(fixture)
+                        // console.log(fixture)
                         return(
                             <div key={fixture.id} className="fixture-container">
                                 <div className="fixture-head">
@@ -55,7 +66,7 @@ export default function Fixtures({ fixtureList, matchChoise }) {
                                             className="dropdown-button" 
                                             onClick={() => moreInfo(fixture.id)}
                                         >
-                                            {showMoreButton.current}
+                                            {!showMoreInfo.includes(fixture.id) ? "MORE INFO" : "LESS INFO"}
                                         </button>
                                     </div>
                                 </div>
@@ -93,7 +104,7 @@ export default function Fixtures({ fixtureList, matchChoise }) {
                             </div>
                         )
                     })}
-                    {showMoreFixtures && <button onClick={() => loadFixtures()}>MORE FIXTURES</button>}
+                    {isShowMoreFixtures && <button onClick={() => loadFixtures()}>MORE FIXTURES</button>}
                 </div>
             }
         </div>
