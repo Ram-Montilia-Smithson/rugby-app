@@ -36,7 +36,6 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-image: url("../utils/images/lines.png");
   margin-bottom: 20px;
 }
 
@@ -241,9 +240,23 @@ th {
 
 td {
   background-color: #F4D35E;
-  color: #000000;
   text-align: center;
-  width: 100px;
+}
+
+.team-logo {
+  max-width: 80px;
+  max-height: 40px;
+  margin: 5px;
+}
+
+.team-link,
+.team-link:visited {
+  text-decoration: underline;
+  color: #004aad;
+}
+
+.team-link:hover {
+  color: black;
 }
 
 #footer {

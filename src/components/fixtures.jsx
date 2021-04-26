@@ -2,10 +2,9 @@ import React, { useEffect, useState, useRef } from 'react'
 import MatchInfoComponent from "./matchInfoComponent"
 import "../scss/fixtures.css"
 
-// arrange the time date value in the fixtures
-// scores colors
+//  search for ideas to improve layout and possibilities of fixtures 
 
-export default function Fixtures({ fixtureList, matchChoise }) {
+export default function Fixtures({ fixtureList, matchChoice }) {
     
     useEffect(() => {
         // console.log(fixtureList)
@@ -37,7 +36,8 @@ export default function Fixtures({ fixtureList, matchChoise }) {
 
     const moreInfo = (id) => {
         if (!showMoreInfo.includes(id)) {setShowMoreInfo([...showMoreInfo,id])}
-        if (showMoreInfo.includes(id)) {setShowMoreInfo(showMoreInfo.filter(id2 => id2 !== id))}
+        if (showMoreInfo.includes(id)) { setShowMoreInfo(showMoreInfo.filter(id2 => id2 !== id)) }
+        console.log(process.env)
     }
 
     return (
@@ -87,7 +87,7 @@ export default function Fixtures({ fixtureList, matchChoise }) {
                                 </div>
                                 <MatchInfoComponent
                                     id={fixture.id} 
-                                    matchChoise={matchChoise}
+                                    matchChoice={matchChoice}
                                     showMoreInfo={showMoreInfo}
                                 />
                             </div>

@@ -3,7 +3,9 @@ import "../scss/main.css"
 import { Link } from 'react-router-dom';
 import { match } from "../utils/api/mockData";
 
-export default function MatchInfoComponent({id, matchChoise, showMoreInfo}) {
+// consider layout and info in the component
+
+export default function MatchInfoComponent({ id, matchChoice, showMoreInfo}) {
 
     const [isShowMore, setIsShowMore] = useState(false)
 
@@ -74,7 +76,7 @@ export default function MatchInfoComponent({id, matchChoise, showMoreInfo}) {
                         <span>{awayDropGoals}</span>
                     </div>
                     <Link
-                        onClick={() => matchChoise(id)}    
+                    onClick={() => matchChoice(id)}
                         className="fixture-link"
                         to={`/matchInfo?${homeTeam}v${awayTeam}`}
                     >

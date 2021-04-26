@@ -2,60 +2,13 @@ import React, { useEffect, useState, useRef } from 'react';
 import Player from "../components/player";
 import Fixtures from "../components/fixtures";
 
-// in the results array of fixtures, use the id's of ten fixtures to fetch ten times the 
-// "https://rugby-live-data.p.rapidapi.com/match/FIXTURE-ID"
-// in results.match.home_team / results.match.away_team you will find your team's name (can be done with ids as well)
-// then in results.home.teamsheet /results.away.teamsheet, you will find an array of the team's players
+// consider to create the team from more than one match
 // collect all players from the last ten matches and show each player as a card in a grid
-
 // about 5-7 cards per row
-
-
-// await fetch(`https://rugby-live-data.p.rapidapi.com/fixtures/${comp_id}/2021`, {
-        //     "method": "GET",
-        //     "headers": {
-        //         "x-rapidapi-key": "d572e6ed0fmsh868629b7063cd7bp1c431cjsnd4f196e6cfe5",
-        //         "x-rapidapi-host": "rugby-live-data.p.rapidapi.com"
-        //     }
-        // })
-        // .then(response => response.json())
-        // .then(data => {
-        //     console.log("data",data);
-        //     while (pastFixturesList.length < 20) {
-        //       data.results.forEach(result => {
-        //         if(result.away_id === team.id || result.home_id === team.id) {
-        //           setpastFixturesList((pastFixturesList) => { return [...pastFixturesList, result]}) 
-        //         } 
-        //       }
-        //     }
-        //     if (pastFixturesList[0].away_id === team.id) {homeOrAway = "away"}
-        //     if (pastFixturesList[0].home_id === team.id) {homeOrAway = "home"}
-        // })
-        // .catch(err => {
-        //     console.error(err);
-        // });
-
-        // console.log(pastFixturesList);
-        
-        // get the players
-        //     fetch(`https://rugby-live-data.p.rapidapi.com/match/${pastFixturesList[0]}`, {
-        //         "method": "GET",
-        //         "headers": {
-        //             "x-rapidapi-key": "d572e6ed0fmsh868629b7063cd7bp1c431cjsnd4f196e6cfe5",
-        //             "x-rapidapi-host": "rugby-live-data.p.rapidapi.com"
-        //         }
-        //     })
-        //     .then(response => response.json())
-        //     .then(data => {
-    //             console.log("data",data);
-    //             console.log("homeOrAway",homeOrAway);
-    //             data.results[`${homeOrAway}`].teamsheet.forEach(player => {
-    //               setPlayers([...players, player])
-    //             });
-    //         })
-    //         .catch(err => {
-    //             console.error(err);
-    //         });
+// take info from mockData.js instead
+// consider the coach card
+// fix the tables of fixtures
+// take ideas from other websites
 
 const RESULTS = [
             {"away":"Glasgow Warr","away_score":22,"date":"2019-09-27T17:05:00+00:00","game_week":1,

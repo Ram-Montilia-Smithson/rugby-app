@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 // here you add welcome to the website and some basic explanations
 // copy from ultimate rugby
-// 
+// be creative, think of some nice layout and features to add
 
 export default function Home() {
     return (

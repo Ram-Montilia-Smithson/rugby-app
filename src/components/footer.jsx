@@ -5,7 +5,8 @@ import "../scss/main.css"
 // contact the "live-rugby-data" API provider about use of the API legally and the credits that should be given
 // set the scroll to the footer
 // fix the sizes of the footer boxes
-// responsiveness and sizes diffrences
+// responsiveness and sizes differences
+// credits for pictures, fonts, ultimate rugby
 
 export default function Footer() {
     return (

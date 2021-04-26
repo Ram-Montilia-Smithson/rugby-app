@@ -9,9 +9,9 @@ import { standings, fixtures } from "../utils/api/mockData";
 // these logos will also connect you to team's page
 // consider cases of no data and errors
 // add future matches
-// consider make logo a different component
+// add explanations for use of page
 
-export default function Competition({ id, logo, matchChoice, teamChoice }) {
+export default function Competition({ id, matchChoice, teamChoice }) {
 
     const [name, setName] = useState("")
     // const [logo, setLogo] = useState(premiership)
@@ -30,7 +30,7 @@ export default function Competition({ id, logo, matchChoice, teamChoice }) {
     return (
         <div className="competition" >
             <div className="competition-header">
-                <img src={logo} alt={name}/>
+                <img src={`${process.env.PUBLIC_URL}/images/comps/${name}.png`} alt={name}/>
                 {/* <div>{name}</div> */}
             </div>
             {table.length && 

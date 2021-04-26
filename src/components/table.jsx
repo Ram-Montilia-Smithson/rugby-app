@@ -1,10 +1,9 @@
 import React, {useState, useEffect, useRef} from 'react'
 import "../scss/main.css"
-import {Link} from "react-router-dom"
-import bristol from "../utils/images/teams/Gallagher Premiership/Bristol Bears.png";
-import Photo from "../utils/api/images"
+import { Link } from "react-router-dom"
 
-// learn how to import images from public
+// consider changing tries +/-
+// look for ideas
 
 export default function Table({standings, teamChoice, futureFixtures, comp}) {
 
@@ -14,12 +13,11 @@ export default function Table({standings, teamChoice, futureFixtures, comp}) {
     const [moreTeams, setMoreTeams] = useState([])
 
     useEffect(() => {
-        console.log()
+        // console.log(Photo())
         if (standings.length > 2) {
             setTeams(standings[0].teams)
         }
         else {
-            console.log("standings")
             setTeams(standings[0].teams)
             setMoreTeams(standings[1].teams)
             setTableName(standings[0].table_name)
@@ -37,7 +35,7 @@ export default function Table({standings, teamChoice, futureFixtures, comp}) {
                                 <tr>
                                     <th>POS</th>
                                     <th>NAME</th>
-                                    {/* <th>LOGO</th> */}
+                                    <th>LOGO</th>
                                     <th>P</th>
                                     <th>W</th>
                                     <th>D</th>
@@ -56,13 +54,14 @@ export default function Table({standings, teamChoice, futureFixtures, comp}) {
                                                 <td>{team.position}</td>
                                                 <td>
                                                     <Link
+                                                        className="team-link"
                                                         to={`/team?${team.name}`}
                                                         onClick={() => teamChoice(team.id, futureFixtures)}
                                                     >
                                                         {team.name}
                                                     </Link>
                                                 </td>
-                                                {/* <td><img src={require('../utils/images/teams/Guinness PRO14/Glasgow Warriors.png')} alt={team}/></td> */}
+                                                <td><img className="team-logo" src={`${process.env.PUBLIC_URL}/images/teams/${comp}/${team.name}.png`} alt={team.name}/></td>
                                                 <td>{team.played}</td>
                                                 <td>{team.won}</td>
                                                 <td>{team.drawn}</td>
@@ -113,7 +112,7 @@ export default function Table({standings, teamChoice, futureFixtures, comp}) {
                                                     {team.name}
                                                 </Link>
                                             </td>
-                                            <td><img src={bristol} alt={team.name} /></td>
+                                            <td><img className="team-logo" src={`${process.env.PUBLIC_URL}/images/teams/${comp}/${team.name}.png`} alt={team.name} /></td>
                                             <td>{team.played}</td>
                                             <td>{team.won}</td>
                                             <td>{team.drawn}</td>

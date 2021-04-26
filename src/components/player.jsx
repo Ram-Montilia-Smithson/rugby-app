@@ -1,5 +1,4 @@
 import React from 'react'
-import headShot from "../utils/images/avatar.png"
 
 // set the player card in a nice way
 
@@ -14,7 +13,7 @@ export default function Player({name, number}) {
 
     return (
         <div className="playerCard">
-            <img src={headShot} alt={name}/>
+            <img src={`${process.env.PUBLIC_URL}/images/avatar.png`} alt={name}/>
             <div>{name}</div>
             <div>POSITION: {positions[number]}</div>
         </div>

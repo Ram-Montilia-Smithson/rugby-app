@@ -1,25 +1,3 @@
-import premiership from "../utils/images/comps/premiership.png";
-import pro14 from "../utils/images/comps/pro14.png"
-import top14 from "../utils/images/comps/top14.png"
-import RWC from "../utils/images/comps/RWC.png"
-import sixNations from "../utils/images/comps/six nations.png"
-import superugbyAO from "../utils/images/comps/super rugby AO.png"
-import superugbyAU from "../utils/images/comps/super rugby AU.png"
-import TRC from "../utils/images/comps/TRC.png"
-import champions from "../utils/images/comps/champions.png"
-import challenge from "../utils/images/comps/challenge.png"
-import worldRugby from "../utils/images/comps/world rugby.png"
-import topLeague from "../utils/images/comps/TopLeaguelogo.png"
-import MLR from "../utils/images/comps/MLR.png"
-import worldRugbyWomen from "../utils/images/comps/world rugby women.png"
-import currie from "../utils/images/comps/currie.png"
-import NPC from "../utils/images/comps/NPC.png"
-import lions from "../utils/images/comps/lions.png"
-import womenSixNations from "../utils/images/comps/women six nations.png"
-import WRWC from "../utils/images/comps/WRWC.png"
-import rugbyEurope from "../utils/images/comps/rugby europe.png"
-import superugbyTT from "../utils/images/comps/super rugby TT.png"
-
 import React, {useEffect, useState} from 'react'
 import '../scss/main.css';
 import { competitions } from "../utils/api/mockData"
@@ -27,6 +5,9 @@ import { Link } from 'react-router-dom';
 
 // world rugby women, champions cup and TT needs fixing
 // delete SR UL
+// consider rainbow cup
+// fix explanation
+// think of more ideas
 
 export default function Competitions({ compChoice}) {
 
@@ -36,8 +17,8 @@ export default function Competitions({ compChoice}) {
         setItems(competitions().results)
     }, [])
 
-    const handleClick = (id, logo) => {
-        compChoice(id, logo)
+    const handleClick = (id) => {
+        compChoice(id)
     }
 
     return (
@@ -50,210 +31,210 @@ export default function Competitions({ compChoice}) {
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id, premiership)}
+                            onClick={() => handleClick(item.id)}
                             to={`/competition?${item.name}`}
                         >
-                            <img className="competitions-image" src={premiership} alt={item.name} />
+                            <img className="competitions-image" src={`${process.env.PUBLIC_URL}/images/comps/${item.name}.png`} alt={item.name} />
                         </Link>
                     )
                     if (item.name === "TOP 14") return (
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id, top14)}
+                            onClick={() => handleClick(item.id)}
                             to={`/competition?${item.name}`}
                         >
-                            <img className="competitions-image" src={top14} alt={item.name} />
+                            <img className="competitions-image" src={`${process.env.PUBLIC_URL}/images/comps/${item.name}.png`} alt={item.name} />
                         </Link>
                     )
                     if (item.name === "Guinness PRO14") return (
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id, pro14)}
+                            onClick={() => handleClick(item.id)}
                             to={`/competition?${item.name}`}
                         >
-                            <img className="competitions-image" src={pro14} alt={item.name} />
+                            <img className="competitions-image" src={`${process.env.PUBLIC_URL}/images/comps/${item.name}.png`} alt={item.name} />
                         </Link>
                     )
                     if (item.name === "Rugby World Cup") return (
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id, RWC)}
+                            onClick={() => handleClick(item.id)}
                             to={`/competition?${item.name}`}
                         >
-                            <img className="competitions-image" src={RWC} alt={item.name} />
+                            <img className="competitions-image" src={`${process.env.PUBLIC_URL}/images/comps/${item.name}.png`} alt={item.name} />
                         </Link>
                     )
                     if (item.name === "Women's Rugby World Cup") return (
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id, WRWC)}
+                            onClick={() => handleClick(item.id)}
                             to={`/competition?${item.name}`}
                         >
-                            <img className="competitions-image" src={WRWC} alt={item.name} />
+                            <img className="competitions-image" src={`${process.env.PUBLIC_URL}/images/comps/${item.name}.png`} alt={item.name} />
                         </Link>
                     )
                     if (item.name === "Major League Rugby") return (
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id, MLR)}
+                            onClick={() => handleClick(item.id)}
                             to={`/competition?${item.name}`}
                         >
-                            <img className="competitions-image" src={MLR} alt={item.name} />
+                            <img className="competitions-image" src={`${process.env.PUBLIC_URL}/images/comps/${item.name}.png`} alt={item.name} />
                         </Link>
                     )
                     if (item.name === "Japan Top League") return (
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id, topLeague)}
+                            onClick={() => handleClick(item.id)}
                             to={`/competition?${item.name}`}
                         >
-                            <img className="competitions-image" src={topLeague} alt={item.name} />
+                            <img className="competitions-image" src={`${process.env.PUBLIC_URL}/images/comps/${item.name}.png`} alt={item.name} />
                         </Link>
                     )
                     if (item.name === "Six Nations") return (
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id, sixNations)}
+                            onClick={() => handleClick(item.id)}
                             to={`/competition?${item.name}`}
                         >
-                            <img className="competitions-image" src={sixNations} alt={item.name} />
+                            <img className="competitions-image" src={`${process.env.PUBLIC_URL}/images/comps/${item.name}.png`} alt={item.name} />
                         </Link>
                     )
                     if (item.name === "Women's Six Nations") return (
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id, womenSixNations)}
+                            onClick={() => handleClick(item.id)}
                             to={`/competition?${item.name}`}
                         >
-                            <img className="competitions-image" src={womenSixNations} alt={item.name} />
+                            <img className="competitions-image" src={`${process.env.PUBLIC_URL}/images/comps/${item.name}.png`} alt={item.name} />
                         </Link>
                     )
                     if (item.name === "Super Rugby Aotearoa") return (
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id, superugbyAO)}
+                            onClick={() => handleClick(item.id)}
                             to={`/competition?${item.name}`}
                         >
-                            <img className="competitions-image" src={superugbyAO} alt={item.name} />
+                            <img className="competitions-image" src={`${process.env.PUBLIC_URL}/images/comps/${item.name}.png`} alt={item.name} />
                         </Link>
                     )
                     if (item.name === "Super Rugby AU") return (
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id, superugbyAU)}
+                            onClick={() => handleClick(item.id)}
                             to={`/competition?${item.name}`}
                         >
-                            <img className="competitions-image" src={superugbyAU} alt={item.name} />
+                            <img className="competitions-image" src={`${process.env.PUBLIC_URL}/images/comps/${item.name}.png`} alt={item.name} />
                         </Link>
                     )
                     if (item.name === "Super Rugby Trans-Tasman") return (
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id, superugbyTT)}
+                            onClick={() => handleClick(item.id)}
                             to={`/competition?${item.name}`}
                         >
-                            <img className="competitions-image" src={superugbyTT} alt={item.name} />
+                            <img className="competitions-image" src={`${process.env.PUBLIC_URL}/images/comps/${item.name}.png`} alt={item.name} />
                         </Link>
                     )
                     if (item.name === "International") return (
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id, worldRugby)}
+                            onClick={() => handleClick(item.id)}
                             to={`/competition?${item.name}`}
                         >
-                            <img className="competitions-image" src={worldRugby} alt={item.name} />
+                            <img className="competitions-image" src={`${process.env.PUBLIC_URL}/images/comps/${item.name}.png`} alt={item.name} />
                         </Link>
                     )
                     if (item.name === "Currie Cup") return (
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id, currie)}
+                            onClick={() => handleClick(item.id)}
                             to={`/competition?${item.name}`}
                         >
-                            <img className="competitions-image" src={currie} alt={item.name} />
+                            <img className="competitions-image" src={`${process.env.PUBLIC_URL}/images/comps/${item.name}.png`} alt={item.name} />
                         </Link>
                     )
                     if (item.name === "European Rugby Challenge Cup") return (
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id, challenge)}
+                            onClick={() => handleClick(item.id)}
                             to={`/competition?${item.name}`}
                         >
-                            <img className="competitions-image" src={challenge} alt={item.name} />
+                            <img className="competitions-image" src={`${process.env.PUBLIC_URL}/images/comps/${item.name}.png`} alt={item.name} />
                         </Link>
                     )
                     if (item.name === "Heineken Champions Cup") return (
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id, champions)}
+                            onClick={() => handleClick(item.id)}
                             to={`/competition?${item.name}`}
                         >
-                            <img className="competitions-image" src={champions} alt={item.name} />
+                            <img className="competitions-image" src={`${process.env.PUBLIC_URL}/images/comps/${item.name}.png`} alt={item.name} />
                         </Link>
                     )
                     if (item.name === "Mitre 10 Cup") return (
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id, NPC)}
+                            onClick={() => handleClick(item.id)}
                             to={`/competition?${item.name}`}
                         >
-                            <img className="competitions-image" src={NPC} alt={item.name} />
+                            <img className="competitions-image" src={`${process.env.PUBLIC_URL}/images/comps/${item.name}.png`} alt={item.name} />
                         </Link>
                     )
                     if (item.name === "Championship") return (
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id, TRC)}
+                            onClick={() => handleClick(item.id)}
                             to={`/competition?${item.name}`}
                         >
-                            <img className="competitions-image" src={TRC} alt={item.name} />
+                            <img className="competitions-image" src={`${process.env.PUBLIC_URL}/images/comps/${item.name}.png`} alt={item.name} />
                         </Link>
                     )
                     if (item.name === "Women's Tour Match") return (
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id, worldRugbyWomen)}
+                            onClick={() => handleClick(item.id)}
                             to={`/competition?${item.name}`}
                         >
-                            <img className="competitions-image" src={worldRugbyWomen} alt={item.name} />
+                            <img className="competitions-image" src={`${process.env.PUBLIC_URL}/images/comps/${item.name}.png`} alt={item.name} />
                         </Link>
                     )
                     if (item.name === "British & Irish Lions") return (
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id, lions)}
+                            onClick={() => handleClick(item.id)}
                             to={`/competition?${item.name}`}
                         >
-                            <img className="competitions-image" src={lions} alt={item.name} />
+                            <img className="competitions-image" src={`${process.env.PUBLIC_URL}/images/comps/${item.name}.png`} alt={item.name} />
                         </Link>
                     )
                     if (item.name === "Rugby Europe Championship") return (
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id, rugbyEurope)}
+                            onClick={() => handleClick(item.id)}
                             to={`/competition?${item.name}`}
                         >
-                            <img className="competitions-image" src={rugbyEurope} alt={item.name} />
+                            <img className="competitions-image" src={`${process.env.PUBLIC_URL}/images/comps/${item.name}.png`} alt={item.name} />
                         </Link>
                     )
                 })}
