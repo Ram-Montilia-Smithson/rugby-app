@@ -1576,12 +1576,12 @@ export const competitions = () => {
                 "season": 2021,
                 "season_name": "Season 2020/2021"
             },
-            // {
-            //     "id": 1620,
-            //     "name": "Friendly",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
+            {
+                "id": 1620,
+                "name": "Friendly",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
             {
                 "id": 1626,
                 "name": "Rugby Europe Championship",
