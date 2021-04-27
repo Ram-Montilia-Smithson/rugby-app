@@ -9,6 +9,7 @@ import { standings, fixtures } from "../utils/api/mockData";
 // these logos will also connect you to team's page
 // consider cases of no data and errors
 // add future matches
+// maybe change the grid to six boxes
 // add explanations for use of page
 
 export default function Competition({ id, matchChoice, teamChoice }) {

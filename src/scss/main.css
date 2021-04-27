@@ -239,24 +239,29 @@ th {
 }
 
 td {
-  background-color: #F4D35E;
   text-align: center;
+}
+
+.table-team {
+  background-color: #F4D35E;
+}
+
+.table-team:hover {
+  background-color: #d1b653;
+}
+
+.team-link:hover {
+  background-color: white;
+}
+
+.team-logo:hover {
+  background-color: white;
 }
 
 .team-logo {
   max-width: 80px;
   max-height: 40px;
-  margin: 5px;
-}
-
-.team-link,
-.team-link:visited {
-  text-decoration: underline;
-  color: #004aad;
-}
-
-.team-link:hover {
-  color: black;
+  padding: 5px;
 }
 
 #footer {
