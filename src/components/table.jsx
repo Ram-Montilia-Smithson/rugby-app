@@ -23,7 +23,7 @@ export default function Table({standings, teamChoice, futureFixtures, comp}) {
             {teams.map((table, index) => {
                 return (
                     <div className="table-container">
-                        <h2>{tableName[index]}</h2>
+                        <h2>{tableName[index].toUpperCase()}</h2>
                         <table className="table">
                             <thead>
                                 <tr>

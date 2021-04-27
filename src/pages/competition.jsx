@@ -15,31 +15,53 @@ import { standings, fixtures } from "../utils/api/mockData";
 export default function Competition({ id, matchChoice, teamChoice }) {
 
     const [name, setName] = useState("")
-    // const [logo, setLogo] = useState(premiership)
-
     const [table, setTable] = useState([])
+    const [season, setSeason] = useState(0)
+    // const [info, setInfo] = useState({})
     const [fixtureList, setFixtureList] = useState([])
+    const [results, setResults] = useState([])
+
+    const time = new Date()
 
     useEffect(() => {
-        // console.log(fixtures().results)
         setName(standings(id).results.comp_name)
-        // setLogo(standings().results.comp_id)
+        setSeason(standings(id).results.season)
         setTable(standings(id).results.standings)
-        setFixtureList(fixtures(id).results)
+        console.log(time.getTime())
+        fixtures(id).results.forEach(result => {
+            if (new Date(result.date).getTime()>time.getTime()) {
+                setFixtureList(fixtureList => [...fixtureList, result])
+            }   
+            if (new Date(result.date).getTime()<time.getTime()) {
+                setResults(results => [result, ...results])
+            }
+        })
+        return () => {
+            setName("")
+            setSeason(0)
+            setTable([])
+            setFixtureList([])
+            setResults([])
+            }
     }, [id])
 
     return (
         <div className="competition" >
             <div className="competition-header">
-                <img src={`${process.env.PUBLIC_URL}/images/comps/${name}.png`} alt={name}/>
-                {/* <div>{name}</div> */}
+                <img className="header-logo" src={`${process.env.PUBLIC_URL}/images/comps/${name}.png`} alt={name}/>
+                <h1 className="header-name">{name.toUpperCase()}</h1>
+                <h1 className="header-name">{season}</h1>
             </div>
             {table.length && 
                 <Table standings={table} teamChoice={teamChoice} futureFixtures={fixtureList} comp={name}/>
             }
             <div>
-                <h2>Last Results</h2>
+                <h2>UPCOMING FIXTURES</h2>
                 <Fixtures fixtureList={fixtureList} matchChoice={matchChoice}/>
+            </div>
+            <div>
+                <h2>LAST RESULTS</h2>
+                <Fixtures fixtureList={results} matchChoice={matchChoice} />
             </div>
         </div>
     )

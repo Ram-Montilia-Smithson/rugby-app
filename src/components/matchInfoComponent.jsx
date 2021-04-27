@@ -5,7 +5,7 @@ import { match } from "../utils/api/mockData";
 
 // consider layout and info in the component
 
-export default function MatchInfoComponent({ id, matchChoice, showMoreInfo}) {
+export default function MatchInfoComponent({ id, status, matchChoice, showMoreInfo}) {
 
     const [isShowMore, setIsShowMore] = useState(false)
 
@@ -49,6 +49,7 @@ export default function MatchInfoComponent({ id, matchChoice, showMoreInfo}) {
         <>
             {isShowMore &&
                 <div className="fixture-moreInfo">
+                    <div>{status}</div>
                     <div className="progress-bar">
                         <div>POSSESION</div>
                         <div className="progress-home" style={{width: `${homePossesion*100}%`}}>{homePossesion*100}%</div>

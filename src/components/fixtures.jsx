@@ -26,12 +26,17 @@ export default function Fixtures({ fixtureList, matchChoice }) {
         setIsShowMoreFixtures(newShowMore);
     }
 
-    const getDate = (date) => {
+    const getDay = (date) => {
+        const time = new Date(date)
+        return `${time.getDate()}/${time.getMonth()+1}/${time.getFullYear()}`
+    }
+
+    const getTime = (date) => {
         const time = new Date(date)
         let minutes
         if (time.getMinutes() == 0) {minutes = "00"}
         else {minutes = time.getMinutes()}
-        return `${time.toLocaleDateString()} ${time.getHours()}:${minutes}`
+        return  `${time.getHours()}:${minutes}`
     }
 
     const moreInfo = (id) => {
@@ -49,7 +54,8 @@ export default function Fixtures({ fixtureList, matchChoice }) {
                             <div key={fixture.id} className="fixture-container">
                                 <div className="fixture-head">
                                     <span className="fixture-game_week">ROUND {fixture.game_week}</span>
-                                    <span className="fixture_date">{getDate(fixture.date)}</span>
+                                    <span className="fixture_date">{getDay(fixture.date)}</span>
+                                    <span className="fixture-time">{getTime(fixture.date)}</span>
                                     <span className="fixture_venue">{fixture.venue}</span>
                                     <div>
                                         <button 
@@ -86,7 +92,8 @@ export default function Fixtures({ fixtureList, matchChoice }) {
                                     <span className="fixture_away">{fixture.away}</span>
                                 </div>
                                 <MatchInfoComponent
-                                    id={fixture.id} 
+                                    id={fixture.id}
+                                    status={fixture.status}
                                     matchChoice={matchChoice}
                                     showMoreInfo={showMoreInfo}
                                 />

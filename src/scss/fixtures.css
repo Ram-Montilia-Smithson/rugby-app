@@ -14,12 +14,8 @@
   color: #ffffff;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 2fr 1fr;
-      grid-template-columns: 1fr 1fr 2fr 1fr;
-}
-
-.fixture_date {
-  width: 200px;
+  -ms-grid-columns: 1fr 1fr 1fr 2fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
 }
 
 .dropdown-button {
