@@ -1,5 +1,5 @@
 import React from 'react'
-import '../scss/main.css';
+import '../scss/home.css';
 import {Link} from "react-router-dom";
 
 // here you add welcome to the website and some basic explanations

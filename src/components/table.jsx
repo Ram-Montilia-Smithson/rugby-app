@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react'
-import "../scss/main.css"
+import "../scss/competition.css"
 import { Link } from "react-router-dom"
 
 export default function Table({standings, teamChoice, futureFixtures, comp}) {

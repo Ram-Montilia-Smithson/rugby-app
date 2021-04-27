@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from 'react'
-import '../scss/main.css';
+import '../scss/competitions.css';
 import { competitions } from "../utils/api/mockData"
 import { Link } from 'react-router-dom';
 
-// autumn, friendlies and tri nations
 // fix explanation
 // think of more ideas
 

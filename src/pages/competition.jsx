@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import "../scss/main.css"
+import "../scss/competition.css"
 import Table from "../components/table";
 import Fixtures from "../components/fixtures";
 import { standings, fixtures } from "../utils/api/mockData";

@@ -1,0 +1,35 @@
+@import "./variables";
+@import "./_mixin";
+
+.header {
+    @include element(space-between);
+    margin-bottom: 20px;
+}
+
+.header-left {
+    height: 120px;
+    width: 120px;
+    margin-left: 50px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.header-options {
+    margin-top: 10px;
+    margin-right: 50px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+a,
+a:visited {
+    margin: 0 20px;
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #004aad;
+}

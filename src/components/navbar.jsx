@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../scss/main.css';
+import '../scss/navbar.css';
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 // consider making it a privet route
 import About from '../pages/about';
@@ -37,7 +37,7 @@ export default function Navbar() {
         <div>
             <BrowserRouter>
                 <div className="header" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/lines.png)`}}>
-                    <img src={`${process.env.PUBLIC_URL}/images/rugby world logo.png`} alt="Rugby World" className="header-left" />
+                    <img className="header-left" src={`${process.env.PUBLIC_URL}/images/rugby world logo.png`} alt="Rugby World"/>
                     <div className="header-options">
                         <Link to="/">HOME</Link>
                         <Link to="/competitions">COMPETITIONS</Link>
