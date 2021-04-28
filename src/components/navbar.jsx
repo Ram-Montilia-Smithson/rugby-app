@@ -4,7 +4,6 @@ import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 // consider making it a privet route
 import About from '../pages/about';
 import Competition from '../pages/competition';
-import Competitions from '../pages/competitions';
 import Home from '../pages/home';
 import MatchInfoPage from '../pages/matchInfoPage';
 import Team from "../pages/team"
@@ -40,7 +39,6 @@ export default function Navbar() {
                     <img className="header-left" src={`${process.env.PUBLIC_URL}/images/rugby world logo.png`} alt="Rugby World"/>
                     <div className="header-options">
                         <Link to="/">HOME</Link>
-                        <Link to="/competitions">COMPETITIONS</Link>
                         <Link to="/about">ABOUT</Link>
                         <a href="#footer">CREDITS</a>
                     </div>
@@ -48,10 +46,9 @@ export default function Navbar() {
                 <Switch>
                     <Route path="/about"><About /></Route>
                     <Route path="/competition"><Competition id={comp} matchChoice={matchChoice} teamChoice={teamChoice}/></Route>
-                    <Route path="/competitions"><Competitions compChoice={compChoice} /></Route>
                     <Route path="/matchInfo"><MatchInfoPage match={match}/></Route>
                     <Route path="/team"><Team team={team} comp_id={comp} matchChoice={matchChoice}/></Route>
-                    <Route exact path="/"><Home /></Route>
+                    <Route exact path="/"><Home matchChoice={matchChoice} compChoice={compChoice}/></Route>
                 </Switch>
             </BrowserRouter>
         </div>

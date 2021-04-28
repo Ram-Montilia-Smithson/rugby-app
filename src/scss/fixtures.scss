@@ -3,6 +3,7 @@
 
 .fixtures {
     grid-area: fixtures;
+    margin-bottom: 10px;
 }
 
 .fixture-container {
@@ -18,10 +19,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
 }
-
-// .fixture_date {
-//     // width: 100px;
-// }
 
 .dropdown-button {
     width: 100px;
@@ -78,10 +75,14 @@
     border-bottom: #000000 solid 1px;
 }
 
+.fixture-status{
+    margin: 1px;
+    font-size: large;
+}
+
 .progress-bar {
     background-color: #E0FBFC;
     color: #000000;
-    border-top: #000000 solid 1px;
 }
 
 .progress-home {

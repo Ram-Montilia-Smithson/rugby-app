@@ -23,7 +23,7 @@ export default function Table({standings, teamChoice, futureFixtures, comp}) {
             {teams.map((table, index) => {
                 return (
                     <div className="table-container">
-                        <h2>{tableName[index].toUpperCase()}</h2>
+                        <h2>TABLE</h2>
                         <table className="table">
                             <thead>
                                 <tr>
@@ -52,6 +52,7 @@ export default function Table({standings, teamChoice, futureFixtures, comp}) {
                                                     onClick={() => teamChoice(team.id, futureFixtures)}
                                                 >
                                                     <img className="team-logo" src={`${process.env.PUBLIC_URL}/images/teams/${comp}/${team.name}.png`} alt={team.name}/>
+                                                    <div>{team.name.toUpperCase()}</div>
                                                 </Link>
                                             </td>
                                             <td>{team.played}</td>

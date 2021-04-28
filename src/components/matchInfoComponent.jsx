@@ -49,9 +49,9 @@ export default function MatchInfoComponent({ id, status, matchChoice, showMoreIn
         <>
             {isShowMore &&
                 <div className="fixture-moreInfo">
-                    <div>{status}</div>
+                <div className="fixture-status">{status.toUpperCase()}</div>
                     <div className="progress-bar">
-                        <div>POSSESION</div>
+                        <div>POSSESSION</div>
                         <div className="progress-home" style={{width: `${homePossesion*100}%`}}>{homePossesion*100}%</div>
                         <div className="progress-away" style={{width: `${awayPossesion*100}%`, display: "inline-block"}}>{awayPossesion*100}%</div>
                     </div>

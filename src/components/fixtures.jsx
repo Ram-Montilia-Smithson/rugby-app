@@ -4,14 +4,13 @@ import "../scss/fixtures.css"
 
 //  search for ideas to improve layout and possibilities of fixtures 
 
-export default function Fixtures({ fixtureList, matchChoice }) {
+export default function Fixtures({ fixtureList, matchChoice, numberOfFixtures }) {
     
     useEffect(() => {
-        // console.log(fixtureList)
         setFixtures(fixtureList.slice(0, LIMIT))
     }, [fixtureList])
 
-    const LIMIT = 5;    
+    const LIMIT = numberOfFixtures;
     const [fixtures, setFixtures] = useState([])
     const [isShowMoreFixtures,setIsShowMoreFixtures] = useState(true);
     const [fixtureIndex,setFixtureIndex] = useState(LIMIT);
@@ -84,9 +83,9 @@ export default function Fixtures({ fixtureList, matchChoice }) {
                                         }
                                         {fixture.home_score === fixture.away_score &&
                                             <span className="fixture-scores">
-                                                <span className="fixture-score-home" style={{ backgroundColor: "#808080", color: "#414141" }}>{fixture.home_score}</span>
+                                                <span className="fixture-score-home" style={{ backgroundColor: "#808080", color: "black" }}>{fixture.home_score}</span>
                                                 <span>-</span>
-                                                <span className="fixture-score-away" style={{ backgroundColor: "#808080", color: "#414141"}}>{fixture.away_score}</span>
+                                                <span className="fixture-score-away" style={{ backgroundColor: "#808080", color: "black"}}>{fixture.away_score}</span>
                                             </span>
                                         }
                                     <span className="fixture_away">{fixture.away}</span>
@@ -100,7 +99,11 @@ export default function Fixtures({ fixtureList, matchChoice }) {
                             </div>
                         )
                     })}
-                    {isShowMoreFixtures && <button onClick={() => loadFixtures()}>MORE FIXTURES</button>}
+                {numberOfFixtures === 14 ? 
+                    <></>
+                    :
+                    isShowMoreFixtures && <button onClick={() => loadFixtures()}>MORE FIXTURES</button>
+                }
                 </div>
             }
         </div>

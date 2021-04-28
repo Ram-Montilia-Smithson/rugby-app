@@ -1,28 +1,50 @@
-import React from 'react'
 import '../scss/home.css';
-import {Link} from "react-router-dom";
+import React, { useEffect, useState} from 'react'
+import Fixtures from "../components/fixtures";
+import { competitions, fixtures } from "../utils/api/mockData"
+import Competitions from '../components/competitions';
 
-// here you add welcome to the website and some basic explanations
-// at the end of the explanation, add a link to competitions
-// make the home page like the nav bar but ilustrated 
-// copy from ultimate rugby
-// be creative, think of some nice layout and features to add
+    //add the logo you will make in the tab above 
 
-export default function Home() {
+export default function Home({ matchChoice, compChoice}) {
+
+    const [fixtureList, setFixtureList] = useState([])
+    const [results, setResults] = useState([])
+
+    useEffect(() => {
+        competitions().results.forEach(comp => {
+            fixtures(comp.id).results.forEach(result => {
+                if (new Date(result.date).getTime() > new Date().getTime() || result.status === "First Half" || result.status === "Half Time" || result.status === "Second Half") {
+                    setFixtureList(fixtureList => [...fixtureList, result])
+                }   
+                else if (new Date(result.date).getTime()<new Date().getTime()) {
+                    setResults(results => [result, ...results])
+                }
+            })
+            setFixtureList(fixtureList => fixtureList.sort((a, b) =>  a.date - b.date ))
+            setResults(results => results.sort((a, b) =>  a.date - b.date ))
+        });
+        return () => {
+            setFixtureList([])
+            setResults([])
+        }
+    }, [])
+
     return (
-        <div>
-            <h1>home</h1>
-            <div className="head-line">
-                <div className="head-line-child">RUGBY WORLD</div>
+        <div className="home">
+            <div className="home-top">
+                <h1 className="line">RUGBY WORLD</h1>
+                <h2>HERE YOU CAN FIND ALL COMPETITIONS, LATEST RESULTS AND UPCOMING MATCHES FROM ALL OVER THE WORLD</h2>
             </div>
-            <div className="line">
-                <div className="line-child">HERE YOU CAN FIND ALL WHAT'S</div>
-                <div className="line-child">NEW IN THE WORLD OF RUGBY</div>
-                <div className="line-child">go to Competition link in the nav bar on top or start just press down</div>
+            <div className="comps">
+                <Competitions compChoice={compChoice}/>
             </div>
-            <div className="button">
-                <Link to="/competitions" className="button-child">here</Link>
+            <div className="last-results">
+                <h2>LATEST RESULTS</h2>
+                <Fixtures fixtureList={results} matchChoice={matchChoice} numberOfFixtures={14}/>
+                <h2>UPCOMING FIXTURES</h2>
+                <Fixtures fixtureList={fixtureList} matchChoice={matchChoice} numberOfFixtures={14}/>
             </div>
         </div>
     )
-}
+}    

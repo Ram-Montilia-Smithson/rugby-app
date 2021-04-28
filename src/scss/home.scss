@@ -1,39 +1,45 @@
 @import "./variables";
 @import "./_mixin";
 
-.head-line {
-    @include element(center);
+.home{
+    text-align: center;
+    display: grid;
+    width: 100%;
+    grid-template-areas: "header header"
+                         "comps fixtures";
+    grid-template-rows: 150px 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
 }
 
-.head-line-child {
-    margin: -5px;
-    font-size: 40px;
-    font-weight: 800;
+.home-top {
+    grid-area: header;
 }
 
-.line {
-    @include element(center);
-    display: flex;
-    flex-direction: column;
+.competitions-container {
+    grid-area: comps;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
+    grid-gap: 20px;
 }
 
-.line-child {
-    font-size: 25px;
-    padding-bottom: 20px;
-}
-
-.button {
-    @include element(center);
-    padding-top: 50px;
-}
-
-.button-child {
-    @include button(white, rgb(0, 18, 119));
+.competitions-link {
+    height: 200px;
+    width: 200px;
     transition: box-shadow 0.25s;
-    cursor: pointer;
+    background-color: white;
+    border-radius: 5px;
 }
 
-.button-child:hover {
-    @include button(rgb(0, 18, 119), white);
-    box-shadow: 0px 0px 20px 0px #FFFFFF;
+.competitions-link:hover {
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 10px #F4D35E;
+    border-radius: 5px;
+}
+
+.competitions-image {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
 }

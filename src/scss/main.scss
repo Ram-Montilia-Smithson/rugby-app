@@ -24,6 +24,7 @@ body{
 
 #footer{
     @include element(none);
+    margin-top: 10px;
     height: fit-content;
     width: auto;
     padding: 20px;
