@@ -1,12 +1,9 @@
 // get all fetches here 
 // consider making season as a variable and not hard coded
+// consider cases of errors
 
-const address = "https://rugby-live-data.p.rapidapi.com/"
-
-const headers = {
-    "x-rapidapi-key": "036004ea61mshcdbc588413d13d6p139954jsnb5af2304f0a1",
-    "x-rapidapi-host": "rugby-live-data.p.rapidapi.com"
-}
+const address = process.env.REACT_APP_ADDRESS
+const headers = process.env.REACT_APP_HEADERS
 
 export const match = (matchID) => {
     fetch(`${address}match/${matchID}`, {

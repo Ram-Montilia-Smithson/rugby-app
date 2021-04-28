@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import '../scss/home.css';
+import '../scss/home/home.css';
 import { competitions } from "../utils/api/mockData"
 import { Link } from 'react-router-dom';
 

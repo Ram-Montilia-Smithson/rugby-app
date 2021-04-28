@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import "../scss/competition.css"
+import "../scss/competition/competition.css"
 import Table from "../components/table";
 import Fixtures from "../components/fixtures";
 import { standings, fixtures } from "../utils/api/mockData";
 
-// consider showing all logos of teams in a horizontal line, fetched by  `https://rugby-live-data.p.rapidapi.com/teams/${id}/2021`
+// consider showing all logos of teams in a horizontal line
 // these logos will also connect you to team's page
 // consider cases of no data and errors
 // add explanations for use of page
@@ -18,6 +18,7 @@ export default function Competition({ id, matchChoice, teamChoice }) {
     const [results, setResults] = useState([])
 
     useEffect(() => {
+        console.log(process.env);
         setName(standings(id).results.comp_name)
         setSeason(standings(id).results.season)
         setTable(standings(id).results.standings)

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-import "../scss/main.css"
+import "../scss/fixtures/fixtures.css"
 import { Link } from 'react-router-dom';
 import { match } from "../utils/api/mockData";
 
@@ -29,7 +29,7 @@ export default function MatchInfoComponent({ id, status, matchChoice, showMoreIn
         if (!showMoreInfo.includes(id)) {
             setIsShowMore(false)
         }
-        console.log(match(id).results);
+        // console.log(match(id).results);
         const data = match(id)
         setHomeTeam(data.results.match.home_team)
         setAwayTeam(data.results.match.away_team)

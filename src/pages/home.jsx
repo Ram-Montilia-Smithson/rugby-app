@@ -1,4 +1,4 @@
-import '../scss/home.css';
+import '../scss/home/home.css';
 import React, { useEffect, useState} from 'react'
 import Fixtures from "../components/fixtures";
 import { competitions, fixtures } from "../utils/api/mockData"

@@ -1,5 +1,5 @@
 import React from 'react'
-import "../scss/main.css"
+import "../scss/main/main.css"
 
 // explain about yourself and your project
 // mention the web dev aspects

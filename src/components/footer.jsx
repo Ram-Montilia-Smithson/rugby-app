@@ -1,5 +1,5 @@
 import React from 'react'
-import "../scss/main.css"
+import "../scss/main/main.css"
 
 // look for nice design to show the contact info
 // contact the "live-rugby-data" API provider about use of the API legally and the credits that should be given

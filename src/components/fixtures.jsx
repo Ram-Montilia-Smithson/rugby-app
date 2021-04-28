@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import MatchInfoComponent from "./matchInfoComponent"
-import "../scss/fixtures.css"
+import "../scss/fixtures/fixtures.css"
 
 //  search for ideas to improve layout and possibilities of fixtures 
 

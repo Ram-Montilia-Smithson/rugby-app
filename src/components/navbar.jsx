@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../scss/navbar.css';
+import '../scss/main/main.css';
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 // consider making it a privet route
 import About from '../pages/about';

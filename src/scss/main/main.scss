@@ -1,5 +1,5 @@
-@import "./variables";
-@import "./_mixin";
+@import "../variables";
+@import "../_mixin";
 
 // learn how to use scss better
 // different screen sizes
@@ -13,9 +13,43 @@ body{
     scroll-behavior: smooth;
 }
 
+.header {
+    @include element(space-between);
+    margin-bottom: 10px;
+}
+
+.header-left {
+    height: 120px;
+    width: 120px;
+    margin-left: 50px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.header-options {
+    margin-top: 5px;
+    margin-right: 50px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+a,
+a:visited {
+    margin: 0 20px;
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #004aad;
+}
+
 .parent{
     @include parent();
     scroll-behavior: smooth;
+    // fix the scroll
 }
 
 .child{
