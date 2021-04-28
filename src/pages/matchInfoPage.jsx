@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import { Pie, defaults, Bar, Line, Doughnut } from 'react-chartjs-2/dist/index'
+import React, {useEffect} from 'react';
+import { defaults, Bar, Line } from 'react-chartjs-2/dist/index'
 
 // show all relevant info about the match, there is so much of it
 // be creative as you go over the info and think how should you show it.

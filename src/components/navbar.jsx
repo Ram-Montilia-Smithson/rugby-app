@@ -28,8 +28,8 @@ export default function Navbar() {
         setMatch(id)
     }
 
-    const teamChoice = (id, futureFixtures) => {
-        setTeam({id, futureFixtures})
+    const teamChoice = (id, fixtures) => {
+        setTeam({id, fixtures})
     }
 
     return (

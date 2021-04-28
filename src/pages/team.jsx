@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import Player from "../components/player";
 import Fixtures from "../components/fixtures";
 
@@ -180,25 +180,21 @@ const data = {
 
 export default function Team({team, comp_id, matchChoise}) {
 
-    const [pastFixturesList, setpastFixturesList] = useState(RESULTS)
+    // const [pastFixturesList, setpastFixturesList] = useState(RESULTS)
+    const pastFixturesList = RESULTS
     const [players, setPlayers] = useState([])
     let homeOrAway = "home"
 
-    const getPlayers = () => {
+    useEffect(() => {
+        console.log(team)
         data.results[`${homeOrAway}`].teamsheet.forEach(player => {
             if (players.includes(player)) {
                 return
             }
             console.log(player)
-            setPlayers((players) => { return[...players, player]})
+            setPlayers((players) => { return [...players, player] })
         })
-    }
-
-    useEffect(() => {
-        console.log(team)
-        // console.log()
-        getPlayers()
-    }, [team])
+    }, [team, players, homeOrAway])
 
     return (
         <div>

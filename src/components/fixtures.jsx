@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import MatchInfoComponent from "./matchInfoComponent"
 import "../scss/fixtures/fixtures.css"
 
@@ -6,15 +6,19 @@ import "../scss/fixtures/fixtures.css"
 
 export default function Fixtures({ fixtureList, matchChoice, numberOfFixtures }) {
     
-    useEffect(() => {
-        setFixtures(fixtureList.slice(0, LIMIT))
-    }, [fixtureList])
 
     const LIMIT = numberOfFixtures;
     const [fixtures, setFixtures] = useState([])
     const [isShowMoreFixtures,setIsShowMoreFixtures] = useState(true);
     const [fixtureIndex,setFixtureIndex] = useState(LIMIT);
     const [showMoreInfo, setShowMoreInfo] = useState([]);
+
+    useEffect(() => {
+        setFixtures(fixtureList.slice(0, LIMIT))
+        return () => {
+            setFixtures([])
+        }
+    }, [fixtureList, LIMIT])
 
     const loadFixtures = () =>{
         const newIndex = fixtureIndex + LIMIT;
@@ -33,7 +37,7 @@ export default function Fixtures({ fixtureList, matchChoice, numberOfFixtures })
     const getTime = (date) => {
         const time = new Date(date)
         let minutes
-        if (time.getMinutes() == 0) {minutes = "00"}
+        if (time.getMinutes() === 0) {minutes = "00"}
         else {minutes = time.getMinutes()}
         return  `${time.getHours()}:${minutes}`
     }

@@ -1,8 +1,8 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useState, useEffect} from 'react'
 import "../scss/competition/competition.css"
 import { Link } from "react-router-dom"
 
-export default function Table({standings, teamChoice, futureFixtures, comp}) {
+export default function Table({standings, teamChoice, fixtures, comp}) {
 
     const [tableName, setTableName] = useState([])
     const [teams, setTeams] = useState([])
@@ -22,8 +22,8 @@ export default function Table({standings, teamChoice, futureFixtures, comp}) {
         <div className="tables">
             {teams.map((table, index) => {
                 return (
-                    <div className="table-container">
-                        <h2>TABLE</h2>
+                    <div className="table-container" key={index}>
+                        <h2>{tableName[index].toUpperCase()} TABLE</h2>
                         <table className="table">
                             <thead>
                                 <tr>
@@ -49,7 +49,7 @@ export default function Table({standings, teamChoice, futureFixtures, comp}) {
                                                 <Link
                                                     className="team-link"
                                                     to={`/team?${team.name}`}
-                                                    onClick={() => teamChoice(team.id, futureFixtures)}
+                                                    onClick={() => teamChoice(team.id, fixtures)}
                                                 >
                                                     <img className="team-logo" src={`${process.env.PUBLIC_URL}/images/teams/${comp}/${team.name}.png`} alt={team.name}/>
                                                     <div>{team.name.toUpperCase()}</div>
