@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import "../scss/competition/competition.css"
 import { Link } from "react-router-dom"
 
-export default function Table({standings, teamChoice, fixtures, comp}) {
+export default function Table({standings, teamChoice, fixtures}) {
 
     const [tableName, setTableName] = useState([])
     const [teams, setTeams] = useState([])
@@ -51,7 +51,7 @@ export default function Table({standings, teamChoice, fixtures, comp}) {
                                                     to={`/team?${team.name}`}
                                                     onClick={() => teamChoice(team.id, fixtures)}
                                                 >
-                                                    <img className="team-logo" src={`${process.env.PUBLIC_URL}/images/teams/${comp}/${team.name}.png`} alt={team.name}/>
+                                                    <img className="team-logo" src={`${process.env.PUBLIC_URL}/images/teams/${team.name}.png`} alt={team.name}/>
                                                     <div>{team.name.toUpperCase()}</div>
                                                 </Link>
                                             </td>

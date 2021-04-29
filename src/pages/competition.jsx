@@ -58,14 +58,14 @@ export default function Competition({ id, matchChoice, teamChoice }) {
                                 to={`/team?${team.name}`}
                                 onClick={() => teamChoice(team.id, fixtureList)}
                             >
-                                <img className="competition-header-team-logo" src={`${process.env.PUBLIC_URL}/images/teams/${name}/${team.name}.png`} alt={team.name}/>
+                                <img className="competition-header-team-logo" src={`${process.env.PUBLIC_URL}/images/teams/${team.name}.png`} alt={team.name}/>
                                 <div>{team.name.toUpperCase()}</div>
                             </Link>
                         )
                     })}
                 </div>
             </div>
-            <Table standings={tables} teamChoice={teamChoice} fixtures={fixtureList} comp={name}/>
+            <Table standings={tables} teamChoice={teamChoice} fixtures={fixtureList}/>
             <div className="fixtures">
                 <h2>LAST RESULTS</h2>
                 <Fixtures fixtureList={results} matchChoice={matchChoice} numberOfFixtures={6}/>
