@@ -1016,6 +1016,110 @@ export const match = (matchID) => {
     })
 }
 
+export const TeamsByCompetitionSeason = (comp_id) => {
+    console.log(comp_id)
+    return (
+        "results": [
+            {
+                "id": 3017,
+                "name": "Bath"
+            },
+            {
+                "id": 131,
+                "name": "Bordeaux Begles"
+            },
+            {
+                "id": 3167,
+                "name": "Bristol"
+            },
+            {
+                "id": 6767,
+                "name": "Clermont Auvergne"
+            },
+            {
+                "id": 10217,
+                "name": "Connacht"
+            },
+            {
+                "id": 9317,
+                "name": "Dragons"
+            },
+            {
+                "id": 5867,
+                "name": "Edinburgh"
+            },
+            {
+                "id": 269,
+                "name": "Exeter"
+            },
+            {
+                "id": 5267,
+                "name": "Glasgow Warriors"
+            },
+            {
+                "id": 3317,
+                "name": "Gloucester"
+            },
+            {
+                "id": 3467,
+                "name": "Harlequins"
+            },
+            {
+                "id": 158,
+                "name": "La Rochelle"
+            },
+            {
+                "id": 6917,
+                "name": "Leinster"
+            },
+            {
+                "id": 152,
+                "name": "Lyon"
+            },
+            {
+                "id": 14867,
+                "name": "Montpellier"
+            },
+            {
+                "id": 6467,
+                "name": "Munster"
+            },
+            {
+                "id": 4217,
+                "name": "Northampton"
+            },
+            {
+                "id": 140,
+                "name": "Racing 92"
+            },
+            {
+                "id": 4367,
+                "name": "Sale"
+            },
+            {
+                "id": 5117,
+                "name": "Scarlets"
+            },
+            {
+                "id": 134,
+                "name": "Toulon"
+            },
+            {
+                "id": 7067,
+                "name": "Toulouse"
+            },
+            {
+                "id": 7367,
+                "name": "Ulster"
+            },
+            {
+                "id": 4667,
+                "name": "Wasps"
+            }
+        ]
+    )
+}
+
 export const standings = (comp_id) => {
     console.log("comp_id",comp_id)
     return ({

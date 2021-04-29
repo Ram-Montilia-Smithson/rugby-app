@@ -16,12 +16,12 @@ import Team from "../pages/team"
 
 export default function Navbar() {
 
-    const [comp, setComp] = useState(0)
+    const [comp, setComp] = useState({})
     const [match, setMatch] = useState(0)
     const [team, setTeam] = useState({})
 
-    const compChoice = (id) => {
-        setComp({id})
+    const compChoice = (comp) => {
+        setComp(comp)
     }
 
     const matchChoice = (id) => {
@@ -45,9 +45,9 @@ export default function Navbar() {
                 </div>
                 <Switch>
                     <Route path="/about"><About /></Route>
-                    <Route path="/competition"><Competition id={comp} matchChoice={matchChoice} teamChoice={teamChoice}/></Route>
+                    <Route path="/competition"><Competition comp={comp} matchChoice={matchChoice} teamChoice={teamChoice}/></Route>
                     <Route path="/matchInfo"><MatchInfoPage match={match}/></Route>
-                    <Route path="/team"><Team team={team} comp_id={comp} matchChoice={matchChoice}/></Route>
+                    <Route path="/team"><Team team={team} comp={comp} matchChoice={matchChoice}/></Route>
                     <Route exact path="/"><Home matchChoice={matchChoice} compChoice={compChoice}/></Route>
                 </Switch>
             </BrowserRouter>

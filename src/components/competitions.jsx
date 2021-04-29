@@ -12,7 +12,7 @@ export default function Competitions({ compChoice}) {
         return () => {setItems([])}
     }, [])
 
-    const handleClick = (id) => {compChoice(id)}
+    // const handleClick = (id) => {compChoice(id)}
 
     return (
             <div className="competitions-container">
@@ -21,7 +21,7 @@ export default function Competitions({ compChoice}) {
                         <Link
                             className="competitions-link"
                             key={item.id}
-                            onClick={() => handleClick(item.id)}
+                            onClick={() => compChoice(item)}
                             to={`/competition?${item.name}`}
                         >
                             <img className="competitions-image" src={`${process.env.PUBLIC_URL}/images/comps/${item.name}.png`} alt={item.name} />
