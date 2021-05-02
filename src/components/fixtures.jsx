@@ -45,7 +45,6 @@ export default function Fixtures({ fixtureList, matchChoice, numberOfFixtures })
     const moreInfo = (id) => {
         if (!showMoreInfo.includes(id)) {setShowMoreInfo([...showMoreInfo,id])}
         if (showMoreInfo.includes(id)) { setShowMoreInfo(showMoreInfo.filter(id2 => id2 !== id)) }
-        // console.log(process.env)
     }
 
     return (
@@ -117,11 +116,10 @@ export default function Fixtures({ fixtureList, matchChoice, numberOfFixtures })
                                     <span className="fixture_away">{fixture.away}</span>
                                 </div>
                                 <MatchInfoComponent
-                                    // id={fixture.id}
-                                    fixture={fixture}
-                                    // status={fixture.status}
+                                    id={fixture.id}
                                     matchChoice={matchChoice}
                                     showMoreInfo={showMoreInfo}
+                                    link={true}
                                 />
                             </div>
                         )

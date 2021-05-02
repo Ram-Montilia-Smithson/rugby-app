@@ -4,13 +4,9 @@ import { Link } from 'react-router-dom';
 import { match } from "../utils/api/mockData";
 
 // consider layout and info in the component
+// maybe drop the possession
 
-export default function MatchInfoComponent({
-    // id,
-    fixture,
-    // status
-     matchChoice, showMoreInfo
-}) {
+export default function MatchInfoComponent({id, matchChoice, showMoreInfo, link}) {
 
     const [isShowMore, setIsShowMore] = useState(false)
 
@@ -28,11 +24,11 @@ export default function MatchInfoComponent({
     const [awayPossession, setAwayPossession] = useState(0)
 
     useEffect(() => {
-        if (showMoreInfo.includes(fixture.id)) {setIsShowMore(true)}
-        if (!showMoreInfo.includes(fixture.id)) {setIsShowMore(false)}
-        const data = match(fixture.id)
-        setHomeTeam(fixture.home)
-        setAwayTeam(fixture.away)
+        if (showMoreInfo.includes(id)) {setIsShowMore(true)}
+        if (!showMoreInfo.includes(id)) {setIsShowMore(false)}
+        const data = match(id)
+        setHomeTeam(data.results.match.home_team)
+        setAwayTeam(data.results.match.away_team)
         setHomeTries(data.results.match.home_tries)
         awayTries.current = data.results.match.away_tries
         setHomeConversions(data.results.match.home_conversions)
@@ -43,7 +39,7 @@ export default function MatchInfoComponent({
         setAwayDropGoals(data.results.match.away_drop_goals)
         setHomePossession(data.results.home.team_stats.possession[0].value)
         setAwayPossession(data.results.away.team_stats.possession[0].value)
-    }, [fixture, showMoreInfo])
+    }, [id, showMoreInfo])
 
     return (
         <>
@@ -75,13 +71,16 @@ export default function MatchInfoComponent({
                         <span className="fixture-label">DROP KICKS</span>
                         <span>{awayDropGoals}</span>
                     </div>
-                    <Link
-                    onClick={() => matchChoice(fixture.id)}
-                        className="fixture-link"
-                        to={`/matchInfo?${homeTeam}v${awayTeam}`}
-                    >
-                        COMPLETE MATCH INFO
-                    </Link>    
+                    {link && 
+                        <Link
+                            onClick={() => matchChoice(id)}
+                            className="fixture-link"
+                            to={`/matchInfo?${homeTeam}v${awayTeam}`}
+                        >
+                            COMPLETE MATCH INFO
+                        </Link>
+                    }
+                
                 </div>
             }
         </>

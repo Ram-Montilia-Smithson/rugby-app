@@ -6,6 +6,7 @@ import Competitions from '../components/competitions';
 
     //add the logo you will make in the tab above 
     // add a header
+    // add a different font to that header
     // change fonts from header to rest of page
 
 export default function Home({ matchChoice, compChoice}) {
