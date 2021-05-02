@@ -27,10 +27,10 @@ export default function Competition({ comp, matchChoice, teamChoice }) {
             }
         })
         return () => {
-            setTables([])
-            setFixtureList([])
-            setResults([])
-            setTeams([])
+            // setTables([])
+            // setFixtureList([])
+            // setResults([])
+            // setTeams([])
         }
     }, [comp])
 
@@ -43,7 +43,7 @@ export default function Competition({ comp, matchChoice, teamChoice }) {
                     <h1 className="header-name">{comp.season}</h1>
                 </div>
                 <div className="competition-header-teams">
-                    {teams.map(team => {
+                    {teams.length && teams.map(team => {
                         return (
                             <Link
                                 className="competition-header-team-link"
@@ -51,7 +51,6 @@ export default function Competition({ comp, matchChoice, teamChoice }) {
                                 onClick={() => teamChoice(team.id, fixtureList)}
                             >
                                 <img className="competition-header-team-logo" src={`${process.env.PUBLIC_URL}/images/teams/${team.name}.png`} alt={team.name}/>
-                                <div>{team.name.toUpperCase()}</div>
                             </Link>
                         )
                     })}

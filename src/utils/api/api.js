@@ -77,6 +77,10 @@ export const competitions = () => {
     });
 }
 
+
+// differentiate between home.jsx and competition.jsx, so in home you would get only 10 - 20 fixtures per competition
+// and in competition you would get it all
+
 export const Fixtures = (comp_id) => {
     fetch(`${address}fixtures/${comp_id}/2021`, {
         "method": "GET",

@@ -5,6 +5,9 @@ import { competitions, fixtures } from "../utils/api/mockData"
 import Competitions from '../components/competitions';
 
     //add the logo you will make in the tab above 
+    // add a header
+    // change fonts from header to rest of page
+    // add live score fixtures based on || result.status === "First Half" || result.status === "Half Time" || result.status === "Second Half"
 
 export default function Home({ matchChoice, compChoice}) {
 
@@ -17,18 +20,18 @@ export default function Home({ matchChoice, compChoice}) {
                 if (new Date(result.date).getTime() > new Date().getTime() || result.status === "First Half" || result.status === "Half Time" || result.status === "Second Half") {
                     setFixtureList(fixtureList => [...fixtureList, result])
                 }   
-                else if (new Date(result.date).getTime()<new Date().getTime()) {
+                else if (new Date(result.date).getTime() < new Date().getTime()) {
                     setResults(results => [result, ...results])
                 }
             })
-            setFixtureList(fixtureList => fixtureList.sort((a, b) =>  a.date - b.date ))
-            setResults(results => results.sort((a, b) =>  a.date - b.date ))
-        });
+        })
+        setFixtureList(fixtureList => fixtureList.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()))
+        setResults(results => results.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()))
         return () => {
             setFixtureList([])
             setResults([])
         }
-    }, [])
+    }, [fixtureList, results])
 
     return (
         <div className="home">

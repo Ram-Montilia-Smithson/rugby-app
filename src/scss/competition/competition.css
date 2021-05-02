@@ -3,8 +3,8 @@
   display: grid;
   width: 100%;
       grid-template-areas: "header header" "table fixtures";
-  -ms-grid-rows: 350px 1fr;
-      grid-template-rows: 350px 1fr;
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   text-align: center;
@@ -19,6 +19,9 @@
   background-color: #F4D35E;
   border: #000000 solid 5px;
   padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .competition-header-info {
@@ -39,23 +42,29 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  margin-top: 10px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
 }
 
 .competition-header-team-link {
   background-color: #ffffff;
-  color: #004AAD;
   border-radius: 5px;
   border: #000000 solid 2px;
-  font-weight: bold;
+  margin: 0px 5px;
 }
 
 .competition-header-team-link:hover {
   background-color: #F4D35E;
   border: #F4D35E solid 2px;
   font-weight: bold;
+  margin: 0px 5px;
 }
 
 .competition-header-team-logo {

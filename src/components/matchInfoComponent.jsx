@@ -5,7 +5,12 @@ import { match } from "../utils/api/mockData";
 
 // consider layout and info in the component
 
-export default function MatchInfoComponent({ id, status, matchChoice, showMoreInfo}) {
+export default function MatchInfoComponent({
+    // id,
+    fixture,
+    // status
+     matchChoice, showMoreInfo
+}) {
 
     const [isShowMore, setIsShowMore] = useState(false)
 
@@ -19,20 +24,15 @@ export default function MatchInfoComponent({ id, status, matchChoice, showMoreIn
     const [awayPenalties, setAwayPenalties] = useState(0)
     const [homeDropGoals, setHomeDropGoals] = useState(0)
     const [awayDropGoals, setAwayDropGoals] = useState(0)
-    const [homePossesion, setHomePossesion] = useState(0)
-    const [awayPossesion, setAwayPossesion] = useState(0)
+    const [homePossession, setHomePossession] = useState(0)
+    const [awayPossession, setAwayPossession] = useState(0)
 
     useEffect(() => {
-        if (showMoreInfo.includes(id)) {
-            setIsShowMore(true)
-        }
-        if (!showMoreInfo.includes(id)) {
-            setIsShowMore(false)
-        }
-        // console.log(match(id).results);
-        const data = match(id)
-        setHomeTeam(data.results.match.home_team)
-        setAwayTeam(data.results.match.away_team)
+        if (showMoreInfo.includes(fixture.id)) {setIsShowMore(true)}
+        if (!showMoreInfo.includes(fixture.id)) {setIsShowMore(false)}
+        const data = match(fixture.id)
+        setHomeTeam(fixture.home)
+        setAwayTeam(fixture.away)
         setHomeTries(data.results.match.home_tries)
         awayTries.current = data.results.match.away_tries
         setHomeConversions(data.results.match.home_conversions)
@@ -41,19 +41,18 @@ export default function MatchInfoComponent({ id, status, matchChoice, showMoreIn
         setAwayPenalties(data.results.match.away_penalties)
         setHomeDropGoals(data.results.match.home_drop_goals)
         setAwayDropGoals(data.results.match.away_drop_goals)
-        setHomePossesion(data.results.home.team_stats.possession[0].value)
-        setAwayPossesion(data.results.away.team_stats.possession[0].value)
-    }, [id, showMoreInfo])
+        setHomePossession(data.results.home.team_stats.possession[0].value)
+        setAwayPossession(data.results.away.team_stats.possession[0].value)
+    }, [fixture, showMoreInfo])
 
     return (
         <>
             {isShowMore &&
                 <div className="fixture-moreInfo">
-                <div className="fixture-status">{status.toUpperCase()}</div>
                     <div className="progress-bar">
                         <div>POSSESSION</div>
-                        <div className="progress-home" style={{width: `${homePossesion*100}%`}}>{homePossesion*100}%</div>
-                        <div className="progress-away" style={{width: `${awayPossesion*100}%`, display: "inline-block"}}>{awayPossesion*100}%</div>
+                        <div className="progress-home" style={{width: `${homePossession*100}%`}}>{homePossession*100}%</div>
+                        <div className="progress-away" style={{width: `${awayPossession*100}%`, display: "inline-block"}}>{awayPossession*100}%</div>
                     </div>
 
                     <div className="fixture-stats">
@@ -77,7 +76,7 @@ export default function MatchInfoComponent({ id, status, matchChoice, showMoreIn
                         <span>{awayDropGoals}</span>
                     </div>
                     <Link
-                    onClick={() => matchChoice(id)}
+                    onClick={() => matchChoice(fixture.id)}
                         className="fixture-link"
                         to={`/matchInfo?${homeTeam}v${awayTeam}`}
                     >

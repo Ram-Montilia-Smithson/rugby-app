@@ -45,7 +45,7 @@ export default function Fixtures({ fixtureList, matchChoice, numberOfFixtures })
     const moreInfo = (id) => {
         if (!showMoreInfo.includes(id)) {setShowMoreInfo([...showMoreInfo,id])}
         if (showMoreInfo.includes(id)) { setShowMoreInfo(showMoreInfo.filter(id2 => id2 !== id)) }
-        console.log(process.env)
+        // console.log(process.env)
     }
 
     return (
@@ -57,8 +57,18 @@ export default function Fixtures({ fixtureList, matchChoice, numberOfFixtures })
                             <div key={fixture.id} className="fixture-container">
                                 <div className="fixture-head">
                                     <span className="fixture-game_week">ROUND {fixture.game_week}</span>
-                                    <span className="fixture_date">{getDay(fixture.date)}</span>
-                                    <span className="fixture-time">{getTime(fixture.date)}</span>
+                                    {
+                                        new Date(fixture.date).getTime() > new Date().getTime() ?
+                                            <>
+                                                <span className="fixture_date"></span>
+                                                <span className="fixture-time"></span>
+                                            </>
+                                        :
+                                            <>
+                                                <span className="fixture_date">{getDay(fixture.date)}</span>
+                                                <span className="fixture-time">{getTime(fixture.date)}</span>
+                                            </>
+                                    }
                                     <span className="fixture_venue">{fixture.venue}</span>
                                     <div>
                                         <button 
@@ -71,32 +81,45 @@ export default function Fixtures({ fixtureList, matchChoice, numberOfFixtures })
                                 </div>
                                 <div className="fixture-bottom">
                                     <span className="fixture_home">{fixture.home}</span>
-                                        {fixture.home_score > fixture.away_score &&
+                                    {
+                                        new Date(fixture.date).getTime() < new Date().getTime() ?
+                                        <>
+                                            {fixture.home_score > fixture.away_score &&
+                                                <span className="fixture-scores">
+                                                    <span style={{ backgroundColor: "#202020", color: "white" }}>{fixture.home_score}</span>
+                                                    <span>-</span>
+                                                    <span style={{ backgroundColor: "#414141", color: "#808080" }}>{fixture.away_score}</span>
+                                                </span>
+                                            }
+                                            {fixture.home_score < fixture.away_score &&
+                                                <span className="fixture-scores">
+                                                    <span className="fixture-score-home" style={{ backgroundColor: "#414141", color: "#808080" }}>{fixture.home_score}</span>
+                                                    <span className="fixture-score-separator">-</span>
+                                                    <span className="fixture-score-away" style={{ backgroundColor: "#202020", color: "white" }}>{fixture.away_score}</span>
+                                                </span>
+                                            }
+                                            {fixture.home_score === fixture.away_score &&
+                                                <span className="fixture-scores">
+                                                    <span className="fixture-score-home" style={{ backgroundColor: "#808080", color: "black" }}>{fixture.home_score}</span>
+                                                    <span>-</span>
+                                                    <span className="fixture-score-away" style={{ backgroundColor: "#808080", color: "black" }}>{fixture.away_score}</span>
+                                                </span>
+                                            }
+                                            </>
+                                            :
                                             <span className="fixture-scores">
-                                                <span style={{ backgroundColor: "#202020", color: "white" }}>{fixture.home_score}</span>
-                                                <span>-</span>
-                                                <span style={{ backgroundColor: "#414141", color: "#808080"}}>{fixture.away_score}</span>
-                                            </span>  
-                                        }
-                                        {fixture.home_score < fixture.away_score &&
-                                            <span className="fixture-scores">
-                                                <span className="fixture-score-home" style={{ backgroundColor: "#414141", color: "#808080" }}>{fixture.home_score}</span>
-                                                <span className="fixture-score-separator">-</span>
-                                                <span className="fixture-score-away" style={{ backgroundColor: "#202020", color: "white" }}>{fixture.away_score}</span>
+                                                <span className="fixture-score-home">{getDay(fixture.date)}</span>
+                                                <span> </span>
+                                                <span className="fixture-score-away">{getTime(fixture.date)}</span>
                                             </span>
-                                        }
-                                        {fixture.home_score === fixture.away_score &&
-                                            <span className="fixture-scores">
-                                                <span className="fixture-score-home" style={{ backgroundColor: "#808080", color: "black" }}>{fixture.home_score}</span>
-                                                <span>-</span>
-                                                <span className="fixture-score-away" style={{ backgroundColor: "#808080", color: "black"}}>{fixture.away_score}</span>
-                                            </span>
-                                        }
+                                    }
+                                        
                                     <span className="fixture_away">{fixture.away}</span>
                                 </div>
                                 <MatchInfoComponent
-                                    id={fixture.id}
-                                    status={fixture.status}
+                                    // id={fixture.id}
+                                    fixture={fixture}
+                                    // status={fixture.status}
                                     matchChoice={matchChoice}
                                     showMoreInfo={showMoreInfo}
                                 />
