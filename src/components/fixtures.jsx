@@ -6,7 +6,7 @@ import "../scss/fixtures/fixtures.css"
 
 export default function Fixtures({ fixtureList, matchChoice, numberOfFixtures }) {
     
-
+    if (numberOfFixtures > 10) {numberOfFixtures = 10}
     const LIMIT = numberOfFixtures;
     const [fixtures, setFixtures] = useState([])
     const [isShowMoreFixtures,setIsShowMoreFixtures] = useState(true);
@@ -126,7 +126,7 @@ export default function Fixtures({ fixtureList, matchChoice, numberOfFixtures })
                             </div>
                         )
                     })}
-                {numberOfFixtures === 14 ? 
+                {numberOfFixtures !== 6 ? 
                     <></>
                     :
                     isShowMoreFixtures && <button onClick={() => loadFixtures()}>MORE FIXTURES</button>
