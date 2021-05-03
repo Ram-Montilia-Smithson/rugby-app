@@ -1,7 +1,7 @@
 .pitch {
   width: 550px;
   height: 850px;
-  margin: 50px auto;
+  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -19,40 +19,49 @@
 .horizontal-lines {
   width: 530px;
   height: 830px;
-  border: 3px solid #ffffff;
+  border: solid 3px white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   z-index: 1;
 }
 
 .in-goal-area-up {
   height: 10%;
-  border-bottom: 3px solid #ffffff;
+  border-bottom: solid 3px white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
 }
 
 .posts-up {
   margin-top: -2%;
   height: 115%;
   width: 50px;
-  border-right: solid #fdff76 5px;
-  border-left: solid #fdff76 5px;
+  border-right: solid #F4D35E 5px;
+  border-left: solid #F4D35E 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: unset;
+      -ms-flex-pack: unset;
+          justify-content: unset;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -60,86 +69,162 @@
 
 .crossbar {
   width: 100%;
-  border-top: solid 5px #fdff76;
+  border-top: solid #F4D35E 5px;
 }
 
 .five-yard-up {
   height: 5%;
-  border-bottom: 3px dashed #ffffff;
+  border-bottom: 3px dashed white;
 }
 
 .tt-up {
   height: 15%;
-  border-bottom: 3px solid #ffffff;
+  border-bottom: solid 3px white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.tt-up span {
-  height: 50px;
-  width: 50px;
-  margin: 10px;
-  border-radius: 50px;
-  text-align: center;
-  background-color: red;
+  -webkit-box-pack: unset;
+      -ms-flex-pack: unset;
+          justify-content: unset;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 .zone-b {
   height: 15%;
-  border-bottom: 3px dashed #ffffff;
+  border-bottom: 3px dashed white;
 }
 
-.ten-up {
+.zone-b div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: unset;
+      -ms-flex-pack: unset;
+          justify-content: unset;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
+}
+
+.second-row {
+  padding-left: 9%;
+}
+
+.player {
+  height: 50px;
+  width: 50px;
+  margin: 0px 20px;
+  border-radius: 50px;
+  text-align: center;
+  background-color: #539A46;
+  border: solid 3px white;
+  font-weight: bold;
+  font-size: large;
+}
+
+.ten-up,
+.ten-down {
   height: 10%;
-  border-bottom: white 3px solid;
+  border-bottom: solid 3px white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 25%;
 }
 
 .ten-down {
-  height: 10%;
+  border: none;
 }
 
 .zone-c {
   height: 15%;
-  border-top: 3px dashed #ffffff;
+  border-top: 3px dashed white;
 }
 
-.tt-down {
-  height: 15%;
-  border-top: 3px solid #ffffff;
-}
-
-.five-yard-down {
-  height: 5%;
-  border-top: 3px dashed #ffffff;
-}
-
-.in-goal-area-down {
-  height: 10%;
-  border-top: 3px solid #ffffff;
+.centers {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
+  padding-left: 10%;
+}
+
+.outside-center {
+  margin-top: 10%;
+}
+
+.tt-down {
+  height: 15%;
+  border-top: solid 3px white;
+}
+
+.wings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
+}
+
+.fullback {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
+}
+
+.five-yard-down {
+  height: 5%;
+  border-top: 3px dashed white;
+}
+
+.in-goal-area-down {
+  height: 10%;
+  border-top: solid 3px white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
 }
 
 .posts-down {
   margin-top: -0.1%;
   height: 115%;
   width: 50px;
-  border-right: solid #fdff76 5px;
-  border-left: solid #fdff76 5px;
+  border-right: solid #F4D35E 5px;
+  border-left: solid #F4D35E 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: unset;
+      -ms-flex-pack: unset;
+          justify-content: unset;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -147,12 +232,18 @@
 
 .vertical-lines {
   z-index: 0;
-  height: 660px;
+  height: 680px;
   width: 550px;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: unset;
+      -ms-flex-pack: unset;
+          justify-content: unset;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -160,26 +251,41 @@
 }
 
 .five-left {
-  width: 7.5%;
-  border-right: #ffffff dashed 3px;
+  width: 8%;
+  border-right: 3px dashed white;
 }
 
 .fifteen-left {
-  width: 15%;
-  border-right: #ffffff dashed 3px;
+  width: 16%;
+  border-right: 3px dashed white;
 }
 
 .mid-pitch {
   width: 55%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mid-pitch div {
+  height: 10px;
+  width: 2px;
+  background-color: white;
 }
 
 .fifteen-right {
-  width: 15%;
-  border-left: #ffffff dashed 3px;
+  width: 16%;
+  border-left: 3px dashed white;
 }
 
 .five-right {
-  width: 7.5%;
-  border-left: #ffffff dashed 3px;
+  width: 8%;
+  border-left: 3px dashed white;
 }
 /*# sourceMappingURL=pitch.css.map */

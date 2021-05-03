@@ -1,10 +1,11 @@
+@import "../variables";
+@import "../_mixin";
+
 .pitch{
     width: 550px;
     height: 850px;
-    margin: 50px auto;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    margin: auto;
+    @include container(center, center);
     position: relative;
     background-color:#539A46;
     z-index: -1;
@@ -13,137 +14,156 @@
 .horizontal-lines {
     width: 530px;
     height: 830px;
-    border: 3px solid #ffffff;
-    display:flex;
+    border: $horizontal;
+    @include container (center, unset);
     flex-direction: column;
-    justify-content: center;
     z-index: 1;
 }
 
 .in-goal-area-up{
     height: 10%;
-    border-bottom: 3px solid #ffffff;
-    display: flex;
-    justify-content: center;
+    border-bottom: $horizontal;
+    @include container (center, unset);
 }
 
 .posts-up{
     margin-top: -2%;
     height: 115%;
     width: 50px;
-    border-right: solid #fdff76 5px;
-    border-left: solid #fdff76 5px;
-    display: flex;
-    align-items: center;
+    border-right: $posts;
+    border-left: $posts;
+    @include container(unset, center);
 }
 
 .crossbar{
     width: 100%;
-    border-top: solid 5px #fdff76;
+    border-top: $posts;
 }
 
 .five-yard-up{
     height: 5%;
-    border-bottom: 3px dashed #ffffff;
+    border-bottom: $vertical;
 }
 
 .tt-up{
     height: 15%;
-    border-bottom: 3px solid #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border-bottom: $horizontal;
+    @include container(unset, flex-end);
 }
-
-.tt-up span{
-    height: 50px;
-    width: 50px;
-    margin: 10px;
-    border-radius: 50px;
-    text-align: center;
-    background-color: red;
-}
-// .front-row{
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// }
 
 .zone-b{
     height: 15%;
-    border-bottom: 3px dashed #ffffff;
+    border-bottom: $vertical;
 }
 
-.ten-up{
+.zone-b div{
+    @include container(unset, unset);
+}
+
+.second-row{
+    padding-left: 9%;
+}
+
+.player{
+    @include player;
+}
+
+.ten-up,
+.ten-down {
     height: 10%;
-    border-bottom: white 3px solid;
+    border-bottom: $horizontal;
+    @include container(space-around, center);
+    padding-right: 25%;
 }
 
 .ten-down{
-    height: 10%;
+    border: none;
 }
 
 .zone-c{
     height: 15%;
-    border-top: 3px dashed #ffffff;
+    border-top: $vertical;
+}
+
+.centers {
+    @include container(center, unset);
+    padding-left: 10%;
+}
+
+.outside-center {
+    margin-top: 10%;
 }
 
 .tt-down{
     height: 15%;
-    border-top: 3px solid #ffffff;
+    border-top: $horizontal;
+}
+
+.wings{
+    @include container(space-between, unset);
+}
+
+.fullback{
+    @include container(center, unset);
 }
 
 .five-yard-down {
     height: 5%;
-    border-top: 3px dashed #ffffff;
+    border-top: $vertical;
 }
 
 .in-goal-area-down{
     height: 10%;
-    border-top: 3px solid #ffffff;
-    display: flex;
-    justify-content: center;
+    border-top: $horizontal;
+    @include container(center, unset);
 }
 
 .posts-down {
     margin-top: -0.1%;
     height: 115%;
     width: 50px;
-    border-right: solid #fdff76 5px;
-    border-left: solid #fdff76 5px;
-    display: flex;
-    align-items: center;
+    border-right: $posts;
+    border-left: $posts;
+    @include container(unset, center);
 }
 
 .vertical-lines{
     z-index: 0;
-    height: 660px;
+    height: 680px;
     width: 550px;
     position: absolute;
-    display: flex;
+    @include container(unset, unset);
     flex-direction: row;
 }
 
 .five-left{
-    width: 7.5%;
-    border-right: #ffffff dashed 3px;
+    width: 8%;
+    border-right: $vertical;
 }
 
 .fifteen-left{
-    width: 15%;
-    border-right: #ffffff dashed 3px;
+    width: 16%;
+    border-right: $vertical;
 }
 
 .mid-pitch{
     width: 55%;
+    @include container(center, center);
+}
+
+.mid-pitch div {
+    height: 10px;
+    width: 2px;
+    background-color: $color1;
+    
 }
 
 .fifteen-right {
-    width: 15%;
-    border-left: #ffffff dashed 3px;
+    width: 16%;
+    border-left: $vertical;
 }
 
 .five-right {
-    width: 7.5%;
-    border-left: #ffffff dashed 3px;
+    width: 8%;
+    border-left: $vertical;
 }

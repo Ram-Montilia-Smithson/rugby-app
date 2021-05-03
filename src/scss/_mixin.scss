@@ -21,4 +21,24 @@
     margin-top: -30px;
 }
 
+@mixin container($justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin player {
+    height: 50px;
+    width: 50px;
+    margin: 0px 20px;
+    border-radius: 50px;
+    text-align: center;
+    background-color: #539A46;
+    border: $horizontal;
+    font-weight: bold;
+    font-size: large;
+}
+
+
+
 
