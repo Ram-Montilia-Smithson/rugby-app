@@ -3,6 +3,7 @@ import "../scss/pitch/pitch.css"
 
 // show the teams line up as circles on a pitch, arrange them based on their position
 // include the subs as well somehow
+// show both pitches side by side
 
 export default function Pitch({ team }) {
     

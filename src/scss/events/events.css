@@ -1,0 +1,31 @@
+.events {
+  background-color: green;
+  font-family: 'Hind', sans-serif;
+  font-size: 20px;
+}
+
+.event-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.away-team {
+  width: 200px;
+  background-color: yellow;
+  margin-left: 200px;
+}
+
+.home-team {
+  width: 200px;
+  background-color: yellow;
+  margin-right: 200px;
+}
+/*# sourceMappingURL=events.css.map */

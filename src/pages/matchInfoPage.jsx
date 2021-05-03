@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import { defaults, Bar, Line } from 'react-chartjs-2/dist/index'
 import { match } from "../utils/api/mockData"
-import Pitch from "../components/pitch"
 import InfoPageHeader from "../components/infoPageHeader"
 import MatchInfoComponent from '../components/matchInfoComponent';
-
+import InfoPageNav from '../components/infoPageNav';
 
 // show all relevant info about the match, there is so much of it
 // be creative as you go over the info and think how should you show it.
@@ -12,7 +11,7 @@ import MatchInfoComponent from '../components/matchInfoComponent';
 // copy from ultimate rugby
 // and from other sport websites
 
-export default function MatchInfoPage({ id, matchChoice }) {
+export default function MatchInfoPage({ id }) {
     
     const [homeAttack, setHomeAttack] = useState([])
     const [awayAttack, setAwayAttack] = useState([])
@@ -34,6 +33,8 @@ export default function MatchInfoPage({ id, matchChoice }) {
     const [referees, setReferees] = useState([])
     const [homeTeam, setHomeTeam] = useState([])
     const [awayTeam, setAwayTeam] = useState([])
+    const [headerInfo, setHeaderInfo] = useState({})
+    // const [awayName, setAwayName] = useState("")
 
     useEffect(() => {
         console.log(id);
@@ -56,28 +57,22 @@ export default function MatchInfoPage({ id, matchChoice }) {
         setHomeScrum(data.home.team_stats.scrums)
         setAwayScrum(data.away.team_stats.scrums)
         setEvents(data.events)
+        setEvents(events => events.sort((a, b) => a.time - b.time))
         setReferees(data.referees)
         setHomeTeam(data.home.teamsheet)
         setAwayTeam(data.away.teamsheet)
+        setHeaderInfo(data.match)
     }, [id])
 
+    // console.log();
 
     return (
         <div>
-            <div>
-                <h1>header</h1>
-                <InfoPageHeader events={events}/>
-            </div>
-            <div>
-                <MatchInfoComponent
-                    id={id}
-                    showMoreInfo={[id]}
-                    link={false}
-                />
-            </div>
-            <div>
-                <h2>line up</h2>
-                <Pitch team={homeTeam} />
+            <InfoPageHeader info={headerInfo} />
+            <InfoPageNav id={id} homeTeam={homeTeam} awayTeam={awayTeam} events={events}/>
+            {/* <div>
+                <h2>line up</h2> */}
+                {/* {homeTeam.length && <Pitch team={homeTeam} />}
                 <div>
                     <h3>referees</h3>
                     {referees.map(referee => {
@@ -90,7 +85,7 @@ export default function MatchInfoPage({ id, matchChoice }) {
                         )
                     })}
                 </div>
-                <Pitch team={awayTeam} />
+                {awayTeam.length && <Pitch team={awayTeam} />}
             </div>
             <div>
                 <h2>attack</h2>
@@ -243,7 +238,7 @@ export default function MatchInfoPage({ id, matchChoice }) {
                         </div>
                     )
                 })}
-            </div>
+            </div> */}
 
 
             {/* <div style={{width: "400px", heigth: "400px", marginLeft: "200px"}}>

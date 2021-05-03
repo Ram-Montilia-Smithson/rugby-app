@@ -4,11 +4,9 @@
 .pitch{
     width: 550px;
     height: 850px;
-    margin: auto;
     @include container(center, center);
-    position: relative;
     background-color:#539A46;
-    z-index: -1;
+    margin: 10px;
 }
 
 .horizontal-lines {
@@ -128,7 +126,6 @@
 }
 
 .vertical-lines{
-    z-index: 0;
     height: 680px;
     width: 550px;
     position: absolute;

@@ -5,6 +5,7 @@ import { match } from "../utils/api/mockData";
 
 // consider layout and info in the component
 // maybe drop the possession
+// decide weather useref or use state
 
 export default function MatchInfoComponent({id, matchChoice, showMoreInfo, link}) {
 
