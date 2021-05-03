@@ -1,0 +1,149 @@
+.pitch{
+    width: 550px;
+    height: 850px;
+    margin: 50px auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position: relative;
+    background-color:#539A46;
+    z-index: -1;
+}
+
+.horizontal-lines {
+    width: 530px;
+    height: 830px;
+    border: 3px solid #ffffff;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+}
+
+.in-goal-area-up{
+    height: 10%;
+    border-bottom: 3px solid #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.posts-up{
+    margin-top: -2%;
+    height: 115%;
+    width: 50px;
+    border-right: solid #fdff76 5px;
+    border-left: solid #fdff76 5px;
+    display: flex;
+    align-items: center;
+}
+
+.crossbar{
+    width: 100%;
+    border-top: solid 5px #fdff76;
+}
+
+.five-yard-up{
+    height: 5%;
+    border-bottom: 3px dashed #ffffff;
+}
+
+.tt-up{
+    height: 15%;
+    border-bottom: 3px solid #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tt-up span{
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    border-radius: 50px;
+    text-align: center;
+    background-color: red;
+}
+// .front-row{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+.zone-b{
+    height: 15%;
+    border-bottom: 3px dashed #ffffff;
+}
+
+.ten-up{
+    height: 10%;
+    border-bottom: white 3px solid;
+}
+
+.ten-down{
+    height: 10%;
+}
+
+.zone-c{
+    height: 15%;
+    border-top: 3px dashed #ffffff;
+}
+
+.tt-down{
+    height: 15%;
+    border-top: 3px solid #ffffff;
+}
+
+.five-yard-down {
+    height: 5%;
+    border-top: 3px dashed #ffffff;
+}
+
+.in-goal-area-down{
+    height: 10%;
+    border-top: 3px solid #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.posts-down {
+    margin-top: -0.1%;
+    height: 115%;
+    width: 50px;
+    border-right: solid #fdff76 5px;
+    border-left: solid #fdff76 5px;
+    display: flex;
+    align-items: center;
+}
+
+.vertical-lines{
+    z-index: 0;
+    height: 660px;
+    width: 550px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+}
+
+.five-left{
+    width: 7.5%;
+    border-right: #ffffff dashed 3px;
+}
+
+.fifteen-left{
+    width: 15%;
+    border-right: #ffffff dashed 3px;
+}
+
+.mid-pitch{
+    width: 55%;
+}
+
+.fifteen-right {
+    width: 15%;
+    border-left: #ffffff dashed 3px;
+}
+
+.five-right {
+    width: 7.5%;
+    border-left: #ffffff dashed 3px;
+}
