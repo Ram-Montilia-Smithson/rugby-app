@@ -1,3 +1,19 @@
+.line-up {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
 .pitch {
   width: 550px;
   height: 850px;
@@ -10,13 +26,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #539A46;
+  background-color: green;
   margin: 10px;
 }
 
 .horizontal-lines {
-  width: 530px;
-  height: 830px;
+  width: 97%;
+  height: 98%;
   border: solid 3px white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -34,7 +50,25 @@
   z-index: 1;
 }
 
-.in-goal-area-up {
+.horizontal-lines .crossbar {
+  width: 100%;
+  border-top: solid #F4D35E 5px;
+}
+
+.horizontal-lines .player {
+  height: 70px;
+  width: 70px;
+  margin: 0px 20px;
+  border-radius: 50px;
+  text-align: center;
+  background-color: green;
+  border: solid white 2px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
+  font-size: 21px;
+}
+
+.horizontal-lines .in-goal-area-up {
   height: 10%;
   border-bottom: solid 3px white;
   display: -webkit-box;
@@ -48,10 +82,10 @@
           align-items: unset;
 }
 
-.posts-up {
+.horizontal-lines .in-goal-area-up .posts-up {
   margin-top: -2%;
   height: 115%;
-  width: 50px;
+  width: 10%;
   border-right: solid #F4D35E 5px;
   border-left: solid #F4D35E 5px;
   display: -webkit-box;
@@ -65,65 +99,56 @@
           align-items: center;
 }
 
-.crossbar {
-  width: 100%;
-  border-top: solid #F4D35E 5px;
-}
-
-.five-yard-up {
+.horizontal-lines .five-yard-up {
   height: 5%;
   border-bottom: 3px dashed white;
 }
 
-.tt-up {
-  height: 15%;
-  border-bottom: solid 3px white;
+.horizontal-lines .tt-up {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: unset;
       -ms-flex-pack: unset;
           justify-content: unset;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 15%;
+  border-bottom: solid 3px white;
 }
 
-.zone-b {
-  height: 15%;
+.horizontal-lines .tt-up .prop {
+  -ms-flex-item-align: baseline;
+      align-self: baseline;
+}
+
+.horizontal-lines .second-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 7.5%;
+  margin-left: 10%;
+}
+
+.horizontal-lines .second-row .lock {
+  margin-top: -10%;
+}
+
+.horizontal-lines .back-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 7.5%;
   border-bottom: 3px dashed white;
 }
 
-.zone-b div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: unset;
-      -ms-flex-pack: unset;
-          justify-content: unset;
-  -webkit-box-align: unset;
-      -ms-flex-align: unset;
-          align-items: unset;
+.horizontal-lines .back-row .loose {
+  margin-top: -7%;
 }
 
-.second-row {
-  padding-left: 9%;
-}
-
-.player {
-  height: 50px;
-  width: 50px;
-  margin: 0px 20px;
-  border-radius: 50px;
-  text-align: center;
-  background-color: #539A46;
-  border: solid 3px white;
-  font-weight: bold;
-  font-size: large;
-}
-
-.ten-up,
-.ten-down {
+.horizontal-lines .ten-up,
+.horizontal-lines .ten-down {
   height: 10%;
   border-bottom: solid 3px white;
   display: -webkit-box;
@@ -137,16 +162,13 @@
   padding-right: 25%;
 }
 
-.ten-down {
+.horizontal-lines .ten-down {
   border: none;
 }
 
-.zone-c {
+.horizontal-lines .zone-c {
   height: 15%;
   border-top: 3px dashed white;
-}
-
-.centers {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -156,19 +178,17 @@
   -webkit-box-align: unset;
       -ms-flex-align: unset;
           align-items: unset;
-  padding-left: 10%;
+  padding-left: 20%;
 }
 
-.outside-center {
-  margin-top: 10%;
+.horizontal-lines .zone-c .outside-center {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
-.tt-down {
+.horizontal-lines .tt-down {
   height: 15%;
   border-top: solid 3px white;
-}
-
-.wings {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -180,24 +200,17 @@
           align-items: unset;
 }
 
-.fullback {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: unset;
-      -ms-flex-align: unset;
-          align-items: unset;
+.horizontal-lines .tt-down .fullback {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
-.five-yard-down {
+.horizontal-lines .five-yard-down {
   height: 5%;
   border-top: 3px dashed white;
 }
 
-.in-goal-area-down {
+.horizontal-lines .in-goal-area-down {
   height: 10%;
   border-top: solid 3px white;
   display: -webkit-box;
@@ -211,10 +224,10 @@
           align-items: unset;
 }
 
-.posts-down {
+.horizontal-lines .in-goal-area-down .posts-down {
   margin-top: -0.1%;
   height: 115%;
-  width: 50px;
+  width: 10%;
   border-right: solid #F4D35E 5px;
   border-left: solid #F4D35E 5px;
   display: -webkit-box;
@@ -247,17 +260,17 @@
           flex-direction: row;
 }
 
-.five-left {
+.vertical-lines .five-left {
   width: 8%;
   border-right: 3px dashed white;
 }
 
-.fifteen-left {
+.vertical-lines .fifteen-left {
   width: 16%;
   border-right: 3px dashed white;
 }
 
-.mid-pitch {
+.vertical-lines .mid-pitch {
   width: 55%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -270,19 +283,19 @@
           align-items: center;
 }
 
-.mid-pitch div {
+.vertical-lines .mid-pitch div {
   height: 10px;
   width: 2px;
   background-color: white;
 }
 
-.fifteen-right {
+.vertical-lines .fifteen-right {
   width: 16%;
   border-left: 3px dashed white;
 }
 
-.five-right {
+.vertical-lines .five-right {
   width: 8%;
   border-left: 3px dashed white;
 }
-/*# sourceMappingURL=pitch.css.map */
+/*# sourceMappingURL=lineUp.css.map */

@@ -1,9 +1,7 @@
 import React from 'react'
-import "../scss/pitch/pitch.css"
+import "../scss/lineUp/lineUp.css"
 
-// show the teams line up as circles on a pitch, arrange them based on their position
-// include the subs as well somehow
-// show both pitches side by side
+
 
 export default function Pitch({ team }) {
     
@@ -19,20 +17,18 @@ export default function Pitch({ team }) {
                 </div>
                 <div className="five-yard-up"></div>
                 <div className="tt-up">
-                    <span className="player">{team[7].name}</span>
-                    <span className="player">{team[8].name}</span>
-                    <span className="player">{team[9].name}</span>
+                    <span className="prop player">{team[7].name}</span>
+                    <span className="prop player">{team[8].name}</span>
+                    <span className="prop player">{team[9].name}</span>
                 </div>
-                <div className="zone-b">
-                    <div className="second-row">
-                        <span className="player">{team[10].name}</span>
-                        <span className="player">{team[11].name}</span>
-                    </div>
-                    <div className="back row">
-                        <span className="player">{team[12].name}</span>
-                        <span className="player">{team[14].name}</span>
-                        <span className="player">{team[13].name}</span>
-                    </div>
+                <div className="second-row">
+                    <span className="lock player">{team[10].name}</span>
+                    <span className="lock player">{team[11].name}</span>
+                </div>
+                <div className="back-row">
+                    <span className="loose player">{team[12].name}</span>
+                    <span className="loose player">{team[14].name}</span>
+                    <span className="loose player">{team[13].name}</span>
                 </div>
                 <div className="ten-up">
                     <span className="player">{team[6].name}</span>
@@ -42,19 +38,13 @@ export default function Pitch({ team }) {
                     <span className="player">{team[5].name}</span>
                 </div>
                 <div className="zone-c">
-                    <div className="centers">
-                        <span className="player">{team[3].name}</span>
-                        <span className="outside-center player">{team[2].name}</span>
-                    </div>
+                    <span className="player">{team[3].name}</span>
+                    <span className="outside-center player">{team[2].name}</span>
                 </div>
                 <div className="tt-down">
-                    <div className="wings">
-                        <span className="player">{team[4].name}</span>
-                        <span className="player">{team[1].name}</span>
-                    </div>
-                    <div className="fullback">
-                        <span className="player">{team[0].name}</span>
-                    </div>
+                    <span className="player">{team[4].name}</span>
+                    <span className="fullback player">{team[0].name}</span>
+                    <span className="player">{team[1].name}</span>
                 </div>
                 <div className="five-yard-down"></div>
                 <div className="in-goal-area-down">

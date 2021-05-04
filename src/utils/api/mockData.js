@@ -1,5 +1,5 @@
 export const match = (matchID) => {
-    console.log(matchID)
+    // console.log(matchID)
     return ({
         "results": {
             "away": {
@@ -1017,7 +1017,7 @@ export const match = (matchID) => {
 }
 
 export const TeamsByCompetitionSeason = (comp_id) => {
-    console.log(comp_id)
+    // console.log(comp_id)
     return ({
         // "results": [
         //     {
@@ -1171,7 +1171,7 @@ export const TeamsByCompetitionSeason = (comp_id) => {
 }
 
 export const standings = (comp_id) => {
-    console.log("comp_id",comp_id)
+    // console.log("comp_id",comp_id)
     return ({
         // "results": {
         //     "comp_id": "1236",
@@ -1662,7 +1662,7 @@ export const standings = (comp_id) => {
 }
 
 export const FixturesByTeam = (team_id) => {
-    console.log(team_id)
+    // console.log(team_id)
     return ({
         "results": [
             {
@@ -1773,7 +1773,7 @@ export const FixturesByTeam = (team_id) => {
 
 
 export const competitions = () => {
-    console.log(process.env.REACT_APP_HEADERS)
+    // console.log(process.env.REACT_APP_HEADERS)
     return ({
         "results": [
             {
@@ -1943,7 +1943,7 @@ export const competitions = () => {
 }
 
 export const fixtures = (comp_id) => {
-    console.log(comp_id)
+    // console.log(comp_id)
     return ({
         "results": [
             {

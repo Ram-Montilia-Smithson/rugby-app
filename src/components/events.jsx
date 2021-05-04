@@ -54,7 +54,9 @@ export default function Events({ events }) {
                         </div>
                     )
                 }
+                else {return (<></>)}
             })}
+            
         </div>
     )
 }

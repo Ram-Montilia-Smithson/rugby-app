@@ -46,7 +46,7 @@ export default function Navbar() {
                 <Switch>
                     <Route path="/about"><About /></Route>
                     <Route path="/competition"><Competition comp={comp} matchChoice={matchChoice} teamChoice={teamChoice}/></Route>
-                    <Route path="/matchInfo"><MatchInfoPage id={match}/></Route>
+                    <Route path="/matchInfo/:match"><MatchInfoPage id={match}/></Route>
                     <Route path="/team"><Team team={team} comp={comp} matchChoice={matchChoice}/></Route>
                     <Route exact path="/"><Home matchChoice={matchChoice} compChoice={compChoice}/></Route>
                 </Switch>

@@ -76,7 +76,7 @@ export default function MatchInfoComponent({id, matchChoice, showMoreInfo, link}
                         <Link
                             onClick={() => matchChoice(id)}
                             className="fixture-link"
-                            to={`/matchInfo?${homeTeam}v${awayTeam}`}
+                            to={`/matchInfo/:${homeTeam}v${awayTeam}`}
                         >
                             COMPLETE MATCH INFO
                         </Link>

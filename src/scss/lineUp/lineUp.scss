@@ -1,0 +1,177 @@
+@import "../variables";
+@import "../_mixin";
+
+.line-up{
+    @include container(center, unset);
+    flex-direction: row;
+}
+
+.pitch{
+    width: 550px;
+    height: 850px;
+    @include container(center, center);
+    background-color:green;
+    margin: 10px;
+}
+
+.horizontal-lines {
+    width: 97%;
+    height: 98%;
+    border: $solid;
+    @include container (center, unset);
+    flex-direction: column;
+    z-index: 1;
+
+    .crossbar{
+        width: 100%;
+        border-top: $posts;
+    }
+
+    .player{
+        @include player;
+    }
+
+    .in-goal-area-up{
+        height: 10%;
+        border-bottom: $solid;
+        @include container (center, unset);
+ 
+        .posts-up{
+            margin-top: -2%;
+            height: 115%;
+            width: 10%;
+            border-right: $posts;
+            border-left: $posts;
+            @include container(unset, center);
+        }
+    }
+
+    .five-yard-up{
+        height: 5%;
+        border-bottom: $dashed;
+    }
+
+    .tt-up{
+        @include container(unset, center);
+        height: 15%;
+        border-bottom: $solid;
+
+        .prop {
+            align-self: baseline;
+        }
+    }
+
+    .second-row{
+        display: flex;
+        height: 7.5%;
+        margin-left: 10%;
+        
+        .lock{
+            margin-top: -10%;
+        }
+    }
+
+    .back-row{
+        display: flex;
+        height: 7.5%;
+        border-bottom: $dashed;
+
+        .loose{
+           margin-top: -7%;
+        }
+    }
+
+    .ten-up,
+    .ten-down {
+        height: 10%;
+        border-bottom: $solid;
+        @include container(space-around, center);
+        padding-right: 25%;
+    }
+
+    .ten-down{
+        border: none;
+    }
+    
+    .zone-c{
+        height: 15%;
+        border-top: $dashed;
+        @include container(center, unset);
+        padding-left: 20%;
+
+        .outside-center {
+            align-self: flex-end;
+        }
+    }
+        
+    .tt-down{
+        height: 15%;
+        border-top: $solid;
+        @include container(space-between, unset);
+   
+        .fullback{
+            align-self: flex-end;
+        }
+    }
+     
+    .five-yard-down {
+        height: 5%;
+        border-top: $dashed;
+    }
+    
+    .in-goal-area-down{
+        height: 10%;
+        border-top: $solid;
+        @include container(center, unset);
+        
+        .posts-down {
+            margin-top: -0.1%;
+            height: 115%;
+            width: 10%;
+            border-right: $posts;
+            border-left: $posts;
+            @include container(unset, center);
+        }
+    }
+}
+
+.vertical-lines {
+    height: 680px;
+    width: 550px;
+    position: absolute;
+    @include container(unset, unset);
+    flex-direction: row;
+    
+    .five-left{
+        width: 8%;
+        border-right: $dashed;
+    }
+    
+    .fifteen-left{
+        width: 16%;
+        border-right: $dashed;
+    }
+    
+    .mid-pitch{
+        width: 55%;
+        @include container(center, center);
+        
+        div {
+            height: 10px;
+            width: 2px;
+            background-color: $color1;
+            
+        }
+    }
+    
+    
+    .fifteen-right {
+        width: 16%;
+        border-left: $dashed;
+    }
+    
+    .five-right {
+        width: 8%;
+        border-left: $dashed;
+    }
+}
