@@ -1,7 +1,7 @@
 import React from 'react'
 import "../scss/lineUp/lineUp.css"
 
-
+// adjust css from % to px
 
 export default function Pitch({ team }) {
     

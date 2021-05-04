@@ -1,9 +1,28 @@
 @import "../variables";
 @import "../_mixin";
 
+// turn all % into px
+
 .line-up{
-    @include container(center, unset);
+    @include container(space-around, stretch);
     flex-direction: row;
+    background-color:#E0FBFC;
+    margin: 10px;
+    border: #6d6d6d 5px solid
+}
+
+.subs{
+    @include container(unset, center);
+    flex-direction: column;
+    width:fit-content ;
+    .sub{
+        @include player;
+        // border: solid 3px black ;
+    }
+}
+
+.referees{
+    text-decoration: underline;
 }
 
 .pitch{
