@@ -1,7 +1,9 @@
 .events {
-  background-color: green;
+  background-color: #F4D35E;
   font-family: 'Hind', sans-serif;
   font-size: 20px;
+  margin: 20px;
+  padding: 10px;
 }
 
 .event-container {
@@ -19,13 +21,17 @@
 
 .away-team {
   width: 200px;
-  background-color: yellow;
+  background-color: #9DB4C0;
   margin-left: 200px;
+  border-radius: 5px;
+  color: white;
 }
 
 .home-team {
   width: 200px;
-  background-color: yellow;
+  background-color: #9DB4C0;
   margin-right: 200px;
+  border-radius: 5px;
+  color: white;
 }
 /*# sourceMappingURL=events.css.map */
