@@ -28,16 +28,13 @@
 }
 
 @mixin player {
-    height: 70px;
-    width: 70px;
-    margin: 0px 20px;
-    border-radius: 50px;
+    width: fit-content;
+    margin: 10px;
     text-align: center;
-    background-color: green;
-    border: solid white 2px;
     font-family: Verdana, Geneva, Tahoma, sans-serif ;
     font-weight: 500 ;
     font-size: 21px ;
+    z-index: 2;
 }
 
 

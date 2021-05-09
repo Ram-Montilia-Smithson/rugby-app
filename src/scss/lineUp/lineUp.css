@@ -11,21 +11,26 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background-color: #E0FBFC;
+  background-color: #004AAD;
   margin: 10px;
   border: #6d6d6d 5px solid;
+  padding-left: 5px;
+}
+
+h1, h2 {
+  text-decoration: underline;
 }
 
 .subs {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: unset;
-      -ms-flex-pack: unset;
-          justify-content: unset;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -33,23 +38,26 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  margin-bottom: 60px;
 }
 
 .subs .sub {
-  height: 70px;
-  width: 70px;
-  margin: 0px 20px;
-  border-radius: 50px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 10px;
   text-align: center;
-  background-color: green;
-  border: solid white 2px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 500;
   font-size: 21px;
+  z-index: 2;
+  color: white;
+  width: fit-content;
+  text-align: left;
 }
 
 .referees {
-  text-decoration: underline;
+  color: white;
 }
 
 .pitch {
@@ -69,8 +77,8 @@
 }
 
 .horizontal-lines {
-  width: 97%;
-  height: 98%;
+  width: 540px;
+  height: 840px;
   border: solid 3px white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -86,6 +94,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   z-index: 1;
+  margin: 5px;
 }
 
 .horizontal-lines .crossbar {
@@ -94,16 +103,20 @@
 }
 
 .horizontal-lines .player {
-  height: 70px;
-  width: 70px;
-  margin: 0px 20px;
-  border-radius: 50px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 10px;
   text-align: center;
-  background-color: green;
-  border: solid white 2px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 500;
   font-size: 21px;
+  z-index: 2;
+}
+
+.horizontal-lines .number {
+  background-color: white;
+  border-radius: 2px;
 }
 
 .horizontal-lines .in-goal-area-up {
@@ -159,6 +172,7 @@
 .horizontal-lines .tt-up .prop {
   -ms-flex-item-align: baseline;
       align-self: baseline;
+  margin: 0px 40px;
 }
 
 .horizontal-lines .second-row {
@@ -166,11 +180,11 @@
   display: -ms-flexbox;
   display: flex;
   height: 7.5%;
-  margin-left: 10%;
+  margin-left: 15%;
 }
 
 .horizontal-lines .second-row .lock {
-  margin-top: -10%;
+  margin-top: -7%;
 }
 
 .horizontal-lines .back-row {
@@ -220,8 +234,11 @@
 }
 
 .horizontal-lines .zone-c .outside-center {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-bottom: 10px;
+  text-align: left;
 }
 
 .horizontal-lines .tt-down {

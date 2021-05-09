@@ -13,32 +13,31 @@ export default function LineUp({ home, away, referees }) {
     return (
         <div className="line-up">
             <div className="subs">
-                <h1>Substitutions</h1>
-                {homeSubs.map(player => {
+                <h1>Substitutions:</h1>
+                {homeSubs.map((player, index) => {
                     return (
-                        <div key={player.player_id} className="sub">{player.name}</div>
+                        <div key={player.player_id} className="sub">{index+16} {player.name}</div>
                     )
                 })}
         </div>
             <Pitch team={home} />
             <div>
-                <h1 className="referees">Match Officials:</h1>
+                <h1>Match Officials:</h1>
                 {referees.map(referee => {
                         return (
-                            <div key={referee.name}>
-                                <h3>{referee.role} </h3>
-                                <span>{referee.name} - {referee.country}</span>
-                                {/* <span>{referee.name} </span> */}
+                            <div className="referees" key={referee.name}>
+                                <h2>{referee.role}: </h2>
+                                <h4>{referee.name}</h4>
                             </div>
                         )
                 })}
             </div>
             <Pitch team={away} />
             <div className="subs">
-                <h1>Substitutions</h1>
-                {awaySubs.map(player => {
+                <h1>Substitutions:</h1>
+                {awaySubs.map((player, index) => {
                     return (
-                        <div key={player.player_id} className="sub">{player.name}</div>
+                        <div key={player.player_id} className="sub">{index + 16} {player.name}</div>
                     )
                 })}
             </div>
