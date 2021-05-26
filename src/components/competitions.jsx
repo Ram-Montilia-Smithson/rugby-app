@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import '../scss/home/home.css';
 import { competitions } from "../utils/api/mockData"
 import { Link } from 'react-router-dom';
 
 export default function Competitions({ compChoice}) {
 
-    const [items,setItems] = useState([])
+    const [items, setItems] = useState([])
 
     useEffect(() => {
         setItems(competitions().results)
@@ -24,7 +24,7 @@ export default function Competitions({ compChoice}) {
                             onClick={() => compChoice(item)}
                             to={`/competition?${item.name}`}
                         >
-                            <img className="competitions-image" src={`${process.env.PUBLIC_URL}/images/comps/${item.name}.png`} alt={item.name} />
+                            <img className="competitions-image" src={`https://res.cloudinary.com/${process.env.REACT_APP_CLOUD_NAME}/image/upload/v1622033973/images/${item.name}.png`} alt={item.name} />
                         </Link>
                     )
                 })}
