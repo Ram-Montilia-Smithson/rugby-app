@@ -13,7 +13,7 @@ export default function Player({name, number}) {
 
     return (
         <div className="playerCard">
-            <img src={`${process.env.PUBLIC_URL}/images/avatar.png`} alt={name}/>
+            <img src={`https://res.cloudinary.com/${process.env.REACT_APP_CLOUD_NAME}/image/upload/v1622033973/images/player.png`} alt={name}/>
             <div>{name}</div>
             <div>POSITION: {positions[number]}</div>
         </div>
