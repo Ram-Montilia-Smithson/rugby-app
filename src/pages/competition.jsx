@@ -38,7 +38,7 @@ export default function Competition({ comp, matchChoice, teamChoice }) {
         <div className="competition" >
             <div className="competition-header">
                 <div className="competition-header-info">
-                    <img className="header-logo" src={`${process.env.PUBLIC_URL}/images/comps/${comp.name}.png`} alt={comp.name}/>
+                    <img className="header-logo" src={`https://res.cloudinary.com/${process.env.REACT_APP_CLOUD_NAME}/image/upload/v1622033973/images/${comp.id}.png`} alt={comp.name}/>
                     <h1 className="header-name">{comp.name.toUpperCase()}</h1>
                     <h1 className="header-name">{comp.season}</h1>
                 </div>
@@ -50,7 +50,7 @@ export default function Competition({ comp, matchChoice, teamChoice }) {
                                 to={`/team?${team.name}`}
                                 onClick={() => teamChoice(team.id, fixtureList)}
                             >
-                                <img className="competition-header-team-logo" src={`${process.env.PUBLIC_URL}/images/teams/${team.name}.png`} alt={team.name}/>
+                                <img className="competition-header-team-logo" src={`https://res.cloudinary.com/${process.env.REACT_APP_CLOUD_NAME}/image/upload/v1622033973/images/${team.id}.png`} alt={team.name}/>
                             </Link>
                         )
                     })}
