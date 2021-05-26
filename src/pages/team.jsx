@@ -209,14 +209,14 @@ export default function Team({team, comp_id, matchChoise}) {
                 }
                 <Player className="team-coach" name={""} number={0}/>
             </div>
-            <div className="team-past-fixtures">
+            {/* <div className="team-past-fixtures">
                 <h1>Last Results</h1>
                 <Fixtures fixtureList={pastFixturesList} matchChoise={matchChoise}/>
             </div>
             <div className="team-future-fixtures">
                 <h1>Upcomming fixtures</h1>
                 <Fixtures fixtureList={team.futureFixtures} matchChoise={matchChoise}/>
-            </div>
+            </div> */}
         </div>
     )
 }

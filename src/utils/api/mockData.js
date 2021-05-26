@@ -1782,162 +1782,162 @@ export const competitions = () => {
                 "season": 2024,
                 "season_name": "Season 2023/2024"
             },
-            // {
-            //     "id": 1506,
-            //     "name": "Women's Rugby World Cup",
-            //     "season": 2022,
-            //     "season_name": "Season 2021/2022"
-            // },
-            // {
-            //     "id": 30,
-            //     "name": "International",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 594,
-            //     "name": "Japan Top League",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 918,
-            //     "name": "Major League Rugby",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 930,
-            //     "name": "Women's Tour Match",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 1218,
-            //     "name": "Gallagher Premiership",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 1230,
-            //     "name": "TOP 14",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 1236,
-            //     "name": "Guinness PRO14",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 1254,
-            //     "name": "Currie Cup",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 1260,
-            //     "name": "Mitre 10 Cup",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 1266,
-            //     "name": "Six Nations",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 1332,
-            //     "name": "Championship",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 1338,
-            //     "name": "British & Irish Lions",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 1464,
-            //     "name": "Heineken Champions Cup",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 1470,
-            //     "name": "European Rugby Challenge Cup",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 1500,
-            //     "name": "Women's Six Nations",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 1620,
-            //     "name": "Friendly",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 1626,
-            //     "name": "Rugby Europe Championship",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 2142,
-            //     "name": "Super Rugby Aotearoa",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 2148,
-            //     "name": "Super Rugby AU",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 2154,
-            //     "name": "Super Rugby Unlocked",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 2160,
-            //     "name": "Super Rugby Trans-Tasman",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 2202,
-            //     "name": "Autumn Nations Cup",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 2208,
-            //     "name": "2020 Tri Nations",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 2214,
-            //     "name": "Rainbow Cup",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // },
-            // {
-            //     "id": 2232,
-            //     "name": "Rainbow Cup SA",
-            //     "season": 2021,
-            //     "season_name": "Season 2020/2021"
-            // }
+            {
+                "id": 1506,
+                "name": "Women's Rugby World Cup",
+                "season": 2022,
+                "season_name": "Season 2021/2022"
+            },
+            {
+                "id": 30,
+                "name": "International",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 594,
+                "name": "Japan Top League",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 918,
+                "name": "Major League Rugby",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 930,
+                "name": "Women's Tour Match",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 1218,
+                "name": "Gallagher Premiership",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 1230,
+                "name": "TOP 14",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 1236,
+                "name": "Guinness PRO14",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 1254,
+                "name": "Currie Cup",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 1260,
+                "name": "Mitre 10 Cup",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 1266,
+                "name": "Six Nations",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 1332,
+                "name": "Championship",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 1338,
+                "name": "British & Irish Lions",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 1464,
+                "name": "Heineken Champions Cup",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 1470,
+                "name": "European Rugby Challenge Cup",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 1500,
+                "name": "Women's Six Nations",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 1620,
+                "name": "Friendly",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 1626,
+                "name": "Rugby Europe Championship",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 2142,
+                "name": "Super Rugby Aotearoa",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 2148,
+                "name": "Super Rugby AU",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 2154,
+                "name": "Super Rugby Unlocked",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 2160,
+                "name": "Super Rugby Trans-Tasman",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 2202,
+                "name": "Autumn Nations Cup",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 2208,
+                "name": "2020 Tri Nations",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 2214,
+                "name": "Rainbow Cup",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            },
+            {
+                "id": 2232,
+                "name": "Rainbow Cup SA",
+                "season": 2021,
+                "season_name": "Season 2020/2021"
+            }
         ]
     })
 }
