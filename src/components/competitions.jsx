@@ -24,7 +24,7 @@ export default function Competitions({ compChoice}) {
                             onClick={() => compChoice(item)}
                             to={`/competition?${item.name}`}
                         >
-                            <img className="competitions-image" src={`https://res.cloudinary.com/${process.env.REACT_APP_CLOUD_NAME}/image/upload/v1622033973/images/${item.name}.png`} alt={item.name} />
+                            <img className="competitions-image" src={`https://res.cloudinary.com/${process.env.REACT_APP_CLOUD_NAME}/image/upload/v1622033973/images/${item.id}.png`} alt={item.name} />
                         </Link>
                     )
                 })}

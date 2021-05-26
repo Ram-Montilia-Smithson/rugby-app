@@ -51,7 +51,7 @@ export default function Table({standings, teamChoice, fixtures}) {
                                                     to={`/team?${team.name}`}
                                                     onClick={() => teamChoice(team.id, fixtures)}
                                                 >
-                                                    <img className="team-logo" src={`${process.env.PUBLIC_URL}/images/teams/${team.name}.png`} alt={team.name}/>
+                                                    <img className="team-logo" src={`https://res.cloudinary.com/${process.env.REACT_APP_CLOUD_NAME}/image/upload/v1622033973/images/${team.id}.png`} alt={team.name}/>
                                                     <div>{team.name.toUpperCase()}</div>
                                                 </Link>
                                             </td>
