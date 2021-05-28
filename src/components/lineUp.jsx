@@ -8,7 +8,6 @@ export default function LineUp({ home, away, referees }) {
     
     const homeSubs = home.slice(15)
     const awaySubs = away.slice(15)
-    // console.log();
 
     return (
         <div className="line-up">

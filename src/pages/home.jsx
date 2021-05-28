@@ -1,13 +1,27 @@
 import '../scss/home/home.css';
 import React, { useEffect, useState} from 'react'
 import Fixtures from "../components/fixtures";
-import { competitions, fixtures } from "../utils/api/mockData"
 import Competitions from '../components/competitions';
+import { competitions, fixtures } from "../utils/api/mockData"
+// import { competitions, fixtures } from "../utils/api/api"
 
     //add the logo you will make in the tab above 
     // add a header
     // add a different font to that header
     // change fonts from header to rest of page
+    // להוריד קוויים מתחת למילים
+    // להוריד בורדר ולעגל פינות
+    // להחליף צבעים לגוונים של לבן ואפור
+    // להקטין תמונות של תחרויות
+    // לעצב נאב באר של matchinfipage
+    // להקטין ולעצב את איוונטס
+    // להציג בגרפים את סטאטס
+    // להקטין ולעצב את ליין אפ
+    // לעשות טראנזישן על הסקרול של קרדיטס ושל מור ינפו
+    // לכתוב ולעצב את אבאוט
+    // במקרה של אררורז עם האיי פי איי, תחשוב מה לעשות
+    // לתת רווח בין התמונות של הקבוצות והתחרויות לבין התחום שלהן
+
 
 export default function Home({ matchChoice, compChoice}) {
 
@@ -17,7 +31,7 @@ export default function Home({ matchChoice, compChoice}) {
 
     useEffect(() => {
         competitions().results.forEach(comp => {
-            fixtures(comp.id).results.forEach(result => {
+            fixtures(comp.id, comp.season).results.forEach(result => {
                 if (new Date(result.date).getTime() > new Date().getTime()) {
                     setFixtureList(fixtureList => [...fixtureList, result])
                 }   
@@ -32,11 +46,11 @@ export default function Home({ matchChoice, compChoice}) {
         setFixtureList(fixtureList => fixtureList.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()))
         setResults(results => results.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()))
         setLiveMatches(liveMatches => liveMatches.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()))
-        return () => {
-            setFixtureList([])
-            setResults([])
-            setLiveMatches([])
-        }
+        // return () => {
+        //     setFixtureList([])
+        //     setResults([])
+        //     setLiveMatches([])
+        // }
     }, [])
 
     return (

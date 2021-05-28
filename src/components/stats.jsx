@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { defaults, Bar, Line } from 'react-chartjs-2/dist/index'
 
-
 export default function Stats({ homeStats, awayStats}) {
 
     // console.log(defaults)
@@ -40,24 +39,24 @@ export default function Stats({ homeStats, awayStats}) {
         setAwayPossession(awayStats.possession)
         setHomeScrum(homeStats.scrums)
         setAwayScrum(awayStats.scrums)
-        return () => {
-            setHomeAttack([])
-            setAwayAttack([])
-            setHomeDefence([])
-            setAwayDefence([])
-            setHomeBreakDown([])
-            setAwayBreakDown([])
-            setHomeFouls([])
-            setAwayFouls([])
-            setHomeKicking([])
-            setAwayKicking([])
-            setHomeLineOut([])
-            setAwayLineOut([])
-            setHomePossession([])
-            setAwayPossession([])
-            setHomeScrum([])
-            setAwayScrum([])
-        }
+        // return () => {
+        //     setHomeAttack([])
+        //     setAwayAttack([])
+        //     setHomeDefence([])
+        //     setAwayDefence([])
+        //     setHomeBreakDown([])
+        //     setAwayBreakDown([])
+        //     setHomeFouls([])
+        //     setAwayFouls([])
+        //     setHomeKicking([])
+        //     setAwayKicking([])
+        //     setHomeLineOut([])
+        //     setAwayLineOut([])
+        //     setHomePossession([])
+        //     setAwayPossession([])
+        //     setHomeScrum([])
+        //     setAwayScrum([])
+        // }
     }, [homeStats, awayStats])
 
     return (

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import Table from "../components/table";
 import Fixtures from "../components/fixtures";
 import { standings, fixtures, TeamsByCompetitionSeason } from "../utils/api/mockData";
+// import { standings, fixtures, TeamsByCompetitionSeason } from "../utils/api/api";
 
 // consider cases of no data and errors
 // add explanations for use of page
@@ -16,9 +17,9 @@ export default function Competition({ comp, matchChoice, teamChoice }) {
     const [teams, setTeams] = useState([])
 
     useEffect(() => {
-        setTeams(TeamsByCompetitionSeason(comp.id).results)
-        setTables(standings(comp.id).results.standings)
-        fixtures(comp.id).results.forEach(result => {
+        setTeams(TeamsByCompetitionSeason(comp.id, comp.season).results)
+        setTables(standings(comp.id, comp.season).results.standings)
+        fixtures(comp.id, comp.season).results.forEach(result => {
             if (new Date(result.date).getTime() > new Date().getTime() || result.status === "First Half" || result.status === "Half Time" || result.status === "Second Half") {
                 setFixtureList(fixtureList => [...fixtureList, result])
             }   

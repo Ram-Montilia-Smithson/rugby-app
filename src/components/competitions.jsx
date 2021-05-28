@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../scss/home/home.css';
 import { competitions } from "../utils/api/mockData"
+// import { competitions } from "../utils/api/api"
 import { Link } from 'react-router-dom';
 
 export default function Competitions({ compChoice}) {
@@ -9,10 +10,8 @@ export default function Competitions({ compChoice}) {
 
     useEffect(() => {
         setItems(competitions().results)
-        return () => {setItems([])}
+        // return () => {setItems([])}
     }, [])
-
-    // const handleClick = (id) => {compChoice(id)}
 
     return (
             <div className="competitions-container">

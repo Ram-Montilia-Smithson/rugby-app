@@ -41,21 +41,16 @@ export default function MatchInfoPage({ id }) {
         setAwayStats(data.away.team_stats)
         setEvents(data.events.sort((a, b) => a.time - b.time))
 
-        return () => {
-
-            setHomeStats({})
-            setAwayStats({})
-            setHeaderInfo({})
-            setReferees([])
-            setHomeLineUp([])
-            setAwayLineUp([])
-            setEvents([])
-
-        }
-
+        // return () => {
+        //     setHomeStats({})
+        //     setAwayStats({})
+        //     setHeaderInfo({})
+        //     setReferees([])
+        //     setHomeLineUp([])
+        //     setAwayLineUp([])
+        //     setEvents([])
+        // }
     }, [id])
-
-    // console.log()
 
     return (
         <div>

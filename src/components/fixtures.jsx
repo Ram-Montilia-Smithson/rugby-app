@@ -15,9 +15,9 @@ export default function Fixtures({ fixtureList, matchChoice, numberOfFixtures })
 
     useEffect(() => {
         setFixtures(fixtureList.slice(0, LIMIT))
-        return () => {
-            setFixtures([])
-        }
+        // return () => {
+        //     setFixtures([])
+        // }
     }, [fixtureList, LIMIT])
 
     const loadFixtures = () =>{

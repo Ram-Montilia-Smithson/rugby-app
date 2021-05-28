@@ -41,6 +41,7 @@ export default function Footer() {
                 <h1>credits</h1>
                 <ul>
                     <li>rugby live data API</li>
+                    {/* add a link to "https://rapidapi.com/sportcontentapi/api/rugby-live-data" */}
                     <li>whoever you stole all these pictures from</li>
                     <li>canva?</li>
                     <li>ITC?</li>

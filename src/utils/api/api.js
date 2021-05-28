@@ -1,16 +1,18 @@
-// get all fetches here 
-// consider making season as a variable and not hard coded
 // consider cases of errors
-// add fetch ....teams, use it in competition.jsx instead of standings
+// find a better name to the variables
+// team.jsx needs checking about its functions imported from here
 
 const address = process.env.REACT_APP_ADDRESS
-const headers = process.env.REACT_APP_HEADERS
+const headers = {
+    "method": "GET",
+    "headers": {
+        "x-rapidapi-key": `${process.env.REACT_APP_API_KEY}`,
+        "x-rapidapi-host": "rugby-live-data.p.rapidapi.com"
+    }
+}
 
 export const match = (matchID) => {
-    fetch(`${address}match/${matchID}`, {
-        "method": "GET",
-        "headers": headers
-    })
+    fetch(`${address}match/${matchID}`, headers)
     .then(response => response.json())
         .then(data => {
             return (data)
@@ -20,11 +22,8 @@ export const match = (matchID) => {
     });
 }
 
-export const standings = (comp_id) => {
-    fetch(`${address}standings/${comp_id}/2021`, {
-        "method": "GET",
-        "headers": headers
-    })
+export const standings = (comp_id, comp_season) => {
+    fetch(`${address}standings/${comp_id}/${comp_season}`, headers)
     .then(response => response.json())
         .then(data => {
             return (data)
@@ -35,10 +34,7 @@ export const standings = (comp_id) => {
 }
 
 export const FixturesByTeam = (team_id) => {
-    fetch(`${address}fixtures-by-team/${team_id}`, {
-        "method": "GET",
-        "headers": headers
-    })
+    fetch(`${address}fixtures-by-team/${team_id}`, headers)
     .then(response => response.json())
         .then(data => {
             return (data)
@@ -48,11 +44,8 @@ export const FixturesByTeam = (team_id) => {
     });
 }
 
-export const TeamsByCompetitionSeason = (comp_id) => {
-    fetch(`${address}teams/${comp_id}/2021`, {
-        "method": "GET",
-        "headers": headers
-    })
+export const TeamsByCompetitionSeason = (comp_id, comp_season) => {
+    fetch(`${address}teams/${comp_id}/${comp_season}`, headers)
     .then(response => response.json())
         .then(data => {
             return (data)
@@ -63,13 +56,10 @@ export const TeamsByCompetitionSeason = (comp_id) => {
 }
 
 export const competitions = () => {
-    fetch(`${address}competitions`, {
-        "method": "GET",
-        "headers": headers
-    })
+    fetch(`${address}competitions`, headers)
     .then(response => response.json())
-    .then(data => {
-        const results = data.results.filter(result => {result.season >= 2021})
+        .then(data => {
+            const results = data.results.filter(result => result.season >= new Date().getFullYear())
         return (results)
     })
     .catch(err => {
@@ -77,15 +67,8 @@ export const competitions = () => {
     });
 }
 
-
-// differentiate between home.jsx and competition.jsx, so in home you would get only 10 - 20 fixtures per competition
-// and in competition you would get it all
-
-export const Fixtures = (comp_id) => {
-    fetch(`${address}fixtures/${comp_id}/2021`, {
-        "method": "GET",
-        "headers": headers
-    })
+export const Fixtures = (comp_id, comp_season) => {
+    fetch(`${address}fixtures/${comp_id}/${comp_season}`, headers)
     .then(response => response.json())
         .then(data => {
             return (data)

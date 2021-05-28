@@ -12,10 +12,10 @@ export default function Table({standings, teamChoice, fixtures}) {
             setTeams(teams => [...teams, table.teams])
             setTableName(tableName => [...tableName, table.table_name])
         });
-        return () => {
-            setTeams([])
-            setTableName([])
-        }
+        // return () => {
+        //     setTeams([])
+        //     setTableName([])
+        // }
     }, [standings])
 
     return (

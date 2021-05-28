@@ -1,12 +1,10 @@
 import React from 'react'
 import "../scss/lineUp/lineUp.css"
 
-// add breaking points
+// add breaking points, mobile
 
 export default function Pitch({ team }) {
     
-    console.log(team);
-
     return (
         <div className="pitch">
             <div className="horizontal-lines">

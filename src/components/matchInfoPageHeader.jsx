@@ -6,8 +6,6 @@ import "../scss/infoPageHeader/infoHeader.css"
 
 export default function MatchInfoPageHeader({ info }) {
     
-    console.log(info);
-
     return (
         <div className="head-line-container">
             <div className="head-line">
