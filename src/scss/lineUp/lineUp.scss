@@ -10,11 +10,12 @@
     margin: 10px;
     border: $color3 5px solid;
     padding-left: 5px;
+    
+    h1,h2{
+        text-decoration: underline;
+    }
 }
 
-h1,h2{
-    text-decoration: underline;
-}
 
 .subs{
     @include container(space-between, unset);

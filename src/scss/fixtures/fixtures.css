@@ -4,7 +4,7 @@
 }
 
 .fixture-container {
-  margin: 10px 20px;
+  margin: 10px 0px;
   padding: 1.5px;
   font-weight: bold;
 }
@@ -31,7 +31,7 @@
 }
 
 .fixture-container .fixture-bottom {
-  height: 100px;
+  height: 50px;
   background-color: white;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -47,11 +47,21 @@
 
 .fixture-container .fixture-bottom .fixture-scores {
   width: 70px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 10px 1fr;
-      grid-template-columns: 1fr 10px 1fr;
-  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-weight: bolder;
+  font-size: large;
+}
+
+.fixture-container .fixture-bottom .fixture-scores .fixture-score-home,
+.fixture-container .fixture-bottom .fixture-scores .fixture-score-away {
+  padding: 5px;
 }
 
 .fixture-container .fixture-moreInfo {
