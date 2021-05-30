@@ -1,9 +1,10 @@
 import React from 'react'
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
+import About from '../pages/about'
+import Home from '../pages/home'
 import "../scss/main/main.css"
 
 // look for nice design to show the contact info
-// contact the "live-rugby-data" API provider about use of the API legally and the credits that should be given
-// set the scroll to the footer
 // fix the sizes of the footer boxes
 // responsiveness and sizes differences
 // credits for pictures, fonts, ultimate rugby
@@ -12,49 +13,39 @@ export default function Footer() {
     return (
         <div id="footer">
             <div className="footer-element">
-                <h1>contact</h1>
-                <ul>
-                    <li>github
-                        <a href="github">
-                            {/* <img/> */}
-                        </a>
-                    </li>
-                    <li>linkedin
-                        <a href="linkedIn">
-                            {/* <img/> */}
-                        </a>
-                    </li>
-                    <li>facebook?
-                        <a href="facebook">
-                            {/* <img/> */}
-                        </a>
-                    </li>
-                    <li>
-                        <a href = "mailto:ramsmithson2@gmail.com?subject=Rugby-App-Feedback&body=Message">
-                            Ramsmithson1@gmail.com
-                        </a>
-                        {/* <img/> of Gmail or just an Email */}
-                    </li>
-                </ul>
+                <div className="contact-list">
+                    <a href="https://github.com/Ram-Montilia-Smithson">
+                        <img src={`https://res.cloudinary.com/${process.env.REACT_APP_CLOUD_NAME}/image/upload/v1622033973/images/github.png`} alt="github" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/ram-montilia-smithson/">
+                        <img src={`https://res.cloudinary.com/${process.env.REACT_APP_CLOUD_NAME}/image/upload/v1622033973/images/linkedin.png`} alt="linkedIn" />
+                    </a>
+                
+                    <a href="https://www.facebook.com/people/Ram-Montilia-Smithson/100009116608872/">
+                        <img src={`https://res.cloudinary.com/${process.env.REACT_APP_CLOUD_NAME}/image/upload/v1622033973/images/facebook.png`} alt="facebook" />
+                    </a>
+                
+                    <a href = "mailto:ramsmithson2@gmail.com?subject=Rugby-App-Feedback&body=Message">
+                        <img src={`https://res.cloudinary.com/${process.env.REACT_APP_CLOUD_NAME}/image/upload/v1622033973/images/gmail.png`} alt="mail" />
+                    </a>
+                </div>
             </div>
             <div className="footer-element">
                 <h1>credits</h1>
                 <ul>
-                    <li>rugby live data API</li>
-                    {/* add a link to "https://rapidapi.com/sportcontentapi/api/rugby-live-data" */}
+                    <a href="https://rapidapi.com/sportcontentapi/api/rugby-live-data">Rugby Live Data API</a>
+                    <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
                     <li>whoever you stole all these pictures from</li>
                     <li>canva?</li>
                     <li>ITC?</li>
-                    <li>google fonts</li>
                 </ul>
             </div>
             <div className="footer-element">
                 <h1>3rd option</h1>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                <ul className="footer-router">
+                    <a href="/">HOME</a>
+                    <a href="/about">ABOUT</a>
+                    <a className="link" href="#header">TOP</a>
                 </ul>
             </div>
         </div>

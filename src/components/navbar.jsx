@@ -35,7 +35,7 @@ export default function Navbar() {
     return (
         <div>
             <BrowserRouter>
-                <div className="header" style={{
+                <div id="header" style={{
                     backgroundImage: `url(https://res.cloudinary.com/${process.env.REACT_APP_CLOUD_NAME}/image/upload/v1622033973/images/lines.png)`}}>
                     <Link to="/">
                         <img className="header-left" src={`https://res.cloudinary.com/${process.env.REACT_APP_CLOUD_NAME}/image/upload/v1622033973/images/rugby_world_logo.png`} alt="Rugby World" />
