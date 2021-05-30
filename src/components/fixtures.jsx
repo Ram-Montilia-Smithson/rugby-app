@@ -69,16 +69,15 @@ export default function Fixtures({ fixtureList, matchChoice, numberOfFixtures })
                                             </>
                                     }
                                     <span className="fixture_venue">{fixture.venue}</span>
-                                    <div>
                                         <button 
                                             className="dropdown-button" 
                                             onClick={() => moreInfo(fixture.id)}
                                         >
                                             {!showMoreInfo.includes(fixture.id) ? "MORE INFO" : "LESS INFO"}
                                         </button>
-                                    </div>
                                 </div>
                                 <div className="fixture-bottom">
+                                    <img src={`https://res.cloudinary.com/${process.env.REACT_APP_CLOUD_NAME}/image/upload/v1622033973/images/${fixture.home_id}.png`} alt={fixture.home} />
                                     <span className="fixture_home">{fixture.home}</span>
                                     {
                                         new Date(fixture.date).getTime() < new Date().getTime() ?
@@ -114,6 +113,7 @@ export default function Fixtures({ fixtureList, matchChoice, numberOfFixtures })
                                     }
                                         
                                     <span className="fixture_away">{fixture.away}</span>
+                                    <img src={`https://res.cloudinary.com/${process.env.REACT_APP_CLOUD_NAME}/image/upload/v1622033973/images/${fixture.away_id}.png`} alt={fixture.away_id} />
                                 </div>
                                 <MatchInfoComponent
                                     id={fixture.id}

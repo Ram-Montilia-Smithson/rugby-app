@@ -1,5 +1,5 @@
 .events {
-  background-color: #F4D35E;
+  background-color: #d2f7f5;
   font-family: 'Hind', sans-serif;
   font-size: 20px;
   margin: 20px;
@@ -21,7 +21,7 @@
 
 .away-team {
   width: 200px;
-  background-color: #9DB4C0;
+  background-color: #dfe8ec;
   margin-left: 200px;
   border-radius: 5px;
   color: white;
@@ -29,7 +29,7 @@
 
 .home-team {
   width: 200px;
-  background-color: #9DB4C0;
+  background-color: #dfe8ec;
   margin-right: 200px;
   border-radius: 5px;
   color: white;

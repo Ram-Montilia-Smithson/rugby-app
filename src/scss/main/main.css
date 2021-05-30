@@ -1,8 +1,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   margin: 0px;
-  background-color: #9DB4C0;
-  color: #000000;
+  background-color: #dfe8ec;
   scroll-behavior: smooth;
 }
 
@@ -45,7 +44,7 @@ a:visited {
 a:hover {
   margin: 0 20px;
   text-decoration: none;
-  color: #004aad;
+  color: #eff6ff;
 }
 
 .parent {
@@ -84,7 +83,7 @@ a:hover {
   height: fit-content;
   width: auto;
   padding: 20px;
-  background-color: #004AAD;
+  background-color: #eff6ff;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto auto auto;
@@ -95,6 +94,6 @@ a:hover {
 }
 
 .footer-element {
-  background-color: #E0FBFC;
+  background-color: white;
 }
 /*# sourceMappingURL=main.css.map */

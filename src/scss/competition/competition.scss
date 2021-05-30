@@ -14,8 +14,8 @@
 
 .competition-header {
     grid-area: header;
-    background-color: #F4D35E;
-    border: #000000 solid 5px;
+    background-color: $color2;
+    border: solid 5px;
     padding: 10px;
     align-items: center;
 }
@@ -38,15 +38,15 @@
 }
 
 .competition-header-team-link{
-    background-color: #ffffff;
+    background-color: $color1;
     border-radius: 5px;
-    border: #000000 solid 2px;
+    border: solid 2px;
     margin: 0px 5px;
 }
 
 .competition-header-team-link:hover{
-    background-color: #F4D35E;
-    border: #F4D35E solid 2px;
+    background-color: $color2;
+    border: $color2 solid 2px;
     font-weight: bold;
     margin: 0px 5px;
 }
@@ -68,7 +68,7 @@
 .table {
     font-weight: 700;
     margin: 20px 0px 20px 20px;
-    background-color: #000000;
+    background-color: $color3;
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
 }
@@ -82,8 +82,8 @@ tr {
 }
 
 th {
-    background-color: #004AAD;
-    color: #ffffff;
+    background-color: $color4;
+    color: $color1;
     width: 100px;
     margin: 10px;
 }
@@ -94,22 +94,22 @@ td {
 }
 
 .table-team {
-    background-color: #F4D35E;
+    background-color: $color2;
 }
 
 .table-team:hover {
-    background-color: #d1b653;
+    background-color: $color25;
 }
 
 .team-link {
     display:block;
-    color: #004AAD;
+    color: $color4;
     margin: 0px;
 }
 
 .team-link:hover{
     margin: 0px;
-    background-color: #ffffff;
+    background-color: $color1;
 }
 
 .team-logo {

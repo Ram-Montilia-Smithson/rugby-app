@@ -4,7 +4,7 @@
 // add breaking points
 
 .events {
-    background-color: #F4D35E;
+    background-color: $color2;
     font-family: 'Hind', sans-serif;
     font-size: 20px;
     margin: 20px;
@@ -20,16 +20,16 @@
 
 .away-team {
     width: 200px;
-    background-color: #9DB4C0;
+    background-color: $color5;
     margin-left: 200px;
     border-radius: 5px;
-    color: white;
+    color: $color1;
 }
 
 .home-team {
     width: 200px;
-    background-color: #9DB4C0;
+    background-color: $color5;
     margin-right: 200px;
     border-radius: 5px;
-    color: white;
+    color: $color1;
 }

@@ -6,9 +6,9 @@
 .line-up{
     @include container(space-around, stretch);
     flex-direction: row;
-    background-color: #004AAD;
+    background-color: $color4;
     margin: 10px;
-    border: #6d6d6d 5px solid;
+    border: $color3 5px solid;
     padding-left: 5px;
 }
 
@@ -23,14 +23,14 @@ h1,h2{
     margin-bottom: 60px;
     .sub{
         @include player;
-        color: white;
+        color: $color1;
         width: fit-content;
         text-align: left;
     }
 }
 
 .referees{
-    color: white;
+    color: $color1;
 }
 
 .pitch{
@@ -60,7 +60,7 @@ h1,h2{
     }
 
     .number{
-        background-color: white;
+        background-color: $color1;
         border-radius: 2px;
     }
 

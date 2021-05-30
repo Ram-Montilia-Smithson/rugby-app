@@ -1,7 +1,7 @@
 .head-line-container {
-    background-color: #004AAD;
-    border: white solid 5px;
-    color: white;
+    background-color: $color4;
+    border: $color1 solid 5px;
+    color: $color1;
 }
 
 .head-line{
@@ -15,9 +15,7 @@
     font-size: 40px;
 }
 
-.score{
-    color: black;
-}
+// .score{}
 
 .logo{
     max-height: 90%;

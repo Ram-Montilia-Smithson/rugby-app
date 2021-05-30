@@ -1,5 +1,5 @@
-@import "./variables";
-@import "./_mixin";
+@import "../_variables";
+@import "../_mixin";
 
 .fixtures {
     grid-area: fixtures;
@@ -9,101 +9,112 @@
 .fixture-container {
     margin: 10px 20px;
     padding: 1.5px;
-    background-color: #000000;
-}
-
-.fixture-head {
-    margin-bottom: 1.5px;
-    background-color: #004AAD;
-    color: #ffffff;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
-}
-
-.dropdown-button {
-    width: 100px;
-    height: 100%;
-    padding: 5px;
-    background-color: #ffffff;
-    border-radius: 3px;
-    border: none;
-}
-
-.dropdown-button:hover {
-    background-color: #004aad;
-    color: #FFFFFF;
-}
-
-.fixture-bottom {
-    background-color: #F4D35E;
-    color: #000000;
-    display: grid;
-    grid-template-columns: 1fr 100px 1fr;
-}
-
-.fixture-scores {
-    width: 70px;
-    display: grid;
-    grid-template-columns: 1fr 10px 1fr;
-    font-weight: 700;
-}
-
-.fixture-link,
-.fixture-link:visited,
-.fixture-link:hover {
-    background-color: #F4D35E;
-    border-radius: 2px;
-    border: #000000 solid 1px;
-    padding: 0px 50px;
     font-weight: bold;
-    text-decoration: underline;
+    
+    .fixture-head {
+        margin-bottom: 1.5px;
+        background-color: $color4;
+        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
+        
+        .dropdown-button {
+            width: 100px;
+            height: 100%;
+            padding: 5px;
+            background-color: $color6;
+            border-radius: 3px;
+            border: none;
+        }
+    }
+    
+    .fixture-bottom {
+        height: 100px;
+        background-color: $color1;
+        align-items: center;
+        justify-items: center;
+        display: flex;
+        // grid-template-columns: 1fr 1fr 100px 1fr 1fr;
+        justify-content: space-evenly;
+        
+        .fixture-scores {
+            width: 70px;
+            display: grid;
+            grid-template-columns: 1fr 10px 1fr;
+            font-weight: 700;
+        }
+    }
+    
+    .fixture-moreInfo {
+        background-color: $color1;
+        border-top: 1px solid;
+        
+        .progress-bar {
+            background-color: $color1;
+            color: $color3;
+            
+            .progress-home {
+                background-color: $color6;
+                color: $color1;
+                display: inline-block;
+                // border-top: $color3 solid 1px;
+            }
+            
+            .progress-away {
+                background-color: $color2;
+                display: inline-block;
+                // border-top: solid 1px;
+            }
+        }
+
+        .fixture-stats {
+            @include element(space-around);
+            height: fit-content;
+            
+            .fixture-label {
+                width: 100px;
+            }
+        }
+
+        .fixture-link,
+        .fixture-link:visited,
+        .fixture-link:hover {
+            background-color: $color1;
+            border-radius: 2px;
+            padding: 0px 50px;
+        }
+    }
 }
 
-.fixture-link:hover {
-    background-color: #E0FBFC;
-    color: #000000;
-    border: none;
-    text-decoration: none;
-    font-weight: 400;
+.fixture-container:hover {
+    .fixture-head {
+        background-color: $color45;
+        .dropdown-button {
+            background-color: $color65;
+        }
+        .dropdown-button:hover {
+            background-color: $color65;
+            color: $color1;
+            cursor: pointer;
+        }
+    }
+    .fixture-bottom {
+        background-color: $color15;
+    }
+    .fixture-moreInfo {
+        background-color: $color15;
+        .progress-bar {
+            background-color: $color15;
+        }
+        .fixture-link{
+            background-color: $color15;
+        }
+
+        .fixture-link:hover {
+            background-color: $color65;
+            color: $color1;
+            cursor: pointer;
+        }
+    }
 }
 
-.fixture-moreInfo {
-    background-color: #E0FBFC;
-}
-
-.fixture-moreInfo div {
-    border-bottom: #000000 solid 1px;
-}
-
-.fixture-status{
-    margin: 1px;
-    font-size: large;
-}
-
-.progress-bar {
-    background-color: #E0FBFC;
-    color: #000000;
-}
-
-.progress-home {
-    background-color: #004aad;
-    color: #ffffff;
-    display: inline-block;
-    border-top: #000000 solid 1px;
-}
-
-.progress-away {
-    background-color: #F4D35E;
-    color: #000000;
-    display: inline-block;
-    border-top: #000000 solid 1px;
-}
-
-.fixture-stats {
-    @include element(space-around);
-    height: fit-content;
-}
-
-.fixture-label {
-    width: 100px;
-}

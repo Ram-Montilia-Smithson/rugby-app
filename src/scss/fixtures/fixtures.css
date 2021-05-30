@@ -6,43 +6,46 @@
 .fixture-container {
   margin: 10px 20px;
   padding: 1.5px;
-  background-color: #000000;
+  font-weight: bold;
 }
 
-.fixture-head {
+.fixture-container .fixture-head {
   margin-bottom: 1.5px;
-  background-color: #004AAD;
-  color: #ffffff;
+  background-color: #eff6ff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 2fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
 }
 
-.dropdown-button {
+.fixture-container .fixture-head .dropdown-button {
   width: 100px;
   height: 100%;
   padding: 5px;
-  background-color: #ffffff;
+  background-color: #beb3f0;
   border-radius: 3px;
   border: none;
 }
 
-.dropdown-button:hover {
-  background-color: #004aad;
-  color: #FFFFFF;
+.fixture-container .fixture-bottom {
+  height: 100px;
+  background-color: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
-.fixture-bottom {
-  background-color: #F4D35E;
-  color: #000000;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 100px 1fr;
-      grid-template-columns: 1fr 100px 1fr;
-}
-
-.fixture-scores {
+.fixture-container .fixture-bottom .fixture-scores {
   width: 70px;
   display: -ms-grid;
   display: grid;
@@ -51,58 +54,28 @@
   font-weight: 700;
 }
 
-.fixture-link,
-.fixture-link:visited,
-.fixture-link:hover {
-  background-color: #F4D35E;
-  border-radius: 2px;
-  border: #000000 solid 1px;
-  padding: 0px 50px;
-  font-weight: bold;
-  text-decoration: underline;
+.fixture-container .fixture-moreInfo {
+  background-color: white;
+  border-top: 1px solid;
 }
 
-.fixture-link:hover {
-  background-color: #E0FBFC;
-  color: #000000;
-  border: none;
-  text-decoration: none;
-  font-weight: 400;
+.fixture-container .fixture-moreInfo .progress-bar {
+  background-color: white;
+  color: black;
 }
 
-.fixture-moreInfo {
-  background-color: #E0FBFC;
-}
-
-.fixture-moreInfo div {
-  border-bottom: #000000 solid 1px;
-}
-
-.fixture-status {
-  margin: 1px;
-  font-size: large;
-}
-
-.progress-bar {
-  background-color: #E0FBFC;
-  color: #000000;
-}
-
-.progress-home {
-  background-color: #004aad;
-  color: #ffffff;
+.fixture-container .fixture-moreInfo .progress-bar .progress-home {
+  background-color: #beb3f0;
+  color: white;
   display: inline-block;
-  border-top: #000000 solid 1px;
 }
 
-.progress-away {
-  background-color: #F4D35E;
-  color: #000000;
+.fixture-container .fixture-moreInfo .progress-bar .progress-away {
+  background-color: #d2f7f5;
   display: inline-block;
-  border-top: #000000 solid 1px;
 }
 
-.fixture-stats {
+.fixture-container .fixture-moreInfo .fixture-stats {
   height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -117,7 +90,51 @@
   height: fit-content;
 }
 
-.fixture-label {
+.fixture-container .fixture-moreInfo .fixture-stats .fixture-label {
   width: 100px;
+}
+
+.fixture-container .fixture-moreInfo .fixture-link,
+.fixture-container .fixture-moreInfo .fixture-link:visited,
+.fixture-container .fixture-moreInfo .fixture-link:hover {
+  background-color: white;
+  border-radius: 2px;
+  padding: 0px 50px;
+}
+
+.fixture-container:hover .fixture-head {
+  background-color: #dce3ee;
+}
+
+.fixture-container:hover .fixture-head .dropdown-button {
+  background-color: #b4aae2;
+}
+
+.fixture-container:hover .fixture-head .dropdown-button:hover {
+  background-color: #b4aae2;
+  color: white;
+  cursor: pointer;
+}
+
+.fixture-container:hover .fixture-bottom {
+  background-color: #f7f7f7;
+}
+
+.fixture-container:hover .fixture-moreInfo {
+  background-color: #f7f7f7;
+}
+
+.fixture-container:hover .fixture-moreInfo .progress-bar {
+  background-color: #f7f7f7;
+}
+
+.fixture-container:hover .fixture-moreInfo .fixture-link {
+  background-color: #f7f7f7;
+}
+
+.fixture-container:hover .fixture-moreInfo .fixture-link:hover {
+  background-color: #b4aae2;
+  color: white;
+  cursor: pointer;
 }
 /*# sourceMappingURL=fixtures.css.map */

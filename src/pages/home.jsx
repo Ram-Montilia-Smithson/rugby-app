@@ -72,9 +72,9 @@ export default function Home({ matchChoice, compChoice}) {
                 <></>
                 }
                 <h2>LATEST RESULTS</h2>
-                <Fixtures fixtureList={results} matchChoice={matchChoice} numberOfFixtures={10}/>
+                <Fixtures fixtureList={results} matchChoice={matchChoice} numberOfFixtures={5}/>
                 <h2>UPCOMING FIXTURES</h2>
-                <Fixtures fixtureList={fixtureList} matchChoice={matchChoice} numberOfFixtures={10}/>
+                <Fixtures fixtureList={fixtureList} matchChoice={matchChoice} numberOfFixtures={5}/>
             </div>
         </div>
     )

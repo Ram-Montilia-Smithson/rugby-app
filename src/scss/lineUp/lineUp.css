@@ -11,9 +11,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background-color: #004AAD;
+  background-color: #eff6ff;
   margin: 10px;
-  border: #6d6d6d 5px solid;
+  border: black 5px solid;
   padding-left: 5px;
 }
 
@@ -99,7 +99,7 @@ h1, h2 {
 
 .horizontal-lines .crossbar {
   width: 100%;
-  border-top: solid #F4D35E 5px;
+  border-top: solid #d2f7f5 5px;
 }
 
 .horizontal-lines .player {
@@ -137,8 +137,8 @@ h1, h2 {
   margin-top: -2%;
   height: 115%;
   width: 10%;
-  border-right: solid #F4D35E 5px;
-  border-left: solid #F4D35E 5px;
+  border-right: solid #d2f7f5 5px;
+  border-left: solid #d2f7f5 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -283,8 +283,8 @@ h1, h2 {
   margin-top: -0.1%;
   height: 115%;
   width: 10%;
-  border-right: solid #F4D35E 5px;
-  border-left: solid #F4D35E 5px;
+  border-right: solid #d2f7f5 5px;
+  border-left: solid #d2f7f5 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
