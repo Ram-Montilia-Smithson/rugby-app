@@ -5,69 +5,70 @@
 // different screen sizes
 // responsiveness
 
-body{
-    font-family: $font-family;
-    margin: 0px;
-    background-color: $color5;
+html {
     scroll-behavior: smooth;
+
+    body{
+        font-family: $font-family;
+        margin: 0px;
+        background-color: $BGColor;
+        
+        .header {
+            @include element(space-between);
+            margin-bottom: 10px;
+            
+            .header-left {
+                height: 100px;
+                width: 100px;
+                margin-top: 5px;
+
+            }
+            
+            .header-options {
+                margin-right: 50px;
+                font-size: 30px;
+                font-weight: bolder;
+                margin-top: 5px;
+
+                .link,
+                .link:visited {
+                    margin: 0 20px;
+                    text-decoration: none;
+                    color: $color3;
+                }
+                
+                .link:hover {
+                    margin: 0 20px;
+                    color: $linkColor;
+                }
+            }
+        }
+        
+        
+        
+        .parent{
+            @include parent();
+        }
+        
+        // .child{
+        //     height: 100px;
+        // }
+        
+        #footer{
+            @include element(none);
+            margin-top: 10px;
+            height: fit-content;
+            padding: 20px;
+            background-color: $color25;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto;
+            grid-gap: 20px;
+        }
+        
+        .footer-element{
+            background-color: $color15;
+        }
+    }
 }
 
-.header {
-    @include element(space-between);
-    margin-bottom: 10px;
-}
-
-.header-left {
-    height: 120px;
-    width: 120px;
-    margin-left: 50px;
-    margin-top: 20px;
-    border-radius: 5px;
-}
-
-.header-options {
-    margin-top: 5px;
-    margin-right: 50px;
-    font-size: 30px;
-    font-weight: bold;
-}
-
-a,
-a:visited {
-    margin: 0 20px;
-    text-decoration: none;
-    color: $color3;
-}
-
-a:hover {
-    margin: 0 20px;
-    text-decoration: none;
-    color: $color4;
-}
-
-.parent{
-    @include parent();
-    scroll-behavior: smooth;
-    // fix the scroll
-}
-
-.child{
-    height: 100px;
-}
-
-#footer{
-    @include element(none);
-    margin-top: 10px;
-    height: fit-content;
-    width: auto;
-    padding: 20px;
-    background-color: $color4;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto;
-    grid-gap: 20px;
-}
-
-.footer-element{
-    background-color: $color1;
-}

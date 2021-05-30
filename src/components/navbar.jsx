@@ -37,11 +37,13 @@ export default function Navbar() {
             <BrowserRouter>
                 <div className="header" style={{
                     backgroundImage: `url(https://res.cloudinary.com/${process.env.REACT_APP_CLOUD_NAME}/image/upload/v1622033973/images/lines.png)`}}>
-                    <img className="header-left" src={`https://res.cloudinary.com/${process.env.REACT_APP_CLOUD_NAME}/image/upload/v1622033973/images/rugby_world_logo.png`} alt="Rugby World"/>
+                    <Link to="/">
+                        <img className="header-left" src={`https://res.cloudinary.com/${process.env.REACT_APP_CLOUD_NAME}/image/upload/v1622033973/images/rugby_world_logo.png`} alt="Rugby World" />
+                    </Link>
                     <div className="header-options">
-                        <Link to="/">HOME</Link>
-                        <Link to="/about">ABOUT</Link>
-                        <a href="#footer">CREDITS</a>
+                        <Link className="link" to="/">HOME</Link>
+                        <Link className="link" to="/about">ABOUT</Link>
+                        <a className="link" href="#footer">CREDITS</a>
                     </div>
                 </div>
                 <Switch>

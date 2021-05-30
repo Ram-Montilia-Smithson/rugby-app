@@ -1,11 +1,14 @@
-body {
-  font-family: "Open Sans", sans-serif;
-  margin: 0px;
-  background-color: #dfe8ec;
+html {
   scroll-behavior: smooth;
 }
 
-.header {
+html body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0px;
+  background-color: #dfe8ec;
+}
+
+html body .header {
   height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -19,35 +22,32 @@ body {
   margin-bottom: 10px;
 }
 
-.header-left {
-  height: 120px;
-  width: 120px;
-  margin-left: 50px;
-  margin-top: 20px;
-  border-radius: 5px;
+html body .header .header-left {
+  height: 100px;
+  width: 100px;
+  margin-top: 5px;
 }
 
-.header-options {
-  margin-top: 5px;
+html body .header .header-options {
   margin-right: 50px;
   font-size: 30px;
-  font-weight: bold;
+  font-weight: bolder;
+  margin-top: 5px;
 }
 
-a,
-a:visited {
+html body .header .header-options .link,
+html body .header .header-options .link:visited {
   margin: 0 20px;
   text-decoration: none;
   color: black;
 }
 
-a:hover {
+html body .header .header-options .link:hover {
   margin: 0 20px;
-  text-decoration: none;
-  color: #eff6ff;
+  color: #2a49f8;
 }
 
-.parent {
+html body .parent {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -59,14 +59,9 @@ a:hover {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  scroll-behavior: smooth;
 }
 
-.child {
-  height: 100px;
-}
-
-#footer {
+html body #footer {
   height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -81,9 +76,8 @@ a:hover {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  width: auto;
   padding: 20px;
-  background-color: #eff6ff;
+  background-color: #c3e7e6;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto auto auto;
@@ -93,7 +87,7 @@ a:hover {
   grid-gap: 20px;
 }
 
-.footer-element {
-  background-color: white;
+html body .footer-element {
+  background-color: #f7f7f7;
 }
 /*# sourceMappingURL=main.css.map */
