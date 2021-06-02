@@ -12,29 +12,29 @@ export default function About() {
             <h1>about</h1>
             <p>
                 in this website you will find all the most recent information from all the professional rugby competitions from all over the world
-                as provided by the "live rugby data" API.
+                as provided by the "live rugby data" API.<br/>
+                all the matches, all the results, all the stats, right here in ONE place
             </p>
             <p>
-                this website is showing my skills as a web developper:
-                I'm using React.js with scss.
+                my name is Ram Montilia Smithson and I'm a junior web developer and as you can see here, a big rugby fan
+            </p>
+            <p>
+                in this website I'm showing my skills as a web developer
+                using React.js with scss.
                 (look for how to write an about page)
             </p>
-            <p>
-                my name is Ram Montilia Smithson and I'm a junior web developper looking for my first apportunity to work
-                in this new ......
-            </p>
-            <p>
+            {/* <p>
                 after graduating from ITC's full stack bootcamp, in which I learned:
                 HTML, CSS and JS
                 React.js, node.js, mongoDB (and mongoos)
                 firebase, heroku, (copy from ITC's CV) 
-            </p>
-            <p>
+            </p> */}
+            {/* <p>
                 I'm a smart enthusiantic guy looking for my first position as a web developper
                 (skills and charituristics)
-            </p>
+            </p> */}
             <p>
-                for contact information you can go through the nav bar link on top or just scroll down
+                for contact information press here (add alink to footer)
             </p>
         </div>
     )

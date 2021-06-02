@@ -43,7 +43,7 @@ export default function Navbar() {
                     <div className="header-options">
                         <Link className="link" to="/">HOME</Link>
                         <Link className="link" to="/about">ABOUT</Link>
-                        <a className="link" href="#footer">CREDITS</a>
+                        <a className="link" href="#footer">CONTACT</a>
                     </div>
                 </div>
                 <Switch>

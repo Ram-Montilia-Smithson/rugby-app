@@ -1,0 +1,34 @@
+.stats {
+  text-align: center;
+}
+
+.stats .stat-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: small;
+}
+
+.stats .stat-container .stat-container-home {
+  text-align: -webkit-right;
+}
+
+.stats .stat-container .stat-container-home .stat-container-home-stat {
+  background-color: red;
+  color: red;
+  display: inline-block;
+}
+
+.stats .stat-container .stat-container-away {
+  text-align: start;
+}
+
+.stats .stat-container .stat-container-away .stat-container-away-stat {
+  background-color: red;
+  color: red;
+  display: inline-block;
+}
+/*# sourceMappingURL=stats.css.map */

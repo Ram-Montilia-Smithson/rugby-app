@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { defaults, Bar, Line } from 'react-chartjs-2/dist/index'
+import "../scss/stats/stats.css"
 
 export default function Stats({ homeStats, awayStats}) {
 
@@ -60,83 +61,135 @@ export default function Stats({ homeStats, awayStats}) {
     }, [homeStats, awayStats])
 
     return (
-        <div>
-            
+        <div className="stats">
+            <h1>HOME - AWAY</h1>
             <div>
                 <h2>attack</h2>
-                {homeAttack.map(stat => {
-                    return (
-                        <div>HOME-
-                            <span>{stat.stat}:</span>
-                            <span>{stat.value}</span>
-                        </div>
-                    )
-                })}
-                {awayAttack.map(stat => {
-                    return (
-                        <div>AWAY-
-                            <span>{stat.stat}:</span>
-                            <span>{stat.value}</span>
-                        </div>
-                    )
-                })}
+                <div className="stat-container">
+                    <div className="stat-container-home">
+                        {homeAttack.map(stat => {
+                            return (
+                                <div >
+                                    <span>{stat.value}</span>
+                                    <span className="stat-container-home-stat" style={{ width: `${stat.value}px` }}>-</span>
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <div >
+                        {homeAttack.map(stat => {
+                            return (
+                                <div>{stat.stat}</div>
+                            )
+                        })}
+                    </div>
+                    <div className="stat-container-away">
+                        {awayAttack.map(stat => {
+                            return (
+                                <div>
+                                    <span className="stat-container-away-stat" style={{ width: `${stat.value}px` }}>-</span>
+                                    <span>{stat.value}</span>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
             </div>
             <div>
                 <h2>defence</h2>
-                {homeDefence.map(stat => {
-                    return (
-                        <div>HOME-
-                            <span>{stat.stat}:</span>
-                            <span>{stat.value}</span>
-                        </div>
-                    )
-                })}
-                {awayDefence.map(stat => {
-                    return (
-                        <div>AWAY-
-                            <span>{stat.stat}:</span>
-                            <span>{stat.value}</span>
-                        </div>
-                    )
-                })}
+                <div className="stat-container">
+                    <div className="stat-container-home">
+                        {homeDefence.map(stat => {
+                            return (
+                                <div>
+                                    <span>{stat.value}</span>
+                                    <span className="stat-container-home-stat" style={{ width: `${stat.value}px` }}>-</span>
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <div>
+                        {homeDefence.map(stat => {
+                            return (
+                                <div>{stat.stat}:</div>
+                            )
+                        })}
+                    </div>
+                    <div className="stat-container-away">
+                        {awayDefence.map(stat => {
+                            return (
+                                <div>
+                                    <span className="stat-container-away-stat" style={{ width: `${stat.value}px` }}>-</span>
+                                    <span>{stat.value}</span>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
             </div>
             <div>
-                <h2>kicking</h2>
-                {homeKicking.map(stat => {
-                    return (
-                        <div>HOME-
-                            <span>{stat.stat}:</span>
-                            <span>{stat.value}</span>
-                        </div>
-                    )
-                })}
-                {awayKicking.map(stat => {
-                    return (
-                        <div>AWAY-
-                            <span>{stat.stat}:</span>
-                            <span>{stat.value}</span>
-                        </div>
-                    )
-                })}
+                <h2>Kicking</h2>
+                <div className="stat-container">
+                    <div className="stat-container-home">
+                        {homeKicking.map(stat => {
+                            return (
+                                <div>
+                                    <span>{stat.value}</span>
+                                    <span className="stat-container-home-stat" style={{ width: `${stat.value *10}px` }}>-</span>
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <div>
+                        {homeKicking.map(stat => {
+                            return (
+                                <div>{stat.stat}:</div>
+                            )
+                        })}
+                    </div>
+                    <div className="stat-container-away">
+                        {awayKicking.map(stat => {
+                            return (
+                                <div>
+                                    <span className="stat-container-away-stat" style={{ width: `${stat.value * 10}px` }}>-</span>
+                                    <span>{stat.value}</span>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
             </div>
             <div>
-                <h2>scrum</h2>
-                {homeScrum.map(stat => {
-                    return (
-                        <div>HOME-
-                            <span>{stat.stat}:</span>
-                            <span>{stat.value}</span>
-                        </div>
-                    )
-                })}
-                {awayScrum.map(stat => {
-                    return (
-                        <div>AWAY-
-                            <span>{stat.stat}:</span>
-                            <span>{stat.value}</span>
-                        </div>
-                    )
-                })}
+                <h2>Scrum</h2>
+                <div className="stat-container">
+                    <div className="stat-container-home">
+                        {homeScrum.map(stat => {
+                            return (
+                                <div>
+                                    <span>{stat.value}</span>
+                                    <span className="stat-container-home-stat" style={{ width: `${stat.value *100}px` }}>-</span>
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <div>
+                        {homeScrum.map(stat => {
+                            return (
+                                <div>{stat.stat}:</div>
+                            )
+                        })}
+                    </div>
+                    <div className="stat-container-away">
+                        {awayScrum.map(stat => {
+                            return (
+                                <div>
+                                    <span className="stat-container-away-stat" style={{ width: `${stat.value*100}px` }}>-</span>
+                                    <span>{stat.value}</span>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
             </div>
             <div>
                 <h2>fouls</h2>
@@ -235,6 +288,7 @@ export default function Stats({ homeStats, awayStats}) {
                         ]
                     }}
                     options={{
+                        indexAxis: 'y',
                         plugins: {
                             title: {
                                 display: true,

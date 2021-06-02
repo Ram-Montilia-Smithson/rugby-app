@@ -1,0 +1,30 @@
+@import "../variables";
+@import "../_mixin";
+
+.stats{
+    text-align: center;
+    .stat-container {
+        display: flex;
+        justify-content: center;
+        font-size: small;
+    
+        .stat-container-home {
+            text-align: -webkit-right;
+
+            .stat-container-home-stat {
+                background-color: red;
+                color: red;
+                display: inline-block;
+            }
+        }
+
+        .stat-container-away {
+            text-align: start;
+            .stat-container-away-stat {
+                background-color: red;
+                color: red;
+                display: inline-block;
+            }
+        }
+    }
+}
