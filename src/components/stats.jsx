@@ -5,6 +5,7 @@ import "../scss/stats/stats.css"
 export default function Stats({ homeStats, awayStats}) {
 
     // console.log(defaults)
+    
 
     const [homeAttack, setHomeAttack] = useState([])
     const [awayAttack, setAwayAttack] = useState([])
